@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alrehab Perfumes & Beauty — Beauty West Africa | DigiHire</title>
+  
+  <!-- DigiHire Official Font: Instrument Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" href="/alrehab/profiles/assets/digihire-favicon.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dgi: {
+              black: '#07090E',
+              dark: '#0C1017',
+              card: '#121722',
+              cardHover: '#181F2E',
+              cyan: '#00C2FF',
+              cyanDim: '#0096C7',
+              cyanSoft: '#33CFFF',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderHover: 'rgba(0, 194, 255, 0.35)',
+              slate: '#94A3B8'
+            }
+          },
+          fontFamily: {
+            sans: ['"Instrument Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background-color: #07090E;
+      color: #F8FAFC;
+    }
+    
+    .talent-card {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    
+    .talent-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px -5px rgba(0, 194, 255, 0.2);
+    }
+
+    .talent-card:hover .portrait-img {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="bg-dgi-black text-slate-100 min-h-screen flex flex-col antialiased selection:bg-dgi-cyan/20 selection:text-white relative">
+
+  <!-- Ambient Luxury Glows -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-[15%] left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-dgi-cyan/10 blur-[150px] rounded-full"></div>
+    <div class="absolute top-[45%] -right-[10%] w-[500px] h-[500px] bg-blue-950/20 blur-[170px] rounded-full"></div>
+  </div>
+
+  <!-- Minimalist Header: DigiHire White Logo & Exhibition Badge -->
+  <header class="sticky top-0 z-30 bg-dgi-black/90 backdrop-blur-xl border-b border-dgi-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-4 flex items-center justify-between">
+      
+      <!-- DigiHire White Logo -->
+      <a href="https://www.digihire.io/" target="_blank" rel="noopener noreferrer" class="flex items-center">
+        <img 
+          src="/alrehab/profiles/assets/digihire-logo-white.png" 
+          alt="DigiHire" 
+          class="h-8 sm:h-9 w-auto object-contain"
+        >
+      </a>
+
+      <!-- Exhibition Tag -->
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-medium text-slate-300">
+          <span class="w-2 h-2 rounded-full bg-dgi-cyan animate-pulse"></span>
+          <span class="text-white font-semibold">Alrehab</span>
+          <span class="text-white/20">•</span>
+          <span class="text-slate-400 hidden sm:inline">Beauty West Africa Exhibition</span>
+          <span class="text-slate-400 sm:hidden">BWA 2026</span>
+        </span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Showcase -->
+  <main class="relative z-10 flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 w-full">
+    
+    <!-- Hero Section (Centered, Bold & Sleek) -->
+    <div class="mb-14 text-center max-w-4xl mx-auto">
+      
+      <!-- Over-headline Tag -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-dgi-cyan/10 border border-dgi-cyan/25 text-dgi-cyan text-xs font-semibold tracking-wider uppercase mb-5">
+        <span>Beauty West Africa Exhibition</span>
+      </div>
+
+      <!-- Large Hero Title: Alrehab Perfumes & Beauty -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-5 leading-[1.08]">
+        Alrehab Perfumes & Beauty
+      </h1>
+
+      <!-- Value Proposition -->
+      <p class="text-base sm:text-lg text-slate-400 font-normal max-w-2xl mx-auto leading-relaxed">
+        100% vetted and professionally trained event hosts with verified tier-one brand experience.
+      </p>
+
+    </div>
+
+    <!-- Sleek 5-Candidate Grid (Balanced & Responsive) -->
+    <div class="flex flex-wrap justify-center gap-7 max-w-7xl mx-auto">
+      
+      <!-- Candidate 1: Rokibat -->
+      <div class="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] flex">
+        <article class="talent-card w-full bg-dgi-card border border-dgi-border hover:border-dgi-borderHover rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+          
+          <div>
+            <!-- Image with 4:5 Aspect Ratio -->
+            <div class="aspect-[4/5] relative overflow-hidden bg-dgi-dark">
+              <img 
+                src="/alrehab/profiles/assets/rokibat-hassan.jpg" 
+                alt="Rokibat" 
+                class="portrait-img w-full h-full object-cover transition-transform duration-500"
+                style="object-position: center 20%;"
+              >
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-dgi-card via-transparent to-black/30"></div>
+              
+              <!-- Experience Badge -->
+              <div class="absolute top-3.5 right-3.5">
+                <span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-xs font-semibold text-white shadow-lg">
+                  4+ Years Experience
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6">
+              
+              <!-- First Name -->
+              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-1.5">
+                Rokibat
+              </h2>
+
+              <div class="text-xs font-semibold uppercase tracking-wider text-dgi-cyan mb-3.5">
+                Luxury Fragrance & Beverage Sampling
+              </div>
+
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-5">
+                High-conversion brand representative with proven in-store activation, guest engagement, and product sampling success for leading global brands.
+              </p>
+
+              <!-- Signature Brand Experience -->
+              <div class="mb-2">
+                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-2">
+                  Signature Brand Experience:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Jameson</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Chivas Regal</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Ballantine's</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Quality Boutique</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Metrics Row -->
+          <div class="p-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+            <div class="flex items-center gap-1.5 font-semibold text-white">
+              <span class="text-amber-400">★</span>
+              <span>5.0 / 5.0</span>
+            </div>
+            <div class="text-slate-400 font-medium">
+              50+ Activations
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+      <!-- Candidate 2: Osaze -->
+      <div class="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] flex">
+        <article class="talent-card w-full bg-dgi-card border border-dgi-border hover:border-dgi-borderHover rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+          
+          <div>
+            <!-- Image with 4:5 Aspect Ratio (Straight Standing View) -->
+            <div class="aspect-[4/5] relative overflow-hidden bg-dgi-dark">
+              <img 
+                src="/alrehab/profiles/assets/osaze-imafidon.png" 
+                alt="Osaze" 
+                class="portrait-img w-full h-full object-cover transition-transform duration-500"
+                style="object-position: center 15%;"
+              >
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-dgi-card via-transparent to-black/30"></div>
+              
+              <!-- Experience Badge -->
+              <div class="absolute top-3.5 right-3.5">
+                <span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-xs font-semibold text-white shadow-lg">
+                  10+ Years Experience
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6">
+              
+              <!-- First Name -->
+              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-1.5">
+                Osaze
+              </h2>
+
+              <div class="text-xs font-semibold uppercase tracking-wider text-dgi-cyan mb-3.5">
+                Floor Operations & Booth Management
+              </div>
+
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-5">
+                Seasoned operational supervisor and lead host with a decade of expertise managing fast-paced booth operations, staff coordination, and crowd dynamics.
+              </p>
+
+              <!-- Signature Brand Experience -->
+              <div class="mb-2">
+                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-2">
+                  Signature Brand Experience:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Domino's Pizza (Eat & Go)</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Isoken Foundation</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Metrics Row -->
+          <div class="p-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+            <div class="flex items-center gap-1.5 font-semibold text-white">
+              <span class="text-amber-400">★</span>
+              <span>5.0 / 5.0</span>
+            </div>
+            <div class="text-slate-400 font-medium">
+              10+ Yrs Operations
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+      <!-- Candidate 3: Deborah -->
+      <div class="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] flex">
+        <article class="talent-card w-full bg-dgi-card border border-dgi-border hover:border-dgi-borderHover rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+          
+          <div>
+            <!-- Image with 4:5 Aspect Ratio -->
+            <div class="aspect-[4/5] relative overflow-hidden bg-dgi-dark">
+              <img 
+                src="/alrehab/profiles/assets/deborah-okeronbi.jpg" 
+                alt="Deborah" 
+                class="portrait-img w-full h-full object-cover transition-transform duration-500"
+                style="object-position: center 15%;"
+              >
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-dgi-card via-transparent to-black/30"></div>
+              
+              <!-- Experience Badge -->
+              <div class="absolute top-3.5 right-3.5">
+                <span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-xs font-semibold text-white shadow-lg">
+                  3+ Years Experience
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6">
+              
+              <!-- First Name -->
+              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-1.5">
+                Deborah
+              </h2>
+
+              <div class="text-xs font-semibold uppercase tracking-wider text-dgi-cyan mb-3.5">
+                VIP Hospitality & Guest Experience
+              </div>
+
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-5">
+                Articulate hospitality coordinator and host with proven excellence in VIP guest care, booth presentation, and high-poise brand engagement.
+              </p>
+
+              <!-- Signature Brand Experience -->
+              <div class="mb-2">
+                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-2">
+                  Signature Brand Experience:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Univ. of Ibadan (Pharm.D)</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Visible Influence</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Limitless Leadership</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Metrics Row -->
+          <div class="p-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+            <div class="flex items-center gap-1.5 font-semibold text-white">
+              <span class="text-amber-400">★</span>
+              <span>5.0 / 5.0</span>
+            </div>
+            <div class="text-slate-400 font-medium">
+              25+ VIP Events
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+      <!-- Candidate 4: Isaac -->
+      <div class="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] flex">
+        <article class="talent-card w-full bg-dgi-card border border-dgi-border hover:border-dgi-borderHover rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+          
+          <div>
+            <!-- Image with 4:5 Aspect Ratio -->
+            <div class="aspect-[4/5] relative overflow-hidden bg-dgi-dark">
+              <img 
+                src="/alrehab/profiles/assets/isaac-ogundele.png" 
+                alt="Isaac" 
+                class="portrait-img w-full h-full object-cover transition-transform duration-500"
+                style="object-position: center 15%;"
+              >
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-dgi-card via-transparent to-black/30"></div>
+              
+              <!-- Experience Badge -->
+              <div class="absolute top-3.5 right-3.5">
+                <span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-xs font-semibold text-white shadow-lg">
+                  7+ Years Experience
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6">
+              
+              <!-- First Name -->
+              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-1.5">
+                Isaac
+              </h2>
+
+              <div class="text-xs font-semibold uppercase tracking-wider text-dgi-cyan mb-3.5">
+                Executive VIP Protocol & Logistics
+              </div>
+
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-5">
+                Distinguished operations specialist and executive event host with an MBA and proven leadership in VIP protocol, aviation safety, and booth logistics.
+              </p>
+
+              <!-- Signature Brand Experience -->
+              <div class="mb-2">
+                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-2">
+                  Signature Brand Experience:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">FAAN (Aviation Safety)</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Chowdeck Logistics</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">LoveMyNigeria</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Metrics Row -->
+          <div class="p-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+            <div class="flex items-center gap-1.5 font-semibold text-white">
+              <span class="text-amber-400">★</span>
+              <span>5.0 / 5.0</span>
+            </div>
+            <div class="text-slate-400 font-medium">
+              Aviation Safety Cert.
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+      <!-- Candidate 5: Olushola -->
+      <div class="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] flex">
+        <article class="talent-card w-full bg-dgi-card border border-dgi-border hover:border-dgi-borderHover rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+          
+          <div>
+            <!-- Image with 4:5 Aspect Ratio -->
+            <div class="aspect-[4/5] relative overflow-hidden bg-dgi-dark">
+              <img 
+                src="/alrehab/profiles/assets/olushola.png" 
+                alt="Olushola" 
+                class="portrait-img w-full h-full object-cover transition-transform duration-500"
+                style="object-position: center 20%;"
+              >
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-dgi-card via-transparent to-black/30"></div>
+              
+              <!-- Experience Badge -->
+              <div class="absolute top-3.5 right-3.5">
+                <span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-xs font-semibold text-white shadow-lg">
+                  10+ Years Experience
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6">
+              
+              <!-- First Name -->
+              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-1.5">
+                Olushola
+              </h2>
+
+              <div class="text-xs font-semibold uppercase tracking-wider text-dgi-cyan mb-3.5">
+                Trade Fair Promotion & Brand Activation
+              </div>
+
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-5">
+                High-conversion brand ambassador and sales specialist with extensive experience driving product demonstration, consumer sales, and booth engagement for leading commercial brands.
+              </p>
+
+              <!-- Signature Brand Experience -->
+              <div class="mb-2">
+                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-2">
+                  Signature Brand Experience:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Multichoice Nigeria</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">De-United Foods</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Rokana Industry</span>
+                  <span class="px-2.5 py-1 rounded-md bg-dgi-dark border border-white/10 text-xs font-medium text-slate-300">Hamtel Holdings</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Metrics Row -->
+          <div class="p-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+            <div class="flex items-center gap-1.5 font-semibold text-white">
+              <span class="text-amber-400">★</span>
+              <span>5.0 / 5.0</span>
+            </div>
+            <div class="text-slate-400 font-medium">
+              60+ Activations
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Sleek Minimalist Footer -->
+  <footer class="bg-dgi-black border-t border-dgi-border py-8 px-4 text-center text-xs text-slate-500 relative z-10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <img src="assets/digihire-logo-white.png" alt="DigiHire" class="h-5 w-auto opacity-70">
+      </div>
+      <div>
+        DigiHire (DGI) © 2026 • Curated for Alrehab at Beauty West Africa Exhibition
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
