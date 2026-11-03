@@ -1078,6 +1078,248 @@
       color: #BDC8D8; letter-spacing: -0.02em; white-space: nowrap;
     }
 
+    /* ── 3.5 STATS BENTO SECTION ─────────────────── */
+    .stats-bento-section {
+      padding: 40px 0 72px 0;
+      background: #F4F7FC;
+      position: relative;
+      z-index: 10;
+    }
+    .stats-bento-grid {
+      display: grid;
+      grid-template-columns: 290px 1fr 1fr 310px;
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+    .bento-card {
+      border-radius: 28px;
+      padding: 32px 28px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(13, 27, 51, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(13, 27, 51, 0.08);
+    }
+
+    /* Card 1: Green */
+    .bento-green {
+      background: #0EB76A;
+      color: #ffffff;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+    .bento-avatars {
+      display: flex;
+      align-items: center;
+    }
+    .bento-avatars img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid #0EB76A;
+      margin-left: -10px;
+      object-fit: cover;
+      background: #ffffff;
+    }
+    .bento-avatars img:first-child { margin-left: 0; }
+    .bento-avatars-dark img {
+      border-color: #E2FC88;
+      filter: grayscale(1);
+    }
+    .bento-green .bento-stat-num {
+      font-size: clamp(38px, 3.2vw, 46px);
+      font-weight: 800 !important;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-family: 'Instrument Sans', sans-serif;
+      margin-top: 28px;
+    }
+    .bento-green .bento-stat-label {
+      font-size: 15px;
+      font-weight: 600 !important;
+      color: rgba(255, 255, 255, 0.95);
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+
+    /* Card 2: Photo */
+    .bento-photo {
+      grid-column: span 2;
+      background: linear-gradient(180deg, rgba(6,17,31,0.2) 0%, rgba(6,17,31,0.85) 100%),
+                  url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=80') center/cover no-repeat;
+      color: #ffffff;
+      justify-content: flex-end;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-play-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #FF5454;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(255, 84, 84, 0.4);
+    }
+    .bento-photo .bento-stat-num {
+      font-size: clamp(38px, 3.2vw, 48px);
+      font-weight: 800 !important;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .bento-photo .bento-stat-label {
+      font-size: 15px;
+      font-weight: 600 !important;
+      color: rgba(255, 255, 255, 0.95);
+      margin-top: 6px;
+    }
+
+    /* Card 3: Lavender Testimonial */
+    .bento-lavender {
+      grid-row: span 2;
+      background: #F3ECFA;
+      justify-content: space-between;
+      min-height: 430px;
+      padding: 38px 30px;
+    }
+    .bento-quote {
+      font-size: clamp(18px, 1.4vw, 22px);
+      font-weight: 700 !important;
+      color: #0D1B33;
+      line-height: 1.42;
+      letter-spacing: -0.015em;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .bento-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .bento-author-img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+    .bento-author-name {
+      font-size: 14px;
+      font-weight: 700 !important;
+      color: #0D1B33;
+      line-height: 1.2;
+    }
+    .bento-author-role {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 500 !important;
+      margin-top: 2px;
+    }
+
+    /* Card 4: Lime */
+    .bento-lime {
+      background: #E2FC88;
+      justify-content: space-between;
+      min-height: 195px;
+    }
+    .bento-lime .bento-stat-num {
+      font-size: clamp(36px, 3vw, 44px);
+      font-weight: 800 !important;
+      color: #0D1B33;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .bento-lime .bento-stat-label {
+      font-size: 15px;
+      font-weight: 600 !important;
+      color: #1E293B;
+      margin-top: 6px;
+    }
+
+    /* Card 5: Dark Navy */
+    .bento-dark {
+      background: #06111F;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      justify-content: flex-end;
+      min-height: 195px;
+    }
+    .bento-dark .bento-stat-num {
+      font-size: clamp(36px, 3vw, 44px);
+      font-weight: 800 !important;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .bento-dark .bento-stat-label {
+      font-size: 14px;
+      font-weight: 500 !important;
+      color: #94A3B8;
+      margin-top: 8px;
+    }
+
+    /* Card 6: White with Blue Accent */
+    .bento-white {
+      background: #ffffff;
+      border: 1px solid #E2ECF5;
+      justify-content: flex-end;
+      min-height: 195px;
+    }
+    .bento-white .bento-stat-num {
+      font-size: clamp(36px, 3vw, 44px);
+      font-weight: 800 !important;
+      color: #1A56DB;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .bento-white .bento-stat-label {
+      font-size: 14px;
+      font-weight: 500 !important;
+      color: #475569;
+      margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .stats-bento-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .bento-photo { grid-column: span 2; }
+      .bento-lavender {
+        grid-row: auto;
+        grid-column: span 2;
+        min-height: auto;
+      }
+    }
+    @media (max-width: 640px) {
+      .stats-bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .bento-photo, .bento-lavender {
+        grid-column: auto;
+      }
+      .bento-card {
+        padding: 24px 20px;
+        border-radius: 20px;
+      }
+    }
+
     /* ════════════════════════════════════════════════
        4. TALENT UNLOCK
     ════════════════════════════════════════════════ */
@@ -2070,6 +2312,77 @@
       <!-- Right 70%: infinite slider -->
       <div class="logos-slider">
         <div class="logos-track" id="logos-track"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 3.5 STATS BENTO SECTION ════════════════════ -->
+<section class="stats-bento-section">
+  <div class="container">
+    <div class="stats-bento-grid">
+      <!-- Card 1: Green (500+ Sales Talents) -->
+      <div class="bento-card bento-green">
+        <div class="bento-avatars">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&q=80" alt="Talent" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&q=80" alt="Talent" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces&q=80" alt="Talent" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=80" alt="Talent" loading="lazy" />
+        </div>
+        <div>
+          <div class="bento-stat-num">500+</div>
+          <div class="bento-stat-label">Sales Talents Recruited &amp; Deployed</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Photo (5000+ Sales Personnel Across 36 States) -->
+      <div class="bento-card bento-photo">
+        <div class="bento-play-btn" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div>
+          <div class="bento-stat-num">5,000+</div>
+          <div class="bento-stat-label">Sales Personnel Across 36 States</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Lavender Testimonial Quote -->
+      <div class="bento-card bento-lavender">
+        <div class="bento-quote">
+          "DigiHire didn't just recruit for us; they gave us a 24/7 sales machine and reliable field execution across Nigeria."
+        </div>
+        <div class="bento-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=faces&q=80" alt="Tunde W." class="bento-author-img" loading="lazy" />
+          <div class="bento-author-info">
+            <div class="bento-author-name">Tunde W.</div>
+            <div class="bento-author-role">Business Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Lime (35+ Companies Served) -->
+      <div class="bento-card bento-lime">
+        <div>
+          <div class="bento-stat-num">35+</div>
+          <div class="bento-stat-label">Companies Served</div>
+        </div>
+        <div class="bento-avatars bento-avatars-dark">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&q=80" alt="Partner" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces&q=80" alt="Partner" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=80" alt="Partner" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Card 5: Dark Navy (120+ Extended Sales Force Managed) -->
+      <div class="bento-card bento-dark">
+        <div class="bento-stat-num">120+</div>
+        <div class="bento-stat-label">Extended Sales Force Managed</div>
+      </div>
+
+      <!-- Card 6: White with Blue Accent (36 States) -->
+      <div class="bento-card bento-white">
+        <div class="bento-stat-num">36</div>
+        <div class="bento-stat-label">States Covered Nationwide</div>
       </div>
     </div>
   </div>
