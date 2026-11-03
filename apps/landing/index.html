@@ -501,35 +501,63 @@
       grid-template-columns: 320px 1fr;
     }
 
-    /* ── Brands Flyout Dropdown (Two-column layout matching screenshot) ── */
+    /* ── Brands Flyout Dropdown (Matches Screenshot 2: Clean Two-Column Editorial Style) ── */
     .nav-item-brands {
       position: relative !important;
     }
+    .nav-item-brands::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 14px;
+      right: 14px;
+      height: 3px;
+      background: #0284C7;
+      border-radius: 2px;
+      opacity: 0;
+      transform: scaleX(0.7);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 260;
+    }
+    .nav-item-brands:hover::after,
+    .nav-item-brands:focus-within::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    .nav-item-brands .nav-mega-trigger {
+      transition: color 0.18s ease;
+    }
+    .nav-item-brands:hover .nav-mega-trigger,
+    .nav-item-brands:focus-within .nav-mega-trigger {
+      color: #0284C7 !important;
+      background: transparent !important;
+    }
+
     .brands-flyout-dropdown {
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 8px);
       left: 0;
-      width: 580px;
-      min-height: 290px;
+      width: 590px;
+      min-height: 280px;
       background: #ffffff;
-      border-radius: 18px;
+      border-radius: 12px;
       border: 1px solid #E2E8F0;
-      box-shadow: 0 20px 50px -10px rgba(13, 27, 51, 0.14), 0 4px 16px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.12), 0 2px 10px rgba(0, 0, 0, 0.04);
       z-index: 250;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-8px);
-      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      transform: translateY(-6px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
       overflow: hidden;
       display: flex;
     }
     .brands-flyout-dropdown::before {
       content: '';
       position: absolute;
-      top: -16px;
+      top: -12px;
       left: 0;
       right: 0;
-      height: 16px;
+      height: 12px;
       background: transparent;
     }
     .nav-item-brands:hover .brands-flyout-dropdown,
@@ -541,46 +569,43 @@
 
     /* Left Column */
     .bfm-left {
-      width: 230px;
+      width: 220px;
       flex-shrink: 0;
-      padding: 16px 12px;
+      padding: 0;
       background: #ffffff;
+      border-right: 1px solid #E2E8F0;
       display: flex;
       flex-direction: column;
     }
     .bfm-all-link {
       display: block;
-      padding: 10px 14px;
-      font-size: 14.5px;
-      font-weight: 700 !important;
-      color: #0D1B33;
+      padding: 16px 22px;
+      font-size: 15px;
+      font-weight: 500 !important;
+      color: #0F172A;
       text-decoration: none;
-      border-radius: 8px;
       font-family: 'Instrument Sans', sans-serif;
+      border-bottom: 1px solid #E2E8F0;
       transition: background-color 0.15s ease, color 0.15s ease;
     }
     .bfm-all-link:hover {
       background: #F8FAFC;
-      color: #1A56DB;
-    }
-    .bfm-divider {
-      height: 1px;
-      background: #EEF2F6;
-      margin: 8px 12px 10px 12px;
+      color: #0284C7;
     }
     .bfm-label {
       font-size: 11px;
-      font-weight: 700 !important;
-      color: #94A3B8;
-      letter-spacing: 0.06em;
+      font-weight: 600 !important;
+      color: #64748B;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 4px 14px 8px 14px;
+      padding: 18px 22px 8px 22px;
       font-family: 'Instrument Sans', sans-serif;
     }
     .bfm-cats {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 0;
+      padding-bottom: 14px;
     }
     .bfm-cat-btn {
       display: flex;
@@ -589,72 +614,66 @@
       width: 100%;
       border: none;
       background: transparent;
-      padding: 10px 14px;
-      font-size: 13.5px;
-      font-weight: 700 !important;
-      letter-spacing: 0.04em;
+      padding: 12px 22px;
+      font-size: 14.5px;
+      font-weight: 500 !important;
       color: #1E293B;
-      border-radius: 8px;
+      border-radius: 0;
       cursor: pointer;
       text-align: left;
       font-family: 'Instrument Sans', sans-serif;
-      transition: background-color 0.15s ease, color 0.15s ease;
+      transition: background-color 0.12s ease, color 0.12s ease;
     }
     .bfm-cat-btn:hover {
       background: #F8FAFC;
-      color: #1A56DB;
+      color: #0F172A;
     }
     .bfm-cat-btn.active {
-      background: #F0F7FF;
-      color: #1A56DB;
+      background: #F0F6FF;
+      color: #0F172A;
+      font-weight: 500 !important;
     }
     .bfm-chevron {
       width: 14px;
       height: 14px;
-      stroke: currentColor;
+      stroke: #64748B;
       transition: transform 0.15s ease;
     }
     .bfm-cat-btn.active .bfm-chevron {
+      stroke: #0F172A;
       transform: translateX(2px);
     }
 
     /* Right Column */
     .bfm-right {
       flex: 1;
-      padding: 18px 16px;
-      border-left: 1px solid #EEF2F6;
+      padding: 24px 32px;
       background: #ffffff;
-      min-height: 260px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
     }
     .bfm-panel {
       display: none;
       flex-direction: column;
-      gap: 4px;
+      gap: 18px;
     }
     .bfm-panel.active {
       display: flex;
-      animation: bfmSlideIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    @keyframes bfmSlideIn {
-      from { opacity: 0; transform: translateX(6px); }
-      to { opacity: 1; transform: translateX(0); }
     }
     .bfm-item {
       display: block;
-      padding: 11px 14px;
-      font-size: 14px;
+      padding: 2px 0;
+      font-size: 15.5px;
       font-weight: 500 !important;
       color: #1E293B;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      line-height: 1.45;
       font-family: 'Instrument Sans', sans-serif;
+      transition: color 0.15s ease;
     }
     .bfm-item:hover {
-      background: #F8FAFC;
-      color: #1A56DB;
-      font-weight: 600 !important;
-      transform: translateX(4px);
+      color: #0284C7;
     }
     @media (max-width: 900px) {
       .brands-flyout-dropdown {
@@ -3175,24 +3194,23 @@
             <!-- LEFT COLUMN -->
             <div class="bfm-left">
               <a href="#solutions" class="bfm-all-link">All Solutions</a>
-              <div class="bfm-divider"></div>
               <div class="bfm-label">EXPLORE BY TRACK</div>
               <div class="bfm-cats">
                 <button type="button" class="bfm-cat-btn active" data-target="panel-hire">
                   <span>HIRE</span>
-                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
                 </button>
                 <button type="button" class="bfm-cat-btn" data-target="panel-deploy">
                   <span>DEPLOY</span>
-                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
                 </button>
                 <button type="button" class="bfm-cat-btn" data-target="panel-manage">
                   <span>MANAGE</span>
-                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
                 </button>
                 <button type="button" class="bfm-cat-btn" data-target="panel-grow">
                   <span>GROW</span>
-                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
                 </button>
               </div>
             </div>
@@ -3203,6 +3221,12 @@
               <div class="bfm-panel active" id="panel-hire">
                 <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="bfm-item">
                   Sales Recruitment
+                </a>
+                <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Tech Sales &amp; B2B Talent
+                </a>
+                <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  AI-Enabled Sales Talent
                 </a>
               </div>
 
@@ -3223,6 +3247,12 @@
               <div class="bfm-panel" id="panel-manage">
                 <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
                   Managed Workforce Solutions
+                </a>
+                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Multi-Location Workforce Management
+                </a>
+                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Payroll, Attendance &amp; Performance
                 </a>
               </div>
 
@@ -5878,12 +5908,16 @@ END V1 COMMENTED OUT
         <a href="#solutions" class="nm-sub-item" style="font-weight:700!important;color:#0D1B33;">All Solutions</a>
         <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">HIRE</div>
         <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Sales Recruitment</a>
+        <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Tech Sales &amp; B2B Talent</a>
+        <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">AI-Enabled Sales Talent</a>
         <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">DEPLOY</div>
         <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Field Sales &amp; Customer Acquisition</a>
         <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Retail &amp; In-Store Workforce</a>
         <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Activation &amp; Exhibition Staffing</a>
         <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">MANAGE</div>
         <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Managed Workforce Solutions</a>
+        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Multi-Location Workforce Management</a>
+        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Payroll, Attendance &amp; Performance</a>
         <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">GROW</div>
         <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Performance-Based Sales &amp; Acquisition</a>
         <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Affiliate Programme Setup</a>
