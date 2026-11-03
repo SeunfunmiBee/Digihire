@@ -1320,6 +1320,427 @@
       }
     }
 
+    /* ── SOLUTIONS SHOWCASE (BLAKSKILL STYLE) ─────── */
+    .solutions-showcase-section {
+      padding: 72px 0 96px 0;
+      background: #ffffff;
+      position: relative;
+      z-index: 10;
+    }
+    .solutions-blocks-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .sol-block {
+      border-radius: 32px;
+      padding: 52px 56px;
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .sol-block:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(13, 27, 51, 0.06);
+    }
+
+    .sol-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800 !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .badge-hire { color: #D97706; background: #FEF3C7; }
+    .badge-deploy { color: #059669; background: #D1FAE5; }
+    .badge-manage { color: #2563EB; background: #DBEAFE; }
+    .badge-grow { color: #7C3AED; background: #F3E8FF; }
+
+    .sol-title {
+      font-size: clamp(28px, 3.2vw, 38px);
+      font-weight: 800 !important;
+      color: #0D1B33;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .sol-desc {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-weight: 400 !important;
+    }
+    .sol-includes-title {
+      font-size: 12px;
+      font-weight: 700 !important;
+      color: #1E293B;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+    .sol-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .sol-chip {
+      background: #ffffff;
+      border: 1px solid rgba(13, 27, 51, 0.08);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600 !important;
+      color: #334155;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .sol-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700 !important;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      font-family: 'Instrument Sans', sans-serif;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-hire { background: #0D1B33; color: #ffffff; }
+    .btn-hire:hover { background: #1E293B; transform: translateX(2px); }
+
+    .btn-deploy { background: #059669; color: #ffffff; }
+    .btn-deploy:hover { background: #047857; transform: translateX(2px); }
+
+    .btn-manage { background: #2563EB; color: #ffffff; }
+    .btn-manage:hover { background: #1D4ED8; transform: translateX(2px); }
+
+    .btn-grow { background: #7C3AED; color: #ffffff; }
+    .btn-grow:hover { background: #6D28D9; transform: translateX(2px); }
+
+    /* Block Background Colors matching Blakskill pastel palettes */
+    .sol-block-hire { background: #FAF7F2; border: 1px solid #EFE8DB; }
+    .sol-block-deploy { background: #F4FBF7; border: 1px solid #D1F2E0; }
+    .sol-block-manage { background: #F0F7FF; border: 1px solid #D0E5FF; }
+    .sol-block-grow { background: #FBF6FF; border: 1px solid #EDD9FF; }
+
+    /* Visual Mockups */
+    .sol-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+    }
+
+    /* 1. Polaroid visual */
+    .polaroids-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 300px;
+      width: 100%;
+    }
+    .polaroid-card {
+      width: 190px;
+      background: #ffffff;
+      padding: 12px 12px 16px 12px;
+      border-radius: 18px;
+      box-shadow: 0 16px 36px rgba(13, 27, 51, 0.12);
+      position: absolute;
+      transition: transform 0.3s ease;
+    }
+    .polaroid-1 {
+      transform: rotate(-6deg) translateX(-36px);
+      z-index: 1;
+    }
+    .polaroid-2 {
+      transform: rotate(6deg) translateX(36px);
+      z-index: 2;
+    }
+    .polaroids-wrap:hover .polaroid-1 { transform: rotate(-8deg) translateX(-42px); }
+    .polaroids-wrap:hover .polaroid-2 { transform: rotate(8deg) translateX(42px); }
+
+    .polaroid-img-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: #E2ECF5;
+    }
+    .polaroid-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .polaroid-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #00C2FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .polaroid-badge-blue { background: #2563EB; }
+    .polaroid-meta {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .polaroid-name {
+      font-size: 13px;
+      font-weight: 700 !important;
+      color: #0D1B33;
+    }
+    .polaroid-role {
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500 !important;
+    }
+
+    /* 2. Map & Network Visual */
+    .map-visual-card {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid #D1F2E0;
+      box-shadow: 0 16px 36px rgba(5, 150, 105, 0.08);
+      position: relative;
+    }
+    .map-nodes-container {
+      position: relative;
+      height: 250px;
+      background: radial-gradient(circle at center, rgba(5,150,105,0.08) 0%, transparent 72%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-svg-routes {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .map-node {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border: 1px solid #E2ECF5;
+      font-size: 12px;
+      font-weight: 700 !important;
+      color: #0D1B33;
+    }
+    .map-node img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .map-node-lagos { top: 40%; left: 8%; }
+    .map-node-abuja { top: 12%; right: 15%; }
+    .map-node-ph { bottom: 15%; right: 28%; }
+    .map-node-kano { top: 10%; left: 22%; }
+    .map-node-badge {
+      font-size: 10px;
+      color: #059669;
+      background: #D1FAE5;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-weight: 700 !important;
+    }
+
+    /* 3. Dashboard Card Visual */
+    .dashboard-widget-card {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid #D0E5FF;
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.08);
+    }
+    .dw-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .dw-title {
+      font-size: 13px;
+      font-weight: 700 !important;
+      color: #0D1B33;
+    }
+    .dw-badge {
+      font-size: 11px;
+      font-weight: 700 !important;
+      color: #2563EB;
+      background: #EFF6FF;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+    .dw-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .dw-stat-box {
+      background: #F8FAFC;
+      padding: 10px 6px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .dw-stat-val {
+      font-size: 15px;
+      font-weight: 800 !important;
+      color: #0D1B33;
+    }
+    .dw-stat-lbl {
+      font-size: 10px;
+      color: #64748B;
+      margin-top: 2px;
+      font-weight: 500 !important;
+    }
+    .dw-feed-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #F8FAFC;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .dw-feed-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dw-feed-left img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .dw-feed-text {
+      font-size: 12px;
+      font-weight: 600 !important;
+      color: #0D1B33;
+    }
+    .dw-feed-sub {
+      font-size: 10px;
+      color: #64748B;
+      margin-top: 1px;
+    }
+    .dw-status-pill {
+      font-size: 10px;
+      color: #059669;
+      background: #D1FAE5;
+      padding: 2px 7px;
+      border-radius: 8px;
+      font-weight: 700 !important;
+    }
+
+    /* 4. Growth Channel Visual */
+    .growth-widget-card {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid #EDD9FF;
+      box-shadow: 0 16px 36px rgba(124, 58, 237, 0.08);
+    }
+    .gw-highlight {
+      background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
+      color: #ffffff;
+      padding: 16px 18px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .gw-h-val {
+      font-size: 26px;
+      font-weight: 800 !important;
+      line-height: 1;
+      color: #ffffff;
+    }
+    .gw-h-lbl {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 4px;
+      font-weight: 500 !important;
+    }
+    .gw-channels-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .gw-channel-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      background: #FAF5FF;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600 !important;
+      color: #4C1D95;
+    }
+    .gw-channel-growth {
+      font-size: 11px;
+      color: #059669;
+      background: #D1FAE5;
+      padding: 2px 7px;
+      border-radius: 8px;
+      font-weight: 700 !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .sol-block {
+        grid-template-columns: 1fr;
+        padding: 40px 28px;
+        gap: 36px;
+      }
+    }
+
     /* ════════════════════════════════════════════════
        4. TALENT UNLOCK
     ════════════════════════════════════════════════ */
@@ -2383,6 +2804,244 @@
       <div class="bento-card bento-white">
         <div class="bento-stat-num">36</div>
         <div class="bento-stat-label">States Covered Nationwide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 3.6 SOLUTIONS SHOWCASE (BLAKSKILL STYLE) ════ -->
+<section class="solutions-showcase-section" id="solutions">
+  <div class="container">
+    <div class="platform-header reveal" style="text-align:center;max-width:840px;margin:0 auto 56px auto;">
+      <p class="section-label" style="color:var(--cyan-dim);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-size:12px;margin-bottom:12px;">SOLUTIONS &amp; SERVICES</p>
+      <h2 class="section-heading" style="font-size:clamp(30px, 4vw, 44px);font-weight:800!important;color:#0D1B33;margin-bottom:18px;line-height:1.15;letter-spacing:-0.025em;">
+        Solutions Built Around How You Need to Grow
+      </h2>
+      <p class="section-sub" style="font-size:17px;color:#475569;max-width:740px;margin:0 auto;line-height:1.6;font-weight:400!important;">
+        Whether you need to hire one sales professional, deploy a customer-facing team, manage a distributed workforce or build a new sales channel, DigiHire gives you the people and infrastructure to make it happen.
+      </p>
+    </div>
+
+    <div class="solutions-blocks-wrap">
+      <!-- 1. HIRE -->
+      <div class="sol-block sol-block-hire reveal">
+        <div class="sol-content">
+          <span class="sol-badge badge-hire">Hire</span>
+          <h3 class="sol-title">Sales Talent, Ready to Perform.</h3>
+          <p class="sol-desc">
+            Build your team with permanent and contract sales professionals across B2B sales, tech sales, business development, account management, field sales and other customer-facing roles.
+          </p>
+          <div class="sol-includes-title">Includes:</div>
+          <div class="sol-chips">
+            <span class="sol-chip">Sales Recruitment</span>
+            <span class="sol-chip">Tech Sales</span>
+            <span class="sol-chip">B2B Sales</span>
+            <span class="sol-chip">SDRs &amp; BDRs</span>
+            <span class="sol-chip">Business Development</span>
+            <span class="sol-chip">Account Management</span>
+            <span class="sol-chip">AI-Enabled Sales Talent</span>
+          </div>
+          <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="sol-cta-btn btn-hire">
+            Explore Sales Recruitment →
+          </a>
+        </div>
+        <div class="sol-visual">
+          <div class="polaroids-wrap">
+            <div class="polaroid-card polaroid-1">
+              <div class="polaroid-img-wrap">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces&q=80" alt="Tech Sales Specialist" loading="lazy" />
+                <span class="polaroid-badge" title="Verified Talent">✓</span>
+              </div>
+              <div class="polaroid-meta">
+                <div class="polaroid-name">Amina O.</div>
+                <div class="polaroid-role">Senior SDR • SaaS &amp; B2B</div>
+              </div>
+            </div>
+            <div class="polaroid-card polaroid-2">
+              <div class="polaroid-img-wrap">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop&crop=faces&q=80" alt="B2B Sales Executive" loading="lazy" />
+                <span class="polaroid-badge polaroid-badge-blue" title="Verified Talent">✓</span>
+              </div>
+              <div class="polaroid-meta">
+                <div class="polaroid-name">Chinedu E.</div>
+                <div class="polaroid-role">B2B Account Executive</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. DEPLOY -->
+      <div class="sol-block sol-block-deploy reveal">
+        <div class="sol-content">
+          <span class="sol-badge badge-deploy">Deploy</span>
+          <h3 class="sol-title">Put the Right People Where Your Customers Are.</h3>
+          <p class="sol-desc">
+            Deploy trained teams for retail locations, field operations, exhibitions, campaigns and customer acquisition.
+          </p>
+          <div class="sol-includes-title">Includes:</div>
+          <div class="sol-chips">
+            <span class="sol-chip">Field Sales</span>
+            <span class="sol-chip">Retail &amp; In-Store Teams</span>
+            <span class="sol-chip">Merchandisers</span>
+            <span class="sol-chip">Supermarket Staff</span>
+            <span class="sol-chip">Brand Ambassadors</span>
+            <span class="sol-chip">Activations</span>
+            <span class="sol-chip">Exhibition Teams</span>
+            <span class="sol-chip">Product Demonstrators</span>
+            <span class="sol-chip">Lead Generation</span>
+          </div>
+          <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="sol-cta-btn btn-deploy">
+            Explore Field &amp; Activation Teams →
+          </a>
+        </div>
+        <div class="sol-visual">
+          <div class="map-visual-card">
+            <div class="map-nodes-container">
+              <svg class="map-svg-routes" viewBox="0 0 350 250" fill="none">
+                <path d="M 70 120 Q 140 50, 230 40" stroke="#059669" stroke-width="2" stroke-dasharray="4 4" opacity="0.45" />
+                <path d="M 70 120 Q 150 180, 240 180" stroke="#059669" stroke-width="2" stroke-dasharray="4 4" opacity="0.45" />
+                <path d="M 120 40 Q 180 80, 240 180" stroke="#059669" stroke-width="2" stroke-dasharray="4 4" opacity="0.45" />
+                <path d="M 120 40 Q 200 30, 230 40" stroke="#059669" stroke-width="2" stroke-dasharray="4 4" opacity="0.45" />
+              </svg>
+              <div class="map-node map-node-kano">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces&q=80" alt="Kano Lead" />
+                <span>Kano</span>
+                <span class="map-node-badge">50+ Reps</span>
+              </div>
+              <div class="map-node map-node-abuja">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces&q=80" alt="Abuja Lead" />
+                <span>Abuja</span>
+                <span class="map-node-badge">120+ Reps</span>
+              </div>
+              <div class="map-node map-node-lagos">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces&q=80" alt="Lagos Lead" />
+                <span>Lagos Hub</span>
+                <span class="map-node-badge">380+ Reps</span>
+              </div>
+              <div class="map-node map-node-ph">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=faces&q=80" alt="PH Lead" />
+                <span>Port Harcourt</span>
+                <span class="map-node-badge">75+ Reps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. MANAGE -->
+      <div class="sol-block sol-block-manage reveal">
+        <div class="sol-content">
+          <span class="sol-badge badge-manage">Manage</span>
+          <h3 class="sol-title">Your Workforce, Managed End to End.</h3>
+          <p class="sol-desc">
+            For businesses that need more than recruitment, DigiHire can recruit, deploy and manage your workforce across locations.
+          </p>
+          <div class="sol-includes-title">Includes:</div>
+          <div class="sol-chips">
+            <span class="sol-chip">Payroll</span>
+            <span class="sol-chip">Attendance</span>
+            <span class="sol-chip">Check-ins</span>
+            <span class="sol-chip">Reporting</span>
+            <span class="sol-chip">Team Coordination</span>
+            <span class="sol-chip">Performance Monitoring</span>
+            <span class="sol-chip">Replacements</span>
+            <span class="sol-chip">Multi-location Workforce Management</span>
+          </div>
+          <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="sol-cta-btn btn-manage">
+            Explore Managed Workforce →
+          </a>
+        </div>
+        <div class="sol-visual">
+          <div class="dashboard-widget-card">
+            <div class="dw-header">
+              <div class="dw-title">Workforce Operations Hub</div>
+              <span class="dw-badge">Live System</span>
+            </div>
+            <div class="dw-stats">
+              <div class="dw-stat-box">
+                <div class="dw-stat-val">99.4%</div>
+                <div class="dw-stat-lbl">Attendance</div>
+              </div>
+              <div class="dw-stat-box">
+                <div class="dw-stat-val">100%</div>
+                <div class="dw-stat-lbl">Payroll SLA</div>
+              </div>
+              <div class="dw-stat-box">
+                <div class="dw-stat-val">36</div>
+                <div class="dw-stat-lbl">States Live</div>
+              </div>
+            </div>
+            <div class="dw-feed-item">
+              <div class="dw-feed-left">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=faces&q=80" alt="Staff" />
+                <div>
+                  <div class="dw-feed-text">Ikeja City Mall Team</div>
+                  <div class="dw-feed-sub">GPS Check-in • 08:58 AM</div>
+                </div>
+              </div>
+              <span class="dw-status-pill">On-Duty</span>
+            </div>
+            <div class="dw-feed-item">
+              <div class="dw-feed-left">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=faces&q=80" alt="Staff" />
+                <div>
+                  <div class="dw-feed-text">Abuja Gateway Activation</div>
+                  <div class="dw-feed-sub">Daily Sales Log • Verified</div>
+                </div>
+              </div>
+              <span class="dw-status-pill">Submitted</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. GROW -->
+      <div class="sol-block sol-block-grow reveal">
+        <div class="sol-content">
+          <span class="sol-badge badge-grow">Grow</span>
+          <h3 class="sol-title">Build New Channels for Customer Acquisition.</h3>
+          <p class="sol-desc">
+            Go beyond traditional hiring with structured sales and performance-based channels designed around measurable growth.
+          </p>
+          <div class="sol-includes-title">Includes:</div>
+          <div class="sol-chips">
+            <span class="sol-chip">Performance-Based Customer Acquisition</span>
+            <span class="sol-chip">Affiliate Programme Setup</span>
+            <span class="sol-chip">Distributed Sales Networks</span>
+            <span class="sol-chip">Campus &amp; Community Campaigns</span>
+            <span class="sol-chip">User Acquisition</span>
+            <span class="sol-chip">Sales Programme Design</span>
+          </div>
+          <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="sol-cta-btn btn-grow">
+            Explore Growth Solutions →
+          </a>
+        </div>
+        <div class="sol-visual">
+          <div class="growth-widget-card">
+            <div class="gw-highlight">
+              <div>
+                <div class="gw-h-val">+340%</div>
+                <div class="gw-h-lbl">Customer Acquisition Scaling</div>
+              </div>
+              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <div class="gw-channels-list">
+              <div class="gw-channel-row">
+                <span>Distributed Sales Network</span>
+                <span class="gw-channel-growth">Active</span>
+              </div>
+              <div class="gw-channel-row">
+                <span>Campus &amp; Community Drives</span>
+                <span class="gw-channel-growth">+1,200 Daily Leads</span>
+              </div>
+              <div class="gw-channel-row">
+                <span>Performance-Based Commission</span>
+                <span class="gw-channel-growth">Structured</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
