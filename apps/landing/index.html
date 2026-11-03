@@ -496,9 +496,170 @@
     .mfc-solutions .mfc-desc  { font-size: 12px; color: #6B849E; line-height: 1.55; margin-bottom: 12px; }
     .mfc-solutions .mfc-cta   { color: var(--cyan-dim); }
 
-    /* ── Brands mega-dropdown ───────────────────────── */
+    /* ── Brands mega-dropdown (for Talents & legacy) ── */
     .brands-mega {
       grid-template-columns: 320px 1fr;
+    }
+
+    /* ── Brands Flyout Dropdown (Two-column layout matching screenshot) ── */
+    .nav-item-brands {
+      position: relative !important;
+    }
+    .brands-flyout-dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      width: 580px;
+      min-height: 290px;
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 20px 50px -10px rgba(13, 27, 51, 0.14), 0 4px 16px rgba(0, 0, 0, 0.04);
+      z-index: 250;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      overflow: hidden;
+      display: flex;
+    }
+    .brands-flyout-dropdown::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 0;
+      right: 0;
+      height: 16px;
+      background: transparent;
+    }
+    .nav-item-brands:hover .brands-flyout-dropdown,
+    .nav-item-brands:focus-within .brands-flyout-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Left Column */
+    .bfm-left {
+      width: 230px;
+      flex-shrink: 0;
+      padding: 16px 12px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+    .bfm-all-link {
+      display: block;
+      padding: 10px 14px;
+      font-size: 14.5px;
+      font-weight: 700 !important;
+      color: #0D1B33;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: 'Instrument Sans', sans-serif;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .bfm-all-link:hover {
+      background: #F8FAFC;
+      color: #1A56DB;
+    }
+    .bfm-divider {
+      height: 1px;
+      background: #EEF2F6;
+      margin: 8px 12px 10px 12px;
+    }
+    .bfm-label {
+      font-size: 11px;
+      font-weight: 700 !important;
+      color: #94A3B8;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 14px 8px 14px;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .bfm-cats {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .bfm-cat-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 10px 14px;
+      font-size: 13.5px;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em;
+      color: #1E293B;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Instrument Sans', sans-serif;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .bfm-cat-btn:hover {
+      background: #F8FAFC;
+      color: #1A56DB;
+    }
+    .bfm-cat-btn.active {
+      background: #F0F7FF;
+      color: #1A56DB;
+    }
+    .bfm-chevron {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      transition: transform 0.15s ease;
+    }
+    .bfm-cat-btn.active .bfm-chevron {
+      transform: translateX(2px);
+    }
+
+    /* Right Column */
+    .bfm-right {
+      flex: 1;
+      padding: 18px 16px;
+      border-left: 1px solid #EEF2F6;
+      background: #ffffff;
+      min-height: 260px;
+    }
+    .bfm-panel {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .bfm-panel.active {
+      display: flex;
+      animation: bfmSlideIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes bfmSlideIn {
+      from { opacity: 0; transform: translateX(6px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .bfm-item {
+      display: block;
+      padding: 11px 14px;
+      font-size: 14px;
+      font-weight: 500 !important;
+      color: #1E293B;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .bfm-item:hover {
+      background: #F8FAFC;
+      color: #1A56DB;
+      font-weight: 600 !important;
+      transform: translateX(4px);
+    }
+    @media (max-width: 900px) {
+      .brands-flyout-dropdown {
+        display: none !important;
+      }
     }
 
     /* Left: featured highlight card inside navy block */
@@ -2772,41 +2933,80 @@
           </div>
         </li>
 
-        <!-- Brands — mega dropdown -->
-        <li class="nav-mega-wrap">
+        <!-- Brands — flyout dropdown (grouped like screenshot) -->
+        <li class="nav-mega-wrap nav-item-brands">
           <button class="nav-mega-trigger">
             Brands
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
 
-          <div class="nav-mega brands-mega">
-            <!-- LEFT: headline + body + learn more link -->
-            <div class="mega-left">
-              <h3 class="mega-headline">Launch campaigns, hire sales talent, and activate markets with <em>Digihire.</em></h3>
-              <p class="mega-body">Digihire helps brands grow through structured sales campaigns, end-to-end sales recruitment, and field activations designed to drive visibility, traction, and revenue.</p>
-              <a href="/about" class="mega-learn">Explore all solutions <span>→</span></a>
+          <div class="brands-flyout-dropdown" id="brandsFlyoutMenu">
+            <!-- LEFT COLUMN -->
+            <div class="bfm-left">
+              <a href="#solutions" class="bfm-all-link">All Solutions</a>
+              <div class="bfm-divider"></div>
+              <div class="bfm-label">EXPLORE BY TRACK</div>
+              <div class="bfm-cats">
+                <button type="button" class="bfm-cat-btn active" data-target="panel-hire">
+                  <span>HIRE</span>
+                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <button type="button" class="bfm-cat-btn" data-target="panel-deploy">
+                  <span>DEPLOY</span>
+                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <button type="button" class="bfm-cat-btn" data-target="panel-manage">
+                  <span>MANAGE</span>
+                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <button type="button" class="bfm-cat-btn" data-target="panel-grow">
+                  <span>GROW</span>
+                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
             </div>
 
-            <!-- RIGHT: 4 service cards -->
-            <div class="mega-right brands-right" style="grid-template-columns: repeat(2,1fr);">
-              <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="brand-supp-card">
-                <div class="bsc-icon i3"><i data-lucide="zap" class="lucide ic-lg"></i></div>
-                <p class="bsc-title">VoltSquad Campaigns</p>
-                <p class="bsc-desc">Launch performance-based sales campaigns. Activate sellers across campuses, communities, and cities to drive signups, users, leads, and sales.</p>
-                <span class="bsc-cta">Launch a Campaign →</span>
-              </a>
-              <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="brand-supp-card">
-                <div class="bsc-icon i1"><i data-lucide="users" class="lucide ic-lg"></i></div>
-                <p class="bsc-title">Hire Sales Talent</p>
-                <p class="bsc-desc">Hire full-time, part-time, or contract sales professionals — SDRs, closers, B2B reps, and field executives screened and ready.</p>
-                <span class="bsc-cta">Start Hiring →</span>
-              </a>
-              <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="brand-supp-card">
-                <div class="bsc-icon i2"><i data-lucide="map-pin" class="lucide ic-lg"></i></div>
-                <p class="bsc-title">Activations &amp; Field Marketing</p>
-                <p class="bsc-desc">Deploy promoters, merchandisers, and execution teams for on-ground mall activations, campus roadshows, in-store promotions, and field marketing.</p>
-                <span class="bsc-cta">Request Activation Talent →</span>
-              </a>
+            <!-- RIGHT COLUMN -->
+            <div class="bfm-right">
+              <!-- HIRE PANEL -->
+              <div class="bfm-panel active" id="panel-hire">
+                <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Sales Recruitment
+                </a>
+              </div>
+
+              <!-- DEPLOY PANEL -->
+              <div class="bfm-panel" id="panel-deploy">
+                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Field Sales &amp; Customer Acquisition
+                </a>
+                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Retail &amp; In-Store Workforce
+                </a>
+                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Activation &amp; Exhibition Staffing
+                </a>
+              </div>
+
+              <!-- MANAGE PANEL -->
+              <div class="bfm-panel" id="panel-manage">
+                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Managed Workforce Solutions
+                </a>
+              </div>
+
+              <!-- GROW PANEL -->
+              <div class="bfm-panel" id="panel-grow">
+                <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Performance-Based Sales &amp; Acquisition
+                </a>
+                <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  Affiliate Programme Setup
+                </a>
+                <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="bfm-item">
+                  AI-Powered Sales Training
+                </a>
+              </div>
             </div>
           </div>
         </li>
@@ -4558,6 +4758,41 @@ END V1 COMMENTED OUT
   const statEl = document.querySelector('.stat-highlight');
   if (statEl) countObs.observe(statEl);
 
+  /* ── Brands flyout menu category switcher ───────── */
+  (function() {
+    const bfmButtons = document.querySelectorAll('.bfm-cat-btn');
+    const bfmPanels = document.querySelectorAll('.bfm-panel');
+    if (bfmButtons.length > 0) {
+      bfmButtons.forEach(btn => {
+        const activate = () => {
+          const targetId = btn.getAttribute('data-target');
+          bfmButtons.forEach(b => b.classList.remove('active'));
+          bfmPanels.forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          const panel = document.getElementById(targetId);
+          if (panel) panel.classList.add('active');
+        };
+        btn.addEventListener('mouseenter', activate);
+        btn.addEventListener('click', activate);
+      });
+    }
+
+    // Close flyout on clicking any link inside
+    document.querySelectorAll('.bfm-all-link, .bfm-item').forEach(link => {
+      link.addEventListener('click', () => {
+        const dd = document.getElementById('brandsFlyoutMenu');
+        if (dd) {
+          dd.style.opacity = '0';
+          dd.style.visibility = 'hidden';
+          setTimeout(() => {
+            dd.style.opacity = '';
+            dd.style.visibility = '';
+          }, 350);
+        }
+      });
+    });
+  })();
+
   /* ── Logo slider ─────────────────────────────── */
   (function() {
     const logos = [
@@ -4727,9 +4962,19 @@ END V1 COMMENTED OUT
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
       </button>
       <div class="nm-submenu" id="nm-brands">
-        <a href="https://brands.digihire.io/signup?service=voltsquad" class="nm-sub-item">Launch VoltSquad Campaign</a>
-        <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" class="nm-sub-item">Hire Sales Talent</a>
-        <a href="/sales-activations" class="nm-sub-item">Activations &amp; Field Marketing</a>
+        <a href="#solutions" class="nm-sub-item" style="font-weight:700!important;color:#0D1B33;">All Solutions</a>
+        <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">HIRE</div>
+        <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Sales Recruitment</a>
+        <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">DEPLOY</div>
+        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Field Sales &amp; Customer Acquisition</a>
+        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Retail &amp; In-Store Workforce</a>
+        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Activation &amp; Exhibition Staffing</a>
+        <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">MANAGE</div>
+        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Managed Workforce Solutions</a>
+        <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">GROW</div>
+        <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Performance-Based Sales &amp; Acquisition</a>
+        <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Affiliate Programme Setup</a>
+        <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">AI-Powered Sales Training</a>
       </div>
     </div>
     <div class="nm-section">
