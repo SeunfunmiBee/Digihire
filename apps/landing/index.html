@@ -1233,22 +1233,24 @@
     .logos-slider::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
     .logos-slider::after  { right: 0; background: linear-gradient(to left, #ffffff, transparent); }
     .logos-track {
-      display: flex; align-items: center; gap: 56px;
-      animation: logoScroll 22s linear infinite;
+      display: flex; align-items: center; gap: 64px;
+      animation: logoScroll 50s linear infinite;
       width: max-content;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
     }
     .logos-track:hover { animation-play-state: paused; }
     @keyframes logoScroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0%   { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
     }
     .logo-item {
       display: inline-flex; align-items: center; flex-shrink: 0;
     }
     .logo-item img {
-      height: 28px; width: auto; max-width: 130px;
-      filter: grayscale(1) opacity(0.45);
-      transition: filter 0.25s;
+      height: 38px; width: auto; max-width: 155px;
+      filter: grayscale(1) opacity(0.55);
+      transition: filter 0.25s, transform 0.25s;
       object-fit: contain;
     }
     .logo-item img:hover { filter: grayscale(0) opacity(0.8); }
@@ -2209,7 +2211,7 @@
     .wif-card {
       position: relative;
       border-radius: 24px;
-      min-height: 270px;
+      min-height: 295px;
       overflow: hidden;
       box-shadow: 0 4px 18px rgba(13, 27, 51, 0.04);
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
@@ -2224,7 +2226,7 @@
     .wif-resting {
       padding: 28px 28px 24px 28px;
       height: 100%;
-      min-height: 270px;
+      min-height: 295px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -3066,15 +3068,200 @@
       .talent-why-benefits { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) { .talent-what-grid { grid-template-columns: 1fr; } }
-  </style>
+  
+/* ── Floating WhatsApp Button ── */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.whatsapp-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+.floating-whatsapp-btn:hover .whatsapp-circle {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+.whatsapp-tooltip {
+  background: #0D1B33;
+  color: #ffffff;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600 !important;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  pointer-events: none;
+}
+.floating-whatsapp-btn:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+@media (max-width: 640px) {
+  .floating-whatsapp-btn {
+    bottom: 20px;
+    right: 20px;
+  }
+  .whatsapp-circle {
+    width: 50px;
+    height: 50px;
+  }
+  .whatsapp-circle svg {
+    width: 26px;
+    height: 26px;
+  }
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+
+/* ── Clean Dropdowns for Brands, Talent, Why DigiHire ── */
+.nav-item-clean {
+  position: relative !important;
+}
+.nav-item-clean .nav-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500 !important;
+  padding: 7px 13px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Instrument Sans', sans-serif;
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+.nav-item-clean:hover .nav-link-btn,
+.nav-item-clean:focus-within .nav-link-btn {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.10);
+}
+#navbar.scrolled .nav-item-clean .nav-link-btn {
+  color: #374151;
+}
+#navbar.scrolled .nav-item-clean:hover .nav-link-btn {
+  color: #0F172A;
+  background: rgba(0, 0, 0, 0.05);
+}
+.nav-item-clean .nav-link-btn svg {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.2s ease;
+}
+.nav-item-clean:hover .nav-link-btn svg {
+  transform: rotate(180deg);
+}
+
+.nav-popover-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  z-index: 350;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+.nav-item-clean:hover .nav-popover-menu,
+.nav-item-clean:focus-within .nav-popover-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav-popover-header {
+  font-size: 10.5px;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748B;
+  padding: 0 8px 10px 8px;
+  border-bottom: 1px solid #F1F5F9;
+  margin-bottom: 8px;
+}
+.nav-popover-item {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-popover-item:hover {
+  background: #F8FAFC;
+}
+.nav-popover-item .npi-title {
+  font-size: 13.5px;
+  font-weight: 600 !important;
+  color: #0F172A;
+  line-height: 1.35;
+}
+.nav-popover-item:hover .npi-title {
+  color: #0284C7;
+}
+.nav-popover-item .npi-desc {
+  font-size: 11.5px;
+  color: #64748B;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+.nav-popover-footer {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #F1F5F9;
+}
+.nav-popover-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 600 !important;
+  color: #0284C7;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+.nav-popover-footer a:hover {
+  text-decoration: underline;
+}
+
+</style>
   <!-- SEO -->
-  <meta name="description" content="DigiHire helps sales professionals advance their careers through job listings, training, and the VoltSquad campaign marketplace." />
+  <meta name="description" content="DigiHire helps sales professionals advance their careers through job listings, training, and performance-based sales acquisition." />
   <link rel="canonical" href="https://digihire.io/" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="DigiHire" />
   <meta property="og:title" content="DigiHire — Sales Talents on Demand" />
-  <meta property="og:description" content="DigiHire helps sales professionals advance their careers through job listings, training, and the VoltSquad campaign marketplace." />
+  <meta property="og:description" content="DigiHire helps sales professionals advance their careers through job listings, training, and performance-based sales acquisition." />
   <meta property="og:url" content="https://digihire.io/" />
   <meta property="og:image" content="https://digihire.io/images/og-default.png" />
   <meta property="og:image:width" content="1200" />
@@ -3082,7 +3269,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DigiHire — Sales Talents on Demand" />
-  <meta name="twitter:description" content="DigiHire helps sales professionals advance their careers through job listings, training, and the VoltSquad campaign marketplace." />
+  <meta name="twitter:description" content="DigiHire helps sales professionals advance their careers through job listings, training, and performance-based sales acquisition." />
   <meta name="twitter:image" content="https://digihire.io/images/og-default.png" />
   <!-- Organization Schema -->
   <script type="application/ld+json">
@@ -3142,219 +3329,115 @@
         </div>
       </a>
       <ul class="nav-links">
-        <!-- Why DigiHire? — mega dropdown -->
-        <li class="nav-mega-wrap">
-          <button class="nav-mega-trigger">
-            Why DigiHire?
+        <!-- 1. For Brands Dropdown (8 Solutions) -->
+        <li class="nav-item-clean">
+          <button type="button" class="nav-link-btn" aria-haspopup="true">
+            For Brands
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-
-          <div class="nav-mega">
-            <!-- LEFT: navy hero block with network visual -->
-            <div class="mega-left">
-              <h3 class="mega-headline">Building the sales network where <em>brands, talent,</em> and opportunity connect.</h3>
-              <p class="mega-body">DigiHire helps brands grow through structured sales campaigns, recruitment, activations, and training — while helping sales talent access gigs, jobs, and career-building opportunities.</p>
-              <a href="#" class="mega-learn">Learn more <span>→</span></a>
-
-              <!-- SVG network visualization -->
-              <div class="mega-visual-svg">
-                <!-- Pulsing rings -->
-                <div class="mv-ring"></div>
-                <div class="mv-ring"></div>
-                <div class="mv-ring"></div>
-                <!-- Center node -->
-                <div class="mv-center">DIGI<br>HIRE</div>
-                <!-- Satellite nodes -->
-                <div class="mv-node" style="top:18%;left:18%;"><i data-lucide="building-2" class="lucide ic-md"></i></div>
-                <div class="mv-node" style="top:18%;right:18%;"><i data-lucide="target" class="lucide ic-md"></i></div>
-                <div class="mv-node" style="bottom:18%;left:18%;"><i data-lucide="user" class="lucide ic-md"></i></div>
-                <div class="mv-node" style="bottom:18%;right:18%;"><i data-lucide="zap" class="lucide ic-md"></i></div>
-                <!-- SVG connecting lines -->
-                <svg class="mv-svg" viewBox="0 0 280 200" preserveAspectRatio="none">
-                  <line x1="140" y1="100" x2="55" y2="45"  stroke="rgba(0,194,255,0.25)" stroke-width="1" stroke-dasharray="4 4"/>
-                  <line x1="140" y1="100" x2="225" y2="45" stroke="rgba(0,194,255,0.25)" stroke-width="1" stroke-dasharray="4 4"/>
-                  <line x1="140" y1="100" x2="55" y2="155" stroke="rgba(0,194,255,0.25)" stroke-width="1" stroke-dasharray="4 4"/>
-                  <line x1="140" y1="100" x2="225" y2="155" stroke="rgba(0,194,255,0.25)" stroke-width="1" stroke-dasharray="4 4"/>
-                </svg>
-              </div>
+          <div class="nav-popover-menu" style="width:530px;">
+            <div class="nav-popover-header">DigiHire Brand Solutions</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;">
+              <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">Sales Recruitment</div>
+                <div class="npi-desc">Permanent &amp; contract sales professionals</div>
+              </a>
+              <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">Field Sales &amp; Customer Acquisition</div>
+                <div class="npi-desc">Outbound user growth &amp; foot-soldier teams</div>
+              </a>
+              <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">Retail &amp; In-Store Workforce</div>
+                <div class="npi-desc">Merchandisers &amp; store promo staff</div>
+              </a>
+              <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">Activation, Event &amp; Exhibition Staffing</div>
+                <div class="npi-desc">High-impact brand activation personnel</div>
+              </a>
+              <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">Managed Workforce Solutions</div>
+                <div class="npi-desc">Multi-location payroll, performance &amp; tracking</div>
+              </a>
+              <a href="https://brands.digihire.io/signup?service=performance-sales" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">Performance-Based Sales &amp; Acquisition</div>
+                <div class="npi-desc">Pay strictly for verified sales results</div>
+              </a>
+              <a href="https://brands.digihire.io/signup?service=affiliate-programmes" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">Affiliate &amp; Sales Programme Setup</div>
+                <div class="npi-desc">Distributed commission networks &amp; pipelines</div>
+              </a>
+              <a href="#training" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">AI-Powered Sales Training</div>
+                <div class="npi-desc">Upskill internal sales reps with modern AI</div>
+              </a>
             </div>
-
-            <!-- RIGHT: info cards + feature cards -->
-            <div class="mega-right">
-              <!-- Top row: 3 info cards -->
-              <div class="mega-top-row">
-                <a href="/about" class="mega-info-card">
-                  <div class="mic-icon i1"><i data-lucide="info" class="lucide ic-md"></i></div>
-                  <p class="mic-title">About Us</p>
-                  <p class="mic-desc">Get to know who we are, what we are building, and how Digihire helps brands and sales talent grow together.</p>
-                  <span class="mic-cta">Learn more →</span>
-                </a>
-                <a href="/blog" class="mega-info-card">
-                  <div class="mic-icon i2"><i data-lucide="book-open" class="lucide ic-md"></i></div>
-                  <p class="mic-title">Blogs</p>
-                  <p class="mic-desc">Insights, strategies, and stories on sales, growth, activations, hiring, and the future of work.</p>
-                  <span class="mic-cta">Learn more →</span>
-                </a>
-                <a href="/events" class="mega-info-card">
-                  <div class="mic-icon i3"><i data-lucide="calendar" class="lucide ic-md"></i></div>
-                  <p class="mic-title">Events</p>
-                  <p class="mic-desc">Stay connected to our latest events, campaigns, activations, training sessions, and community experiences.</p>
-                  <span class="mic-cta">Learn more →</span>
-                </a>
-              </div>
-
-              <div class="mega-divider"></div>
-
-              <!-- Bottom row: 2 feature cards -->
-              <div class="mega-feat-row">
-                <a href="#" class="mega-feat-card mfc-voltsquad">
-                  <span class="mfc-volt-badge"><i data-lucide="zap" class="lucide"></i> VoltSquad</span>
-                  <p class="mfc-title">Campaign Marketplace</p>
-                  <p class="mfc-desc">Our campaign marketplace for sales talent, built to help brands launch structured campaigns and help sellers earn through real sales opportunities.</p>
-                  <span class="mfc-cta">Explore VoltSquad →</span>
-                </a>
-                <a href="#" class="mega-feat-card mfc-solutions">
-                  <span class="mfc-sol-badge"><i data-lucide="link-2" class="lucide"></i> Solutions</span>
-                  <p class="mfc-title">Wider Solutions</p>
-                  <p class="mfc-desc">Explore Digihire's wider solutions, from sales recruitment and outsourcing to field activations, merchandising support, and practical sales training.</p>
-                  <span class="mfc-cta">See all solutions →</span>
-                </a>
-              </div>
+            <div class="nav-popover-footer">
+              <a href="#solutions">Explore all DigiHire solutions →</a>
             </div>
           </div>
         </li>
 
-        <!-- Brands — flyout dropdown (grouped like screenshot) -->
-        <li class="nav-mega-wrap nav-item-brands">
-          <button class="nav-mega-trigger">
-            Brands
+        <!-- 2. For Talent Dropdown (5 Items) -->
+        <li class="nav-item-clean">
+          <button type="button" class="nav-link-btn" aria-haspopup="true">
+            For Talent
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-
-          <div class="brands-flyout-dropdown" id="brandsFlyoutMenu">
-            <!-- LEFT COLUMN -->
-            <div class="bfm-left">
-              <a href="#solutions" class="bfm-all-link">All Solutions</a>
-              <div class="bfm-label">EXPLORE BY TRACK</div>
-              <div class="bfm-cats">
-                <button type="button" class="bfm-cat-btn active" data-target="panel-hire">
-                  <span>HIRE</span>
-                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-                <button type="button" class="bfm-cat-btn" data-target="panel-deploy">
-                  <span>DEPLOY</span>
-                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-                <button type="button" class="bfm-cat-btn" data-target="panel-manage">
-                  <span>MANAGE</span>
-                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-                <button type="button" class="bfm-cat-btn" data-target="panel-grow">
-                  <span>GROW</span>
-                  <svg class="bfm-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-              </div>
-            </div>
-
-            <!-- RIGHT COLUMN -->
-            <div class="bfm-right">
-              <!-- HIRE PANEL -->
-              <div class="bfm-panel active" id="panel-hire">
-                <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Sales Recruitment
-                </a>
-                <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Tech Sales &amp; B2B Talent
-                </a>
-                <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  AI-Enabled Sales Talent
-                </a>
-              </div>
-
-              <!-- DEPLOY PANEL -->
-              <div class="bfm-panel" id="panel-deploy">
-                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Field Sales &amp; Customer Acquisition
-                </a>
-                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Retail &amp; In-Store Workforce
-                </a>
-                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Activation &amp; Exhibition Staffing
-                </a>
-              </div>
-
-              <!-- MANAGE PANEL -->
-              <div class="bfm-panel" id="panel-manage">
-                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Managed Workforce Solutions
-                </a>
-                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Multi-Location Workforce Management
-                </a>
-                <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Payroll, Attendance &amp; Performance
-                </a>
-              </div>
-
-              <!-- GROW PANEL -->
-              <div class="bfm-panel" id="panel-grow">
-                <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Performance-Based Sales &amp; Acquisition
-                </a>
-                <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  Affiliate Programme Setup
-                </a>
-                <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="bfm-item">
-                  AI-Powered Sales Training
-                </a>
-              </div>
+          <div class="nav-popover-menu" style="width:310px;">
+            <div class="nav-popover-header">Opportunities for Sales Talent</div>
+            <div style="display:flex;flex-direction:column;gap:3px;">
+              <a href="https://talents.digihire.io/signup?module=talent_pool" class="nav-popover-item">
+                <div class="npi-title">Join the Talent Pool</div>
+                <div class="npi-desc">Get discovered by top employers hiring sales talent</div>
+              </a>
+              <a href="/jobs" class="nav-popover-item">
+                <div class="npi-title">Apply for Sales Jobs</div>
+                <div class="npi-desc">Browse full-time, B2B, tech &amp; contract sales roles</div>
+              </a>
+              <a href="https://talents.digihire.io/signup?module=gigs" class="nav-popover-item">
+                <div class="npi-title">Activation &amp; Field Opportunities</div>
+                <div class="npi-desc">Short-term merchandising, promo &amp; event gigs</div>
+              </a>
+              <a href="https://chat.whatsapp.com/DigihireTalentCommunity" target="_blank" rel="noopener noreferrer" class="nav-popover-item">
+                <div class="npi-title">Join WhatsApp Group</div>
+                <div class="npi-desc">Instant gig alerts &amp; peer community</div>
+              </a>
+              <a href="#training" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
+                <div class="npi-title">Sales Academy</div>
+                <div class="npi-desc">Practical AI-powered sales training</div>
+              </a>
             </div>
           </div>
         </li>
-        <!-- For Talents — mega dropdown -->
-        <li class="nav-mega-wrap">
-          <button class="nav-mega-trigger">
-            For Talents
+
+        <!-- 3. Why DigiHire Dropdown (4 Items) -->
+        <li class="nav-item-clean">
+          <button type="button" class="nav-link-btn" aria-haspopup="true">
+            Why DigiHire
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-
-          <div class="nav-mega brands-mega">
-            <!-- LEFT: headline + body + learn more link -->
-            <div class="mega-left">
-              <h3 class="mega-headline">Work with brands. Earn through sales. Grow with <em>Digihire.</em></h3>
-              <p class="mega-body">Access sales gigs, commission-based campaigns, job opportunities, and practical training built for people who want to earn more and build real career value through sales.</p>
-              <a href="/about" class="mega-learn">Explore all opportunities <span>→</span></a>
-            </div>
-
-            <!-- RIGHT: 4 service cards (Talent Pool, VoltSquad, Gigs, Events) -->
-            <div class="mega-right brands-right" style="grid-template-columns: repeat(2,1fr);">
-              <a href="https://talents.digihire.io/signup?module=talent_pool" class="brand-supp-card">
-                <div class="bsc-icon i1"><i data-lucide="user-plus" class="lucide ic-lg"></i></div>
-                <p class="bsc-title">Talent Pool</p>
-                <p class="bsc-desc">Get discovered for full-time, part-time, contract, and project-based roles with brands hiring through Digihire.</p>
-                <span class="bsc-cta">Join the Talent Pool →</span>
+          <div class="nav-popover-menu" style="width:230px;">
+            <div class="nav-popover-header">Company</div>
+            <div style="display:flex;flex-direction:column;gap:3px;">
+              <a href="/about" class="nav-popover-item">
+                <div class="npi-title">About</div>
               </a>
-              <a href="https://talents.digihire.io/join-now" class="brand-supp-card">
-                <div class="bsc-icon i3"><i data-lucide="zap" class="lucide ic-lg"></i></div>
-                <p class="bsc-title">VoltSquad</p>
-                <p class="bsc-desc">Join brand campaigns, earn commissions, track your wallet, and grow your income through real sales opportunities.</p>
-                <span class="bsc-cta">Join VoltSquad →</span>
+              <a href="/blog" class="nav-popover-item">
+                <div class="npi-title">Blog</div>
               </a>
-              <a href="https://talents.digihire.io/signup?module=gigs" class="brand-supp-card">
-                <div class="bsc-icon i2"><i data-lucide="briefcase" class="lucide ic-lg"></i></div>
-                <p class="bsc-title">Short-Term Gigs</p>
-                <p class="bsc-desc">Apply for merchandising, field marketing, in-store promotions, activation staff, and event staffing roles.</p>
-                <span class="bsc-cta">Apply for Gigs →</span>
+              <a href="/events" class="nav-popover-item">
+                <div class="npi-title">Events</div>
               </a>
-              <a href="https://talents.digihire.io/signup?module=events" class="brand-supp-card">
-                <div class="bsc-icon i1"><i data-lucide="calendar" class="lucide ic-lg"></i></div>
-                <p class="bsc-title">Events</p>
-                <p class="bsc-desc">Register for upcoming brand events, activations, networking sessions, and industry gatherings.</p>
-                <span class="bsc-cta">Register for Events →</span>
+              <a href="#solutions" class="nav-popover-item">
+                <div class="npi-title">All Solutions</div>
               </a>
             </div>
           </div>
+        </li>
+
+        <!-- 4. Jobs Link -->
+        <li>
+          <a href="/jobs">Jobs</a>
         </li>
       </ul>
     </div>
@@ -3363,54 +3446,46 @@
     <div class="nav-actions">
       <!-- Get Started with hover dropdown — replaced by JS when user is logged in -->
       <div class="nav-dropdown-wrap" id="nav-auth-wrap">
-        <a href="https://talents.digihire.io/login" class="btn-get-started">
+        <button type="button" class="btn-get-started">
           Get Started
           <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </a>
-        <div class="nav-dropdown">
-          <!-- For Talent -->
-          <p class="dd-section-label">For Talent</p>
-          <a href="https://talents.digihire.io/signup?module=talent_pool">
-            <span>Join the Talent Pool</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="https://talents.digihire.io/join-now">
-            <span>Join VoltSquad</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="https://talents.digihire.io/signup?module=gigs">
-            <span>Apply for Gigs / Field Roles</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="https://talents.digihire.io/signup?module=events">
-            <span>Register for Events</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="https://talents.digihire.io/login" style="opacity:0.6;font-size:12px;">
-            <span>Talent login</span>
-            <span class="dd-arrow">›</span>
-          </a>
-
-          <div class="nav-dropdown-divider"></div>
-
-          <!-- For Brands -->
+        </button>
+        <div class="nav-dropdown" style="min-width:240px;">
+          <!-- 1. For Brands (First) -->
           <p class="dd-section-label">For Brands</p>
-          <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)">
-            <span>Launch VoltSquad Campaign</span>
-            <span class="dd-arrow">›</span>
-          </a>
           <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)">
             <span>Hire Sales Talent</span>
             <span class="dd-arrow">›</span>
           </a>
           <a href="/sales-activations" onclick="openBrandWaitlistModal(event)">
-            <span>Activations &amp; Field Marketing</span>
+            <span>Deploy Field &amp; Retail Teams</span>
             <span class="dd-arrow">›</span>
           </a>
-          <a href="https://brands.digihire.io/login" onclick="openBrandWaitlistModal(event)" style="opacity:0.6;font-size:12px;">
-            <span>Brand login</span>
+          <a href="https://brands.digihire.io/signup?service=performance-sales" onclick="openBrandWaitlistModal(event)">
+            <span>Performance-Based Sales</span>
+            <span class="dd-arrow">›</span>
+          </a>
+
+          <div class="nav-dropdown-divider"></div>
+
+          <!-- 2. For Talent (Second) -->
+          <p class="dd-section-label">For Talent</p>
+          <a href="https://talents.digihire.io/signup?module=talent_pool">
+            <span>Join the Talent Pool</span>
+            <span class="dd-arrow">›</span>
+          </a>
+          <a href="/jobs">
+            <span>Apply for Sales Jobs</span>
+            <span class="dd-arrow">›</span>
+          </a>
+          <a href="https://talents.digihire.io/signup?module=gigs">
+            <span>Activation &amp; Field Gigs</span>
+            <span class="dd-arrow">›</span>
+          </a>
+          <a href="https://chat.whatsapp.com/DigihireTalentCommunity" target="_blank" rel="noopener noreferrer">
+            <span>Join WhatsApp Group</span>
             <span class="dd-arrow">›</span>
           </a>
         </div>
@@ -3764,15 +3839,15 @@
       </div>
 
       <div class="twc" style="background:linear-gradient(135deg,#F8FAFC 0%,#EEF2FF 100%);border:1px solid #D4DDFF;padding:28px;border-radius:18px;">
-        <div class="twc-tag" style="color:#4444BB;font-weight:700;">On-Ground Gigs</div>
-        <h3 class="twc-title" style="color:#0D1B33;margin-top:6px;font-size:22px;">Apply for Activation &amp; Field Opportunities</h3>
-        <p class="twc-desc" style="color:#475569;font-size:15px;margin-top:10px;margin-bottom:20px;">Find paid merchandising, field marketing, in-store promotion, exhibition staffing, event staffing, and activation roles.</p>
-        <a href="https://talents.digihire.io/signup?module=gigs" class="btn btn-cyan" style="background:#4444BB;color:#fff;">Find Opportunities →</a>
+        <div class="twc-tag" style="color:#4444BB;font-weight:700;">Sales Academy</div>
+        <h3 class="twc-title" style="color:#0D1B33;margin-top:6px;font-size:22px;">Build Your Sales Career</h3>
+        <p class="twc-desc" style="color:#475569;font-size:15px;margin-top:10px;margin-bottom:20px;">Practical AI-powered sales training designed for modern B2B and tech sales professionals.</p>
+        <a href="#training" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan" style="background:#4444BB;color:#fff;">Explore Sales Academy →</a>
       </div>
 
       <div class="twc" style="background:linear-gradient(135deg,#F8FAFC 0%,#E8FDF5 100%);border:1px solid #CCF5E8;padding:28px;border-radius:18px;">
         <div class="twc-tag" style="color:#00875A;font-weight:700;">Instant Job Alerts</div>
-        <h3 class="twc-title" style="color:#0D1B33;margin-top:6px;font-size:22px;">Join WhatsApp Channel</h3>
+        <h3 class="twc-title" style="color:#0D1B33;margin-top:6px;font-size:22px;">Join WhatsApp Group</h3>
         <p class="twc-desc" style="color:#475569;font-size:15px;margin-top:10px;margin-bottom:20px;">Find jobs and gigs in tech sales, software sales, SDR, BDR, full-time, part-time, contract, merchandiser, field and event roles.</p>
         <a href="https://chat.whatsapp.com/DigihireTalentCommunity" class="btn btn-cyan" style="background:#00875A;color:#fff;">Join WhatsApp →</a>
       </div>
@@ -3866,6 +3941,33 @@
 
   </div>
 </section>
+
+
+    <!-- 3. Sales Academy: DigiHire AI-Powered Sales Academy -->
+    <div class="talent-split-row talent-split-academy" style="margin-top:64px;">
+      <div class="talent-split-inner">
+        <div class="reveal">
+          <div class="talent-split-tag">Sales Academy</div>
+          <h2 class="talent-split-title">Build Your Sales Career</h2>
+          <p class="talent-split-desc">Practical AI-powered sales training designed for modern B2B and tech sales professionals.</p>
+          <a href="#training" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan btn-lg">Explore Sales Academy →</a>
+        </div>
+        <div class="talent-polaroid-wrap reveal" style="transition-delay:0.15s">
+          <div class="tpcard tpcard-1" style="background:#0D1B33;color:#fff;border-color:rgba(0,194,255,0.25);width:100%;max-width:380px;">
+            <div style="padding:28px 24px;">
+              <span style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#38BDF8;background:rgba(0,194,255,0.18);padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:14px;">DigiHire Academy</span>
+              <h4 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:10px;">Modern AI-Enabled Sales Training</h4>
+              <p style="font-size:13.5px;color:#94A3B8;line-height:1.6;margin-bottom:16px;">Master AI outbound research, pipeline generation, enterprise discovery, objection handling and high-converting closing frameworks.</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <span style="background:rgba(255,255,255,0.08);color:#E2E8F0;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:6px;">B2B Tech Sales</span>
+                <span style="background:rgba(255,255,255,0.08);color:#E2E8F0;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:6px;">SDR &amp; AE Playbooks</span>
+                <span style="background:rgba(255,255,255,0.08);color:#E2E8F0;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:6px;">AI Outbound</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <!-- ════ T3. BRAND PARTNERS ═══════════ -->
 <section class="talent-brands-section">
@@ -4413,7 +4515,7 @@
       <div class="wif-card wif-card-fintech" tabindex="0">
         <div class="wif-resting">
           <div class="wif-img-wrap">
-            <img src="/sales-talent-amina.jpg" alt="Fintech & Crypto" class="wif-thumb" loading="lazy" />
+            <img src="/sales-talent-amina.jpg" alt="Fintech &amp; Crypto" class="wif-thumb" loading="lazy" />
           </div>
           <h3 class="wif-title">Fintech &amp; Crypto Companies</h3>
           <div class="wif-bottom-row">
@@ -4423,22 +4525,22 @@
             </div>
           </div>
         </div>
-        <div class="wif-revealed">
-          <div class="wif-rev-header">
-            <h4 class="wif-rev-title">Fintech &amp; Crypto</h4>
-            <span class="wif-rev-badge">Services</span>
+        <div class="wif-revealed" style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+          <div>
+            <div class="wif-rev-header">
+              <h4 class="wif-rev-title">Fintech &amp; Crypto</h4>
+              <span class="wif-rev-badge">Services</span>
+            </div>
+            <div class="wif-pills">
+              <span class="wif-pill">Tech Sales</span>
+              <span class="wif-pill">Customer Acquisition</span>
+              <span class="wif-pill">Field Sales</span>
+              <span class="wif-pill">Performance-Based Acquisition</span>
+              <span class="wif-pill">Affiliate Programmes</span>
+            </div>
           </div>
-          <div class="wif-pills">
-            <span class="wif-pill">Customer Acquisition Teams</span>
-            <span class="wif-pill">Field Sales</span>
-            <span class="wif-pill">User Onboarding</span>
-            <span class="wif-pill">Campus &amp; Community Activations</span>
-            <span class="wif-pill">Performance-Based Acquisition</span>
-            <span class="wif-pill">Affiliate Networks</span>
-            <span class="wif-pill">Sales Recruitment</span>
-          </div>
-          <a href="https://brands.digihire.io/signup?service=voltsquad" onclick="openBrandWaitlistModal(event)" class="wif-cta-btn btn-fintech">
-            Deploy Acquisition Teams →
+          <a href="https://brands.digihire.io/signup?service=performance-sales" onclick="openBrandWaitlistModal(event)" class="wif-cta-btn btn-fintech" style="margin-top:auto;">
+            Request Talent →
           </a>
         </div>
       </div>
@@ -4447,7 +4549,7 @@
       <div class="wif-card wif-card-retail" tabindex="0">
         <div class="wif-resting">
           <div class="wif-img-wrap">
-            <img src="/avatar-partner-1.jpg" alt="Retail Stores & Supermarkets" class="wif-thumb" loading="lazy" />
+            <img src="/sector-retail-attendant.jpg" alt="Retail Stores & Supermarkets" class="wif-thumb" loading="lazy" />
           </div>
           <h3 class="wif-title">Retail Stores &amp; Supermarkets</h3>
           <div class="wif-bottom-row">
@@ -4481,7 +4583,7 @@
       <div class="wif-card wif-card-fmcg" tabindex="0">
         <div class="wif-resting">
           <div class="wif-img-wrap">
-            <img src="/avatar-lead-kano.jpg" alt="FMCG & Consumer Brands" class="wif-thumb" loading="lazy" />
+            <img src="/sector-fmcg-merchandising.jpg" alt="FMCG & Consumer Brands" class="wif-thumb" loading="lazy" />
           </div>
           <h3 class="wif-title">FMCG &amp; Consumer Brands</h3>
           <div class="wif-bottom-row">
@@ -4515,7 +4617,7 @@
       <div class="wif-card wif-card-events" tabindex="0">
         <div class="wif-resting">
           <div class="wif-img-wrap">
-            <img src="/avatar-lead-abuja.jpg" alt="Exhibitors & Event Brands" class="wif-thumb" loading="lazy" />
+            <img src="/sector-event-staff.jpg" alt="Exhibitors & Event Brands" class="wif-thumb" loading="lazy" />
           </div>
           <h3 class="wif-title">Exhibitors &amp; Event Brands</h3>
           <div class="wif-bottom-row">
@@ -4549,7 +4651,7 @@
       <div class="wif-card wif-card-field" tabindex="0">
         <div class="wif-resting">
           <div class="wif-img-wrap">
-            <img src="/avatar-lead-lagos.jpg" alt="Distributed Field Teams" class="wif-thumb" loading="lazy" />
+            <img src="/avatar-lead-abuja.jpg" alt="Distributed Field Teams" class="wif-thumb" loading="lazy" />
           </div>
           <h3 class="wif-title">Businesses With Distributed Field Teams</h3>
           <div class="wif-bottom-row">
@@ -4951,67 +5053,7 @@
         </div>
       </article>
 
-      <!-- Card 3: BetKing -->
-      <article class="cs-card" onclick="openCaseStudyModal('betking')">
-        <div class="cs-img-wrap">
-          <img src="https://crecerpartners.com/wp-content/uploads/2025/08/bk-650x549.jpg" alt="BetKing" class="cs-img" loading="lazy" />
-          <span class="cs-cat-badge">SEO &amp; Digital Growth</span>
-          <div class="cs-arrow-btn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </div>
-        </div>
-        <div class="cs-card-body">
-          <h3 class="cs-card-title">BetKing</h3>
-          <p class="cs-card-sub">SEO Content &amp; Link Building</p>
-          <p class="cs-card-desc">Increasing organic visibility and Google Nigeria rankings through aggressive link profile reverse-engineering and high-authority placements.</p>
-          <div class="cs-card-stats">
-            <div>
-              <div class="cs-stat-num">#1 SERP</div>
-              <div class="cs-stat-lbl">High-Intent Keywords</div>
-            </div>
-            <div>
-              <div class="cs-stat-num">Tier-1</div>
-              <div class="cs-stat-lbl">Digital PR Authority</div>
-            </div>
-          </div>
-          <div class="cs-card-footer">
-            <span class="cs-footer-text">Read Full Story</span>
-            <span class="cs-footer-action">Explore Case Study →</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 4: Cloudmylab -->
-      <article class="cs-card" onclick="openCaseStudyModal('cloudmylab')">
-        <div class="cs-img-wrap">
-          <img src="https://crecerpartners.com/wp-content/uploads/2025/08/cloud-bg-650x549.jpg" alt="Cloudmylab" class="cs-img" loading="lazy" />
-          <span class="cs-cat-badge">Enterprise Tech Positioning</span>
-          <div class="cs-arrow-btn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </div>
-        </div>
-        <div class="cs-card-body">
-          <h3 class="cs-card-title">Cloudmylab</h3>
-          <p class="cs-card-sub">SEO &amp; Tech Lab Solutions</p>
-          <p class="cs-card-desc">Capturing niche enterprise searches for Fortinet, Versa SD-WAN, and Juniper Lab Rentals through technical SEO and off-page syndication.</p>
-          <div class="cs-card-stats">
-            <div>
-              <div class="cs-stat-num">2,000+</div>
-              <div class="cs-stat-lbl">Quality Submissions</div>
-            </div>
-            <div>
-              <div class="cs-stat-num">Global</div>
-              <div class="cs-stat-lbl">Enterprise Search Lift</div>
-            </div>
-          </div>
-          <div class="cs-card-footer">
-            <span class="cs-footer-text">Read Full Story</span>
-            <span class="cs-footer-action">Explore Case Study →</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 5: Hewlett-Packard -->
+      <!-- Card 3: Hewlett-Packard -->
       <article class="cs-card" onclick="openCaseStudyModal('hp')">
         <div class="cs-img-wrap">
           <img src="https://crecerpartners.com/wp-content/uploads/2025/08/hp-bg-650x549.jpg" alt="Hewlett-Packard" class="cs-img" loading="lazy" />
@@ -5138,44 +5180,6 @@
         "Interactive crowd engagement with quizzes, competitions, and branded swag",
         "Sales-driven referral pipeline connecting booth visitors to nearby authorized dealers",
         "On-site retail liaisons managing customer handoffs and real-time sales conversions"
-      ]
-    },
-    betking: {
-      title: "BetKing",
-      category: "SEO & Digital Growth",
-      headline: "SEO Content and Link Building for Traffic & Visibility",
-      image: "https://crecerpartners.com/wp-content/uploads/2025/08/bk-650x549.jpg",
-      challenge: "BetKing, one of Nigeria’s largest betting platforms, wanted to push its search dominance even further in a fiercely competitive digital landscape, targeting higher organic visibility and new user acquisition.",
-      solution: "DigiHire engineered an aggressive search strategy: reverse-engineering competitor backlink profiles, producing high-impact content, and expanding domain authority through tier-1 backlinks.",
-      stats: [
-        { num: "#1 SERP", label: "Rankings across competitive betting keywords" },
-        { num: "Tier-1", label: "Media backlink placements across regional publications" },
-        { num: "Scalable", label: "Organic customer acquisition pipeline established" }
-      ],
-      deliverables: [
-        "Competitor link profile reverse-engineering & technical audit",
-        "High-impact SEO content creation & semantic keyword mapping",
-        "Off-page link building & digital PR distribution across Nigerian portals",
-        "SERP feature dominance and search snippet optimization"
-      ]
-    },
-    cloudmylab: {
-      title: "Cloudmylab",
-      category: "Enterprise Tech Positioning",
-      headline: "SEO and Keyword Positioning for Tech Lab Solutions",
-      image: "https://crecerpartners.com/wp-content/uploads/2025/08/cloud-bg-650x549.jpg",
-      challenge: "CloudMyLab needed to capture high-value global searches for specialized enterprise tech labs (Fortinet, Versa SD-WAN, Juniper Lab Rentals), requiring a technical overhaul to outrank legacy global providers.",
-      solution: "DigiHire executed a deep technical on-page audit, restructured site metadata and header hierarchies, and activated an off-page syndication campaign across enterprise directories and tech communities.",
-      stats: [
-        { num: "2,000+", label: "Off-page SEO submissions completed in 30 days" },
-        { num: "Keyword Lift", label: "Across core and semantic enterprise IT terms" },
-        { num: "Global Reach", label: "Targeted organic search traffic from enterprise buyers" }
-      ],
-      deliverables: [
-        "Full technical SEO & on-page content architecture audit",
-        "Monthly keyword tracking, competitor benchmarking & reporting",
-        "Targeted enterprise link building & niche directory submissions",
-        "LSI keyword integration for specialized cloud & network labs"
       ]
     },
     hp: {
@@ -5454,11 +5458,11 @@
   /* ── Hero tab toggle ──────────────────────────── */
   const heroContent = {
     'job-seeker': {
-      headline: 'Join Digihire to assess Sales Jobs, Activation gigs & Field Opportunities.',
-      sub: 'Whether you’re looking for a full-time sales role, tech sales opportunity, merchandising gig, activation job, or field marketing campaign, Digihire connects you with brands looking for people who can sell.',
+      headline: 'Find Sales Jobs. Get Field Gigs. Build Your Sales Career.',
+      sub: 'Access full-time sales roles, flexible field opportunities, commission campaigns and practical sales training designed to help you earn and grow.',
       cta: 'Join Talent Pool',
       href: 'https://talents.digihire.io/signup?module=talent_pool',
-      secCtaText: 'Join WhatsApp channel',
+      secCtaText: 'Join WhatsApp Group',
       secCtaHref: 'https://chat.whatsapp.com/DigihireTalentCommunity'
     },
     'employer': {
@@ -5897,13 +5901,29 @@ document.addEventListener('DOMContentLoaded', function() {
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="modal-header">
-      <h3 class="modal-title">Join the Brand Waitlist</h3>
-      <p class="modal-sub">Fill in the form below to get early access to launch sales campaigns on VoltSquad.</p>
+      <h3 class="modal-title" style="font-size:24px;font-weight:800!important;color:#0D1B33;margin-bottom:8px;">Request Talent</h3>
+      <p class="modal-sub" style="font-size:14px;color:#475569;line-height:1.55;">Tell us the talent or team you need for an upcoming hire, campaign, activation or ongoing workforce requirement.</p>
+      <p class="modal-alt-contact" style="margin-top:12px;font-size:13.5px;color:#64748B;">Prefer email? Contact <a href="mailto:digihirenigeria@gmail.com" style="color:#0284C7;font-weight:700!important;text-decoration:none;">digihirenigeria@gmail.com</a></p>
     </div>
     <div class="modal-body">
       <iframe id="fluentform" width="100%" height="500px" style="min-height: 500px;width: 100%;border:none;border-radius:12px;" frameborder="0" src="https://segun.innoveal.com.ng/?fluent-form=28&embedded=1"></iframe>
     </div>
   </div>
 </dialog>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20services." 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="floating-whatsapp-btn" 
+   aria-label="Chat with us on WhatsApp">
+  <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+  <div class="whatsapp-circle">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.77.462 3.498 1.341 5.023L2.05 21.95l5.068-1.328a9.98 9.98 0 0 0 4.913 1.282h.004c5.535 0 10.031-4.496 10.031-10.031 0-2.68-1.043-5.199-2.937-7.094A9.972 9.972 0 0 0 12.031 2zm5.834 14.195c-.244.686-1.42 1.309-1.969 1.392-.516.078-1.189.112-3.475-.838-2.651-1.1-4.349-3.799-4.48-3.974-.132-.175-1.066-1.42-1.066-2.709 0-1.289.673-1.924.912-2.184.238-.26.52-.325.694-.325.174 0 .348.002.5.01.163.008.38-.062.593.45.22.529.749 1.826.815 1.959.066.133.11.289.022.463-.088.175-.132.284-.262.437-.132.152-.278.34-.397.457-.132.13-.27.272-.116.536.154.264.687 1.13 1.472 1.83 1.01 1.002 1.862 1.312 2.126 1.442.264.13.418.109.572-.066.154-.175.66-1.002.836-1.348.176-.346.352-.289.594-.2.242.089 1.542.727 1.806.859.264.132.44.198.506.308.066.11.066.642-.178 1.328z"/>
+    </svg>
+  </div>
+</a>
+
 </body>
 </html>
