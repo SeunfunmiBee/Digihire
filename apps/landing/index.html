@@ -2044,8 +2044,8 @@
         </p>
 
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px;" id="hero-ctas-container">
-          <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="hero-cta-single" id="hero-cta-primary">Hire Sales Talent</a>
-          <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="btn btn-outline-white btn-lg" id="hero-cta-secondary" style="border-radius:10px;padding:16px 32px;">Request Activation Staff</a>
+          <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="hero-cta-single" id="hero-cta-primary">Request Talent</a>
+          <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="btn btn-outline-white btn-lg" id="hero-cta-secondary" style="border-radius:10px;padding:16px 32px;">Explore Our Services</a>
         </div>
       </div>
     </div>
@@ -3146,6 +3146,32 @@ END V1 COMMENTED OUT
 </footer>
 
 <script>
+  /* ── BRAND WAITLIST MODAL FUNCTIONS ───────────── */
+  window.openBrandWaitlistModal = function(e) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+    var modal = document.getElementById('waitlist-modal');
+    if (modal) {
+      if (typeof modal.showModal === 'function') {
+        modal.showModal();
+      } else {
+        modal.setAttribute('open', '');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.closeBrandWaitlistModal = function() {
+    var modal = document.getElementById('waitlist-modal');
+    if (modal) {
+      if (typeof modal.close === 'function') {
+        modal.close();
+      } else {
+        modal.removeAttribute('open');
+      }
+      document.body.style.overflow = '';
+    }
+  };
+
   /* ── Gradient bars ────────────────────────────── */
   (function() {
     const NUM_BARS = 18;
@@ -3183,9 +3209,9 @@ END V1 COMMENTED OUT
     'employer': {
       headline: 'Your Sales & Field Workforce Partner.',
       sub: 'DigiHire recruits, deploys and manages sales, retail, activation and field teams that help businesses reach more customers and drive growth.',
-      cta: 'Hire Sales Talent',
+      cta: 'Request Talent',
       href: 'https://brands.digihire.io/signup?service=recruitment-fulltime',
-      secCtaText: 'Request Activation Staff',
+      secCtaText: 'Explore Our Services',
       secCtaHref: '/sales-activations'
     }
   };
@@ -3531,32 +3557,7 @@ END V1 COMMENTED OUT
   });
 })();
 
-/* ── BRAND WAITLIST MODAL SCRIPT ── */
-function openBrandWaitlistModal(e) {
-  if (e) e.preventDefault();
-  var modal = document.getElementById('waitlist-modal');
-  if (modal) {
-    if (typeof modal.showModal === 'function') {
-      modal.showModal();
-    } else {
-      modal.setAttribute('open', '');
-    }
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeBrandWaitlistModal() {
-  var modal = document.getElementById('waitlist-modal');
-  if (modal) {
-    if (typeof modal.close === 'function') {
-      modal.close();
-    } else {
-      modal.removeAttribute('open');
-    }
-    document.body.style.overflow = '';
-  }
-}
-
+/* ── BRAND WAITLIST MODAL LISTENERS ── */
 document.addEventListener('DOMContentLoaded', function() {
   var modal = document.getElementById('waitlist-modal');
   if (modal) {
