@@ -214,7 +214,7 @@
 
     .nav-actions { display: flex; align-items: center; gap: 10px; }
 
-    /* Get Started button — white outlined on hero */
+    /* Join the Sales Academy CTA button — white outlined on hero */
     .btn-get-started {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 9px 18px; border-radius: 8px; cursor: pointer;
@@ -3713,53 +3713,13 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
       </ul>
     </div>
 
-    <!-- Right: Get Started dropdown + Launch a Campaign CTA -->
+    <!-- Right: Join the Sales Academy CTA + Hire Talent CTA -->
     <div class="nav-actions">
-      <!-- Get Started with hover dropdown — replaced by JS when user is logged in -->
+      <!-- Replaced by JS when user is logged in -->
       <div class="nav-dropdown-wrap" id="nav-auth-wrap">
-        <button type="button" class="btn-get-started">
-          Get Started
-          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="nav-dropdown" style="min-width:240px;">
-          <!-- 1. For Brands (First) -->
-          <p class="dd-section-label">For Brands</p>
-          <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)">
-            <span>Hire Sales Talent</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="/sales-activations" onclick="openBrandWaitlistModal(event)">
-            <span>Deploy Field &amp; Retail Teams</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="https://brands.digihire.io/signup?service=performance-sales" onclick="openBrandWaitlistModal(event)">
-            <span>Performance-Based Sales</span>
-            <span class="dd-arrow">›</span>
-          </a>
-
-          <div class="nav-dropdown-divider"></div>
-
-          <!-- 2. For Talent (Second) -->
-          <p class="dd-section-label">For Talent</p>
-          <a href="https://talents.digihire.io/signup?module=talent_pool">
-            <span>Join the Talent Pool</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="/jobs">
-            <span>Apply for Sales Jobs</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="https://talents.digihire.io/signup?module=gigs">
-            <span>Activation &amp; Field Gigs</span>
-            <span class="dd-arrow">›</span>
-          </a>
-          <a href="https://chat.whatsapp.com/Eq7TlCDMTuF566MXjOrI3Z?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank" rel="noopener noreferrer">
-            <span>Join WhatsApp Group</span>
-            <span class="dd-arrow">›</span>
-          </a>
-        </div>
+        <a href="https://talents.digihire.io/academy" class="btn-get-started" id="auth-btn">
+          Join the Sales Academy
+        </a>
       </div>
 
       <!-- Main CTA -->
@@ -4139,7 +4099,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
           <div class="talent-split-tag">Community</div>
           <h2 class="talent-split-title">Join a growing network of sales talent</h2>
           <p class="talent-split-desc">Work with real brands, access job opportunities, and grow your sales career alongside a community of ambitious sales professionals across Nigeria.</p>
-          <a href="https://talents.digihire.io/login" class="btn btn-cyan btn-lg">Get Started →</a>
+          <a href="https://talents.digihire.io/academy" class="btn btn-cyan btn-lg">Join the Sales Academy →</a>
         </div>
 
         <div class="talent-polaroid-wrap reveal" style="transition-delay:0.15s">
@@ -6173,7 +6133,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
       </div>
     </div>
     <div class="nm-actions">
-      <a href="https://talents.digihire.io/login" class="nm-btn-outline" id="nm-auth-btn">Get Started</a>
+      <a href="https://talents.digihire.io/academy" class="nm-btn-outline" id="nm-auth-btn">Join the Sales Academy</a>
       <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nm-btn-cyan">Hire Talent
         <svg viewBox="0 0 16 16" fill="none" width="14" height="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
