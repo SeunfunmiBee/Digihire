@@ -9,6 +9,7 @@
     { "source": "/events", "destination": "/events.html" },
     { "source": "/voltsquad", "destination": "/voltsquad.html" },
     { "source": "/sales-activations", "destination": "/sales-activations.html" },
+    { "source": "/services", "destination": "/services.html" },
     { "source": "/alrehab/profiles", "destination": "/alrehab/profiles/index.html" },
     { "source": "/jobs", "destination": "/jobs.html" },
     { "source": "/jobs/:id", "destination": "/jobs.html" },

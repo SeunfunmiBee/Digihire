@@ -782,47 +782,95 @@
     }
     .modal-close-btn:hover { background: #E2E8F0; color: #0D1B33; }
 
-    /* ════ 10. FLOATING WHATSAPP ════ */
+    /* ════ 10. FLOATING WHATSAPP (PERMANENT PILL) ════ */
     .floating-whatsapp-btn {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      width: 58px;
-      height: 58px;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px 8px 10px;
+      background: #FFFFFF;
+      border: 1.5px solid rgba(37, 211, 102, 0.45);
+      border-radius: 999px;
+      box-shadow: 0 10px 32px rgba(13, 27, 51, 0.16), 0 2px 8px rgba(37, 211, 102, 0.25);
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .floating-whatsapp-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 40px rgba(13, 27, 51, 0.22), 0 4px 14px rgba(37, 211, 102, 0.4);
+      border-color: #25D366;
+    }
+    .whatsapp-circle {
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: #25D366;
-      color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 24px rgba(37,211,102,0.38);
-      z-index: 190;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      text-decoration: none;
+      flex-shrink: 0;
+      box-shadow: 0 3px 12px rgba(37, 211, 102, 0.4);
+      transition: transform 0.25s ease;
     }
-    .floating-whatsapp-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 12px 30px rgba(37,211,102,0.5);
+    .floating-whatsapp-btn:hover .whatsapp-circle {
+      transform: rotate(6deg) scale(1.05);
     }
-    .floating-whatsapp-tooltip {
-      position: absolute;
-      right: 68px;
-      background: #0D1B33;
-      color: #FFFFFF;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
+    .whatsapp-circle svg {
+      width: 25px;
+      height: 25px;
+      display: block;
+    }
+    .whatsapp-label-wrap {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .whatsapp-label-title {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700 !important;
+      color: #0D1B33;
+      line-height: 1.2;
       white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transform: translateX(8px);
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .floating-whatsapp-btn:hover .floating-whatsapp-tooltip {
-      opacity: 1;
-      transform: translateX(0);
+    .whatsapp-label-sub {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 11.5px;
+      font-weight: 600 !important;
+      color: #059669;
+      line-height: 1;
+      margin-top: 3px;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 640px) {
+      .floating-whatsapp-btn {
+        bottom: 18px;
+        right: 16px;
+        padding: 6px 14px 6px 8px;
+        gap: 8px;
+      }
+      .whatsapp-circle {
+        width: 36px;
+        height: 36px;
+      }
+      .whatsapp-circle svg {
+        width: 21px;
+        height: 21px;
+      }
+      .whatsapp-label-title {
+        font-size: 12px;
+      }
+      .whatsapp-label-sub {
+        font-size: 10px;
+      }
     }
 
     /* ════ MOBILE DRAWER ════ */
@@ -933,7 +981,7 @@
                 <div class="npi-title">Activation &amp; Field Opportunities</div>
                 <div class="npi-desc">Short-term merchandising, promo &amp; event gigs</div>
               </a>
-              <a href="https://chat.whatsapp.com/DigihireTalentCommunity" target="_blank" rel="noopener noreferrer" class="nav-popover-item">
+              <a href="https://chat.whatsapp.com/Eq7TlCDMTuF566MXjOrI3Z?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank" rel="noopener noreferrer" class="nav-popover-item">
                 <div class="npi-title">Join WhatsApp Group</div>
                 <div class="npi-desc">Instant gig alerts &amp; peer community</div>
               </a>
@@ -1177,7 +1225,7 @@
         </div>
 
         <div class="service-visual-col">
-          <img src="/avatar-lead-abuja.jpg" alt="Field Sales Team" class="service-visual-img" loading="lazy" />
+          <img src="/sector-field-teams.jpg" alt="Field Sales Team" class="service-visual-img" loading="lazy" />
           <div class="service-visual-overlay">
             <p class="visual-quote">"Over 45,000 verified merchant sign-ups completed across Lagos, Ibadan, and Kano within 90 days."</p>
             <p class="visual-author">KoboGo — Merchant Acquisition Drive</p>
@@ -1796,7 +1844,7 @@
           <li><a href="https://talents.digihire.io/signup?module=talent_pool">Join the Talent Pool</a></li>
           <li><a href="/jobs">Apply for Sales Jobs</a></li>
           <li><a href="https://talents.digihire.io/signup?module=gigs">Field Opportunities</a></li>
-          <li><a href="https://chat.whatsapp.com/DigihireTalentCommunity" target="_blank" rel="noopener noreferrer">WhatsApp Community</a></li>
+          <li><a href="https://chat.whatsapp.com/Eq7TlCDMTuF566MXjOrI3Z?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank" rel="noopener noreferrer">Join WhatsApp Group</a></li>
           <li><a href="/services#sales-academy">AI Sales Training</a></li>
         </ul>
       </div>
@@ -1859,11 +1907,17 @@
    target="_blank" 
    rel="noopener noreferrer" 
    class="floating-whatsapp-btn" 
-   aria-label="Chat with us on WhatsApp">
-  <span class="floating-whatsapp-tooltip">Chat with us on WhatsApp</span>
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.84.814 2.796.814 3.18 0 5.766-2.587 5.767-5.766.001-3.181-2.585-5.767-5.767-5.767zm0-2.172c4.379 0 7.938 3.559 7.939 7.938 0 4.38-3.56 7.939-7.939 7.939-1.332 0-2.593-.332-3.705-.918l-5.326 1.396 1.423-5.201c-.677-1.182-1.059-2.527-1.059-3.956 0-4.379 3.56-7.938 7.939-7.938zm-1.896 5.867c.105-.233.224-.239.336-.243.088-.004.189-.004.289-.004.1 0 .264.038.402.188.138.151.528.516.528 1.258 0 .742.54 1.458.616 1.558.075.1 1.042 1.666 2.568 2.277 1.267.508 1.526.407 1.802.382.277-.025.892-.365 1.018-.717.126-.352.126-.654.088-.717-.038-.063-.138-.1-.289-.176-.151-.075-.892-.44-1.03-.49-.138-.05-.239-.075-.34.075-.101.151-.389.49-.477.591-.088.1-.176.113-.327.038-.151-.075-.637-.235-1.213-.749-.448-.4-.75-894-.838-1.045-.088-.151-.009-.233.066-.308.068-.068.151-.176.226-.264.075-.088.1-.151.151-.252.05-.1.025-.188-.013-.264-.038-.075-.34-.818-.466-1.12-.122-.294-.246-.254-.339-.258z"/>
-  </svg>
+   aria-label="Chat with us on WhatsApp: 07073848138">
+  <div class="whatsapp-circle">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M16 2.667C8.636 2.667 2.667 8.636 2.667 16c0 2.474.675 4.887 1.956 6.99L2.667 29.333l6.53-1.895A13.272 13.272 0 0016 29.333c7.364 0 13.333-5.969 13.333-13.333S23.364 2.667 16 2.667z" fill="#25D366"/>
+      <path d="M22.56 19.387c-.293.826-1.455 1.512-2.01 1.6-.528.085-1.22.121-3.563-.812-2.718-1.082-4.46-3.858-4.594-4.037-.135-.18-1.094-1.457-1.094-2.779 0-1.322.69-1.973.935-2.24.245-.266.533-.333.711-.333.178 0 .356.002.513.01.166.01.388-.063.608.462.226.543.768 1.874.836 2.011.067.137.112.296.022.475-.09.18-.135.29-.268.447-.135.156-.285.35-.408.469-.135.133-.277.279-.118.55.158.27.704 1.16 1.51 1.876 1.035.92 1.91 1.206 2.18 1.326.27.12.429.1.587-.068.158-.18.677-1.028.857-1.383.18-.354.36-.296.609-.205.249.091 1.58.746 1.852.881.272.136.452.204.519.318.068.113.068.658-.225 1.484z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+  <div class="whatsapp-label-wrap">
+    <span class="whatsapp-label-title">Chat with us on WhatsApp</span>
+    <span class="whatsapp-label-sub">0707 384 8138</span>
+  </div>
 </a>
 
 <!-- ════ 11. MOBILE MENU OVERLAY ═════════════════ -->
@@ -1903,7 +1957,7 @@
         <a href="https://talents.digihire.io/signup?module=talent_pool" class="nm-sub-item">Join Talent Pool</a>
         <a href="/jobs" class="nm-sub-item">Apply for Sales Jobs</a>
         <a href="https://talents.digihire.io/signup?module=gigs" class="nm-sub-item">Activation &amp; Field Gigs</a>
-        <a href="https://chat.whatsapp.com/DigihireTalentCommunity" target="_blank" rel="noopener noreferrer" class="nm-sub-item">Join WhatsApp Group</a>
+        <a href="https://chat.whatsapp.com/Eq7TlCDMTuF566MXjOrI3Z?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank" rel="noopener noreferrer" class="nm-sub-item">Join WhatsApp Group</a>
         <a href="/services#sales-academy" class="nm-sub-item">Sales Academy</a>
       </div>
     </div>

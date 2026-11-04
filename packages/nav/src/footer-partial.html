@@ -1,7 +1,4 @@
 <style>
-  #site-footer, #site-footer * {
-    font-weight: 400 !important;
-  }
   #site-footer {
     background: #06111F;
     border-top: 1px solid rgba(0,194,255,0.12);
@@ -74,6 +71,97 @@
     #site-footer { padding: 48px 0 28px; }
     #site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
+
+  /* ── Floating WhatsApp Button (Permanently Visible Pill) ── */
+  .floating-whatsapp-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px 8px 10px;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(37, 211, 102, 0.45);
+    border-radius: 999px;
+    box-shadow: 0 10px 32px rgba(13, 27, 51, 0.16), 0 2px 8px rgba(37, 211, 102, 0.25);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .floating-whatsapp-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 40px rgba(13, 27, 51, 0.22), 0 4px 14px rgba(37, 211, 102, 0.4);
+    border-color: #25D366;
+  }
+  .whatsapp-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 12px rgba(37, 211, 102, 0.4);
+    transition: transform 0.25s ease;
+  }
+  .floating-whatsapp-btn:hover .whatsapp-circle {
+    transform: rotate(6deg) scale(1.05);
+  }
+  .whatsapp-circle svg {
+    width: 25px;
+    height: 25px;
+    display: block;
+  }
+  .whatsapp-label-wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .whatsapp-label-title {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 700 !important;
+    color: #0D1B33;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .whatsapp-label-sub {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600 !important;
+    color: #059669;
+    line-height: 1;
+    margin-top: 3px;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 640px) {
+    .floating-whatsapp-btn {
+      bottom: 18px;
+      right: 16px;
+      padding: 6px 14px 6px 8px;
+      gap: 8px;
+    }
+    .whatsapp-circle {
+      width: 36px;
+      height: 36px;
+    }
+    .whatsapp-circle svg {
+      width: 21px;
+      height: 21px;
+    }
+    .whatsapp-label-title {
+      font-size: 12px;
+    }
+    .whatsapp-label-sub {
+      font-size: 10px;
+    }
+  }
 </style>
 
 <footer id="site-footer">
@@ -118,28 +206,30 @@
       <div>
         <p class="footer-col-title">Solutions</p>
         <ul class="footer-col-links">
-          <li><a href="https://talents.digihire.io">VoltSquad</a></li>
-          <li><a href="https://brands.digihire.io">Sales Recruitment</a></li>
+          <li><a href="https://brands.digihire.io/signup?service=recruitment-fulltime">Sales Recruitment</a></li>
           <li><a href="/sales-activations">Activations &amp; Field Marketing</a></li>
-          <li><a href="https://talents.digihire.io/academy">Sales Academy</a></li>
+          <li><a href="https://brands.digihire.io/signup?service=performance-sales">Performance-Based Sales</a></li>
+          <li><a href="/about#training">Sales Academy</a></li>
         </ul>
       </div>
 
       <div>
         <p class="footer-col-title">Talent</p>
         <ul class="footer-col-links">
-          <li><a href="https://talents.digihire.io">Join the Talent Pool</a></li>
-          <li><a href="https://talents.digihire.io/academy">Sales Academy</a></li>
-          <li><a href="https://talents.digihire.io">VoltSquad</a></li>
+          <li><a href="https://talents.digihire.io/signup?module=talent_pool">Join the Talent Pool</a></li>
+          <li><a href="/jobs">Browse Jobs</a></li>
+          <li><a href="https://talents.digihire.io/signup?module=gigs">Activation Opportunities</a></li>
+          <li><a href="https://chat.whatsapp.com/Eq7TlCDMTuF566MXjOrI3Z?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank" rel="noopener noreferrer">Join WhatsApp Group</a></li>
         </ul>
       </div>
 
       <div>
         <p class="footer-col-title">Brands</p>
         <ul class="footer-col-links">
-          <li><a href="https://talents.digihire.io">VoltSquad</a></li>
-          <li><a href="https://brands.digihire.io">Sales Recruitment</a></li>
-          <li><a href="/sales-activations">Activations &amp; Field Marketing</a></li>
+          <li><a href="https://brands.digihire.io/signup?service=recruitment-fulltime">Hire Sales Talent</a></li>
+          <li><a href="/sales-activations">Hire Activation Teams</a></li>
+          <li><a href="https://brands.digihire.io/signup?service=performance-sales">Performance-Based Sales</a></li>
+          <li><a href="/sales-activations">Managed Workforce</a></li>
         </ul>
       </div>
     </div>
@@ -163,3 +253,21 @@
     </div>
   </div>
 </footer>
+
+<!-- Floating WhatsApp Button (Permanently Visible Pill) -->
+<a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20services." 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="floating-whatsapp-btn" 
+   aria-label="Chat with us on WhatsApp: 0707 384 8138">
+  <div class="whatsapp-circle">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M16 2.667C8.636 2.667 2.667 8.636 2.667 16c0 2.474.675 4.887 1.956 6.99L2.667 29.333l6.53-1.895A13.272 13.272 0 0016 29.333c7.364 0 13.333-5.969 13.333-13.333S23.364 2.667 16 2.667z" fill="#25D366"/>
+      <path d="M22.56 19.387c-.293.826-1.455 1.512-2.01 1.6-.528.085-1.22.121-3.563-.812-2.718-1.082-4.46-3.858-4.594-4.037-.135-.18-1.094-1.457-1.094-2.779 0-1.322.69-1.973.935-2.24.245-.266.533-.333.711-.333.178 0 .356.002.513.01.166.01.388-.063.608.462.226.543.768 1.874.836 2.011.067.137.112.296.022.475-.09.18-.135.29-.268.447-.135.156-.285.35-.408.469-.135.133-.277.279-.118.55.158.27.704 1.16 1.51 1.876 1.035.92 1.91 1.206 2.18 1.326.27.12.429.1.587-.068.158-.18.677-1.028.857-1.383.18-.354.36-.296.609-.205.249.091 1.58.746 1.852.881.272.136.452.204.519.318.068.113.068.658-.225 1.484z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+  <div class="whatsapp-label-wrap">
+    <span class="whatsapp-label-title">Chat with us on WhatsApp</span>
+    <span class="whatsapp-label-sub">0707 384 8138</span>
+  </div>
+</a>
