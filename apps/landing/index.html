@@ -2295,10 +2295,16 @@
       box-shadow: 0 4px 18px rgba(13, 27, 51, 0.04);
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
     }
-    .wif-card:hover, .wif-card:focus-within, .wif-card.is-revealed {
+    .wif-card.is-revealed {
       transform: translateY(-6px);
       box-shadow: 0 20px 40px -10px rgba(13, 27, 51, 0.14), 0 4px 14px rgba(0,0,0,0.03);
+    }
+    .wif-card:focus-visible {
+      outline: 2px solid #00C2FF;
+      outline-offset: 3px;
     }
 
     /* Resting face */
@@ -2326,9 +2332,6 @@
       background: rgba(255, 255, 255, 0.5);
       border: 2px solid #ffffff;
       transition: transform 0.3s ease;
-    }
-    .wif-card:hover .wif-img-wrap {
-      transform: scale(1.05);
     }
     .wif-thumb {
       width: 100%;
@@ -2363,9 +2366,6 @@
       opacity: 0.85;
       transition: opacity 0.2s ease;
     }
-    .wif-card:hover .wif-explore-hint {
-      opacity: 1;
-    }
 
     /* White circular arrow button matching reference */
     .wif-arrow-circle {
@@ -2381,13 +2381,8 @@
       transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
       flex-shrink: 0;
     }
-    .wif-card:hover .wif-arrow-circle {
-      transform: rotate(45deg);
-      background: #0D1B33;
-      color: #ffffff;
-    }
 
-    /* Revealed face (Services on Hover) */
+    /* Revealed face (Services on Hover / Tap) */
     .wif-revealed {
       position: absolute;
       inset: 0;
@@ -2403,20 +2398,56 @@
       pointer-events: none;
       z-index: 2;
       border-radius: 24px;
+      user-select: text;
     }
-    .wif-card:hover .wif-revealed,
-    .wif-card:focus-within .wif-revealed,
+
+    /* Open/Revealed state (Single active accordion) */
+    .wif-card.is-revealed .wif-arrow-circle {
+      transform: rotate(45deg);
+      background: #0D1B33;
+      color: #ffffff;
+    }
+    .wif-card.is-revealed .wif-explore-hint {
+      opacity: 1;
+    }
     .wif-card.is-revealed .wif-revealed {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
       pointer-events: auto;
     }
-    .wif-card:hover .wif-resting,
-    .wif-card:focus-within .wif-resting,
     .wif-card.is-revealed .wif-resting {
       opacity: 0;
       transform: translateY(-8px);
+    }
+
+    /* Desktop hover preview */
+    @media (hover: hover) and (pointer: fine) {
+      .wif-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px -10px rgba(13, 27, 51, 0.14), 0 4px 14px rgba(0,0,0,0.03);
+      }
+      .wif-card:hover .wif-img-wrap {
+        transform: scale(1.05);
+      }
+      .wif-card:hover .wif-explore-hint {
+        opacity: 1;
+      }
+      .wif-card:hover .wif-arrow-circle {
+        transform: rotate(45deg);
+        background: #0D1B33;
+        color: #ffffff;
+      }
+      .wif-card:hover .wif-revealed {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .wif-card:hover .wif-resting {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
     }
 
     .wif-rev-header {
@@ -5454,11 +5485,11 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
 <section class="final-cta">
   <div class="container">
     <div class="reveal">
-      <h2 class="final-cta-title">Ready to Build Your Sales Team?</h2>
+      <h2 class="final-cta-title">Ready to Build Your Sales &amp; Activation Team?</h2>
       <p class="final-cta-sub">Whether you’re hiring a Sales Executive, activation staff, merchandisers, or an entire field team, Digihire helps you find the right people, fast.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
-        <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan btn-lg">Hire Sales Talent</a>
-        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="btn btn-outline-white btn-lg">Request Activation Staff</a>
+        <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan btn-lg" style="border-radius:10px;padding:16px 32px;">Request Talent</a>
+        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="btn btn-outline-white btn-lg" style="border-radius:10px;padding:16px 32px;">Explore Our Services</a>
       </div>
     </div>
   </div>
@@ -5805,13 +5836,70 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
     });
   })();
 
-  /* ── Who Is DigiHire For card mobile tap toggle ─── */
-  document.querySelectorAll('.wif-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-      if (e.target.closest('.wif-cta-btn')) return;
-      card.classList.toggle('is-revealed');
+  /* ── Who Is DigiHire For: Single-Active Accordion & Toggle ─── */
+  (function() {
+    const wifCards = document.querySelectorAll('.wif-card');
+    if (!wifCards.length) return;
+
+    wifCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // If clicking the CTA button inside the revealed face, let the button proceed
+        if (e.target.closest('.wif-cta-btn')) return;
+
+        const isCurrentlyOpen = card.classList.contains('is-revealed');
+
+        // Close ALL other cards so only one can be open at a time
+        wifCards.forEach(c => {
+          if (c !== card) c.classList.remove('is-revealed');
+        });
+
+        // Toggle the clicked card (open if closed, return to cover if already open)
+        if (isCurrentlyOpen) {
+          card.classList.remove('is-revealed');
+        } else {
+          card.classList.add('is-revealed');
+        }
+
+        // Blur active element so mobile Safari doesn't latch onto focus states
+        if (document.activeElement && typeof document.activeElement.blur === 'function') {
+          document.activeElement.blur();
+        }
+      });
+
+      // Keyboard accessibility (Enter or Space)
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (e.target.closest('.wif-cta-btn')) return;
+          e.preventDefault();
+          card.click();
+        }
+      });
+
+      // On desktop hover devices: hovering a card closes any other card that was opened by click
+      if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        card.addEventListener('mouseenter', () => {
+          wifCards.forEach(c => {
+            if (c !== card) c.classList.remove('is-revealed');
+          });
+        });
+      }
     });
-  });
+
+    // Clicking anywhere outside the cards closes all open cards back to cover
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.wif-card')) {
+        wifCards.forEach(c => c.classList.remove('is-revealed'));
+      }
+    });
+
+    // On desktop, moving the cursor out of the grid closes any clicked cards back to cover
+    const grid = document.querySelector('.who-is-for-grid');
+    if (grid && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      grid.addEventListener('mouseleave', () => {
+        wifCards.forEach(c => c.classList.remove('is-revealed'));
+      });
+    }
+  })();
 
   /* ── Logo slider ─────────────────────────────── */
   (function() {
