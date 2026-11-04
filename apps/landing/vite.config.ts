@@ -16,6 +16,7 @@ export default defineConfig({
         events:    path.resolve(__dirname, "events.html"),
         voltsquad: path.resolve(__dirname, "voltsquad.html"),
         salesActivations: path.resolve(__dirname, "sales-activations.html"),
+        services: path.resolve(__dirname, "services.html"),
         "blog-post": path.resolve(__dirname, "blog-post.html"),
         "blog-ai-resume": path.resolve(__dirname, "blog-ai-resume.html"),
         "blog-enterprise-sales": path.resolve(__dirname, "blog-enterprise-sales.html"),

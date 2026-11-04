@@ -642,12 +642,15 @@
       <ul class="nav-links">
         <!-- 1. For Brands Dropdown (8 Solutions) -->
         <li class="nav-item-clean">
-          <button type="button" class="nav-link-btn" aria-haspopup="true">
+          <a href="/services" class="nav-link-btn" aria-haspopup="true">
             For Brands
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+          </a>
           <div class="nav-popover-menu" style="width:530px;">
-            <div class="nav-popover-header">DigiHire Brand Solutions</div>
+            <div class="nav-popover-header" style="display:flex;justify-content:space-between;align-items:center;">
+              <span>DigiHire Brand Solutions</span>
+              <a href="/services" style="color:var(--cyan-dim);font-weight:700;font-size:12px;text-decoration:none;">View All Services →</a>
+            </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;">
               <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" class="nav-popover-item">
                 <div class="npi-title">Sales Recruitment</div>
@@ -683,7 +686,7 @@
               </a>
             </div>
             <div class="nav-popover-footer">
-              <a href="/about">Explore all DigiHire solutions →</a>
+              <a href="/services">Explore all DigiHire solutions &amp; services →</a>
             </div>
           </div>
         </li>
@@ -739,8 +742,8 @@
               <a href="/events" class="nav-popover-item">
                 <div class="npi-title">Events</div>
               </a>
-              <a href="/about" class="nav-popover-item">
-                <div class="npi-title">All Solutions</div>
+              <a href="/services" class="nav-popover-item">
+                <div class="npi-title">All Solutions &amp; Services</div>
               </a>
             </div>
           </div>

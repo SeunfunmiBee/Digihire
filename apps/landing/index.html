@@ -3530,12 +3530,15 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
       <ul class="nav-links">
         <!-- 1. For Brands Dropdown (8 Solutions) -->
         <li class="nav-item-clean">
-          <button type="button" class="nav-link-btn" aria-haspopup="true">
+          <a href="/services" class="nav-link-btn" aria-haspopup="true">
             For Brands
             <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+          </a>
           <div class="nav-popover-menu" style="width:530px;">
-            <div class="nav-popover-header">DigiHire Brand Solutions</div>
+            <div class="nav-popover-header" style="display:flex;justify-content:space-between;align-items:center;">
+              <span>DigiHire Brand Solutions</span>
+              <a href="/services" style="color:var(--cyan-dim);font-weight:700;font-size:12px;text-decoration:none;">View All Services →</a>
+            </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;">
               <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nav-popover-item">
                 <div class="npi-title">Sales Recruitment</div>
@@ -3571,7 +3574,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
               </a>
             </div>
             <div class="nav-popover-footer">
-              <a href="#solutions">Explore all DigiHire solutions →</a>
+              <a href="/services">Explore all DigiHire solutions &amp; services →</a>
             </div>
           </div>
         </li>
@@ -3627,8 +3630,8 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
               <a href="/events" class="nav-popover-item">
                 <div class="npi-title">Events</div>
               </a>
-              <a href="#solutions" class="nav-popover-item">
-                <div class="npi-title">All Solutions</div>
+              <a href="/services" class="nav-popover-item">
+                <div class="npi-title">All Solutions &amp; Services</div>
               </a>
             </div>
           </div>
@@ -3730,7 +3733,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
 
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px;" id="hero-ctas-container">
           <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="hero-cta-single" id="hero-cta-primary">Request Talent</a>
-          <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="btn btn-outline-white btn-lg" id="hero-cta-secondary" style="border-radius:10px;padding:16px 32px;">Explore Our Services</a>
+          <a href="/services" class="btn btn-outline-white btn-lg" id="hero-cta-secondary" style="border-radius:10px;padding:16px 32px;">Explore Our Services</a>
         </div>
       </div>
     </div>
@@ -5489,7 +5492,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
       <p class="final-cta-sub">Whether you’re hiring a Sales Executive, activation staff, merchandisers, or an entire field team, Digihire helps you find the right people, fast.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
         <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan btn-lg" style="border-radius:10px;padding:16px 32px;">Request Talent</a>
-        <a href="/sales-activations" onclick="openBrandWaitlistModal(event)" class="btn btn-outline-white btn-lg" style="border-radius:10px;padding:16px 32px;">Explore Our Services</a>
+        <a href="/services" class="btn btn-outline-white btn-lg" style="border-radius:10px;padding:16px 32px;">Explore Our Services</a>
       </div>
     </div>
   </div>
@@ -5671,7 +5674,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
       cta: 'Request Talent',
       href: 'https://brands.digihire.io/signup?service=recruitment-fulltime',
       secCtaText: 'Explore Our Services',
-      secCtaHref: '/sales-activations'
+      secCtaHref: '/services'
     }
   };
 
@@ -5697,7 +5700,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
       }
       if (key === 'employer') {
         cta.onclick = openBrandWaitlistModal;
-        if (secCta) secCta.onclick = openBrandWaitlistModal;
+        if (secCta) secCta.onclick = null;
       } else {
         cta.onclick = null;
         if (secCta) secCta.onclick = null;
@@ -5746,7 +5749,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
         }
         if (isEmployer) {
           cta.onclick = openBrandWaitlistModal;
-          if (secCta) secCta.onclick = openBrandWaitlistModal;
+          if (secCta) secCta.onclick = null;
         } else {
           cta.onclick = null;
           if (secCta) secCta.onclick = null;
@@ -6062,7 +6065,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
         <a href="/about" class="nm-sub-item">About Us</a>
         <a href="/blog" class="nm-sub-item">Blog</a>
         <a href="/events" class="nm-sub-item">Events</a>
-        <a href="https://talents.digihire.io" class="nm-sub-item">VoltSquad</a>
+        <a href="/services" class="nm-sub-item">All Solutions</a>
       </div>
     </div>
     <div class="nm-section">
@@ -6070,7 +6073,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
       </button>
       <div class="nm-submenu" id="nm-brands">
-        <a href="#solutions" class="nm-sub-item" style="font-weight:700!important;color:#0D1B33;">All Solutions</a>
+        <a href="/services" class="nm-sub-item" style="font-weight:700!important;color:#00C2FF;">Explore All Services &amp; Solutions →</a>
         <div style="font-size:10px;font-weight:800!important;color:#94A3B8;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px 2px;">HIRE</div>
         <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Sales Recruitment</a>
         <a href="https://brands.digihire.io/signup?service=recruitment-fulltime" onclick="openBrandWaitlistModal(event)" class="nm-sub-item">Tech Sales &amp; B2B Talent</a>

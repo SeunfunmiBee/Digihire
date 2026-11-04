@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap" rel="stylesheet" />
+  <title>All Services &amp; Solutions — DigiHire | Sales Recruitment, Field &amp; Managed Workforce</title>
+  <!-- SEO -->
+  <meta name="description" content="Explore DigiHire's complete sales & field workforce solutions: sales recruitment, direct field customer acquisition, retail merchandising, activations, managed workforce and AI sales training across Africa." />
+  <link rel="canonical" href="https://digihire.io/services" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DigiHire" />
+  <meta property="og:title" content="All Services &amp; Solutions — DigiHire for Brands" />
+  <meta property="og:description" content="Recruit, deploy and manage high-performance sales, retail and field teams across Nigeria and Africa." />
+  <meta property="og:url" content="https://digihire.io/services" />
+  <meta property="og:image" content="https://digihire.io/images/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="All Services &amp; Solutions — DigiHire" />
+  <meta name="twitter:description" content="Recruit, deploy and manage high-performance sales, retail and field teams across Nigeria and Africa." />
+  <meta name="twitter:image" content="https://digihire.io/images/og-default.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.min.js" integrity="sha384-wkxmY9HYHJVzx0oZ7k8stpLQ7g7ogSqBha75ozCZmxFadwtaIw5dzXKVWWfi9I36" crossorigin="anonymous" defer></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #06111F;
+      --navy-1:      #0B1D33;
+      --navy-2:      #0F2544;
+      --navy-3:      #162E52;
+      --navy-4:      #1D3A64;
+      --cyan:        #00C2FF;
+      --cyan-dim:    #0096C7;
+      --cyan-soft:   #33CFFF;
+      --cyan-border: rgba(0,194,255,0.18);
+      --white:       #FFFFFF;
+      --gray-1:      #94A3B8;
+      --gray-2:      #7A9CC5;
+      --gray-bg:     #F8FAFC;
+      --card-bg:     #FFFFFF;
+      --border:      rgba(0,194,255,0.12);
+      --radius-lg:   18px;
+      --radius-xl:   28px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: #FDFEFE;
+      color: #111827;
+      line-height: 1.6;
+      overflow-x: hidden !important;
+    }
+
+    /* Headings font-weight compliance (User rule: light font-weight 400 across all titles) */
+    h1, h2, h3, h4,
+    .hero-title,
+    .section-heading,
+    .service-card-title,
+    .final-cta-title,
+    .modal-title {
+      font-family: 'Instrument Sans', sans-serif !important;
+      font-weight: 400 !important;
+      letter-spacing: -0.02em;
+    }
+
+    .lucide { display: inline-block; vertical-align: middle; flex-shrink: 0; stroke: currentColor; }
+    .ic-sm { width: 14px; height: 14px; }
+    .ic-md { width: 18px; height: 18px; }
+    .ic-lg { width: 22px; height: 22px; }
+
+    .container { max-width: 1220px; margin: 0 auto; padding: 0 24px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 24px; border-radius: 10px; cursor: pointer;
+      font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 700;
+      border: none; text-decoration: none; transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+    .btn-cyan { background: var(--cyan); color: var(--navy); box-shadow: 0 4px 20px rgba(0,194,255,0.35); }
+    .btn-cyan:hover { background: var(--cyan-soft); transform: translateY(-1px); box-shadow: 0 6px 28px rgba(0,194,255,0.5); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+    .btn-outline-navy { background: transparent; color: var(--navy); border: 1.5px solid rgba(13,27,51,0.2); }
+    .btn-outline-navy:hover { border-color: var(--navy); background: rgba(13,27,51,0.04); }
+    .btn-lg { padding: 15px 32px; font-size: 15px; border-radius: 12px; }
+
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: transparent; border-bottom: 1px solid transparent;
+      transition: top 0.45s cubic-bezier(0.34,1.56,0.64,1), left 0.45s cubic-bezier(0.34,1.56,0.64,1),
+                  right 0.45s cubic-bezier(0.34,1.56,0.64,1), background 0.3s ease,
+                  border-radius 0.45s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    #navbar.scrolled {
+      top: 14px; left: 16%; right: 16%;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-radius: 999px; border-bottom: 1px solid rgba(255,255,255,0.55);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+    @media (max-width: 991px) {
+      #navbar.scrolled { left: 14px; right: 14px; border-radius: 20px; }
+    }
+
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1340px; width: 100%; margin: 0 auto; padding: 0 28px;
+      transition: height 0.3s ease, padding 0.3s ease;
+    }
+    #navbar.scrolled .nav-inner { height: 54px; padding: 0 24px; }
+    .nav-left { display: flex; align-items: center; gap: 0; }
+    .nav-logo { display: flex; align-items: center; gap: 0; text-decoration: none; flex-shrink: 0; margin-right: 32px; }
+    .nav-logo-wrap-img { position: relative; display: flex; align-items: center; }
+    .nav-logo-img { height: 34px; width: auto; display: block; transition: opacity 0.3s; }
+    .nav-logo-img.logo-white { opacity: 1; }
+    .nav-logo-img.logo-color { opacity: 0; position: absolute; }
+    #navbar.scrolled .nav-logo-img.logo-white { opacity: 0; }
+    #navbar.scrolled .nav-logo-img.logo-color { opacity: 1; }
+
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-item-clean { position: relative; }
+    .nav-link-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 14px; color: rgba(255,255,255,0.85); text-decoration: none;
+      font-weight: 500; padding: 7px 14px; border-radius: 8px; border: none; background: transparent;
+      cursor: pointer; font-family: 'Instrument Sans', sans-serif; transition: color 0.2s, background 0.2s;
+    }
+    .nav-link-btn:hover { color: #ffffff; background: rgba(255,255,255,0.10); }
+    .nav-link-btn svg { width: 13px; height: 13px; transition: transform 0.2s; }
+    .nav-item-clean:hover .nav-link-btn svg { transform: rotate(180deg); }
+    #navbar.scrolled .nav-link-btn { color: #334155; }
+    #navbar.scrolled .nav-link-btn:hover { color: var(--navy); background: rgba(0,0,0,0.05); }
+
+    .nav-links a.nav-plain-link {
+      font-size: 14px; color: rgba(255,255,255,0.85); text-decoration: none;
+      font-weight: 500; padding: 7px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a.nav-plain-link:hover { color: #ffffff; background: rgba(255,255,255,0.10); }
+    #navbar.scrolled .nav-links a.nav-plain-link { color: #334155; }
+    #navbar.scrolled .nav-links a.nav-plain-link:hover { color: var(--navy); background: rgba(0,0,0,0.05); }
+
+    /* Popover */
+    .nav-popover-menu {
+      position: absolute; top: calc(100% + 10px); left: 0;
+      background: #FFFFFF; border: 1px solid rgba(13,27,51,0.08); border-radius: 16px;
+      box-shadow: 0 18px 48px rgba(13,27,51,0.14); padding: 16px;
+      opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+    }
+    .nav-item-clean:hover .nav-popover-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-popover-header {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: #94A3B8; padding: 4px 10px 10px; border-bottom: 1px solid #F1F5F9; margin-bottom: 8px;
+    }
+    .nav-popover-item {
+      display: block; padding: 8px 10px; border-radius: 8px; text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .nav-popover-item:hover { background: #F8FAFC; }
+    .npi-title { font-size: 13.5px; font-weight: 600; color: #0D1B33; line-height: 1.3; }
+    .npi-desc { font-size: 11.5px; color: #64748B; margin-top: 2px; }
+    .nav-popover-footer {
+      border-top: 1px solid #F1F5F9; padding-top: 10px; margin-top: 8px; text-align: center;
+    }
+    .nav-popover-footer a {
+      font-size: 12px; font-weight: 700; color: #0284C7; text-decoration: none;
+    }
+
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .btn-get-started {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px; cursor: pointer;
+      font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 700;
+      border: 1.5px solid rgba(255,255,255,0.45); background: transparent;
+      color: #ffffff; text-decoration: none; transition: all 0.2s; white-space: nowrap;
+    }
+    .btn-get-started:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); }
+    #navbar.scrolled .btn-get-started { color: #1E293B; border-color: #CBD5E1; }
+    #navbar.scrolled .btn-get-started:hover { background: rgba(0,0,0,0.04); border-color: #94A3B8; }
+
+    .btn-launch {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 20px; border-radius: 8px; cursor: pointer;
+      font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 800;
+      border: none; background: var(--cyan); color: var(--navy);
+      text-decoration: none; transition: all 0.22s ease; white-space: nowrap;
+      box-shadow: 0 3px 16px rgba(0,194,255,0.35);
+    }
+    .btn-launch:hover { background: #33CFFF; box-shadow: 0 5px 24px rgba(0,194,255,0.5); transform: translateY(-1px); }
+
+    .nav-hamburger-btn {
+      display: none; background: transparent; border: none; color: #fff; cursor: pointer; padding: 6px;
+    }
+    #navbar.scrolled .nav-hamburger-btn { color: var(--navy); }
+    @media (max-width: 991px) {
+      .nav-links, .nav-actions .btn-get-started { display: none; }
+      .nav-hamburger-btn { display: inline-flex; }
+    }
+
+    /* ════ 2. HERO SECTION ════ */
+    .services-hero {
+      position: relative;
+      background: linear-gradient(180deg, #06111F 0%, #0B1D33 100%);
+      padding: 160px 0 80px 0;
+      color: #FFFFFF;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0,194,255,0.12);
+    }
+    .hero-glow-1 {
+      position: absolute; top: -120px; left: 15%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,194,255,0.16) 0%, transparent 70%);
+      pointer-events: none; filter: blur(50px);
+    }
+    .hero-glow-2 {
+      position: absolute; top: 100px; right: 10%; width: 450px; height: 450px;
+      background: radial-gradient(circle, rgba(79,70,229,0.12) 0%, transparent 70%);
+      pointer-events: none; filter: blur(60px);
+    }
+    .hero-pill-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px;
+      background: rgba(0,194,255,0.10); border: 1px solid rgba(0,194,255,0.28);
+      color: var(--cyan); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.14;
+      color: #FFFFFF;
+      max-width: 960px;
+      margin: 0 auto 22px auto;
+      text-align: center;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.6;
+      color: #94A3B8;
+      max-width: 820px;
+      margin: 0 auto 36px auto;
+      text-align: center;
+    }
+    .hero-ctas {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px;
+    }
+
+    /* Sub-nav quick anchor jumps */
+    .services-subnav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .subnav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .subnav-link:hover {
+      background: rgba(0,194,255,0.18);
+      border-color: rgba(0,194,255,0.45);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Stats strip */
+    .services-stats-strip {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 28px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #0D1B33;
+      line-height: 1.1;
+      margin-bottom: 4px;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    /* ════ 3. SERVICES DETAILED SECTIONS ════ */
+    .services-main-container {
+      padding: 80px 0 100px 0;
+    }
+
+    .service-section-block {
+      background: #FFFFFF;
+      border-radius: 24px;
+      border: 1px solid #E2ECF5;
+      box-shadow: 0 8px 30px rgba(13,27,51,0.04);
+      margin-bottom: 48px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      scroll-margin-top: 100px;
+    }
+    .service-section-block:hover {
+      box-shadow: 0 16px 40px rgba(13,27,51,0.08);
+      border-color: rgba(0,194,255,0.3);
+    }
+
+    .service-block-inner {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 0;
+    }
+    @media (max-width: 991px) {
+      .service-block-inner { grid-template-columns: 1fr; }
+    }
+
+    .service-content-col {
+      padding: 44px 44px 40px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media (max-width: 640px) {
+      .service-content-col { padding: 30px 22px; }
+    }
+
+    .service-header-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .service-category-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    /* Categorized accents matching sector cards */
+    .badge-recruitment { background: #E0F2FE; color: #0369A1; }
+    .badge-field { background: #DCFCE7; color: #15803D; }
+    .badge-retail { background: #FEF3C7; color: #B45309; }
+    .badge-events { background: #F3E8FF; color: #7E22CE; }
+    .badge-managed { background: #EEF2FF; color: #4338CA; }
+    .badge-performance { background: #FFE4E6; color: #BE123C; }
+    .badge-affiliate { background: #F0FDF4; color: #166534; }
+    .badge-academy { background: #EDE9FE; color: #5B21B6; }
+
+    .service-sla-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      background: #F1F5F9;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .service-card-title {
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.22;
+      color: #0D1B33;
+      margin-bottom: 14px;
+    }
+    .service-card-desc {
+      font-size: 15.5px;
+      color: #475569;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    /* Sub-section: Roles & Deliverables */
+    .service-spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #F1F5F9;
+    }
+    @media (max-width: 640px) {
+      .service-spec-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    .spec-box-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #0D1B33;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .spec-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .spec-list li {
+      font-size: 13.5px;
+      color: #334155;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.45;
+    }
+    .spec-check {
+      color: #0284C7;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Target industries chips */
+    .service-industry-bar {
+      margin-bottom: 28px;
+      padding: 12px 16px;
+      background: #F8FAFC;
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .ind-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .ind-chip {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1E293B;
+      background: #FFFFFF;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid #CBD5E1;
+    }
+
+    .service-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Visual Col */
+    .service-visual-col {
+      position: relative;
+      background: #F1F5F9;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid #E2ECF5;
+      overflow: hidden;
+      min-height: 380px;
+    }
+    @media (max-width: 991px) {
+      .service-visual-col {
+        border-left: none;
+        border-top: 1px solid #E2ECF5;
+        min-height: 280px;
+      }
+    }
+    .service-visual-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .service-section-block:hover .service-visual-img {
+      transform: scale(1.03);
+    }
+    .service-visual-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      background: linear-gradient(180deg, transparent 0%, rgba(6,17,31,0.85) 100%);
+      color: #FFFFFF;
+    }
+    .visual-quote {
+      font-size: 13.5px;
+      font-style: italic;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.45;
+    }
+    .visual-author {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ════ 4. COMPARISON MATRIX ════ */
+    .comparison-section {
+      background: #0B1D33;
+      color: #FFFFFF;
+      padding: 90px 0;
+      border-top: 1px solid rgba(0,194,255,0.12);
+      border-bottom: 1px solid rgba(0,194,255,0.12);
+    }
+    .comparison-table-wrap {
+      overflow-x: auto;
+      margin-top: 40px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      text-align: left;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 14.5px;
+    }
+    .comparison-table th {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      background: rgba(255,255,255,0.05);
+    }
+    .comparison-table th.col-highlight {
+      color: var(--cyan);
+      background: rgba(0,194,255,0.12);
+    }
+    .comparison-table td.col-highlight {
+      background: rgba(0,194,255,0.06);
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+
+    /* ════ 5. HOW IT WORKS / DEPLOYMENT PROCESS ════ */
+    .how-it-works-section {
+      padding: 90px 0;
+      background: #F8FAFC;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 991px) {
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 580px) {
+      .process-grid { grid-template-columns: 1fr; }
+    }
+    .process-card {
+      background: #FFFFFF;
+      padding: 32px 24px;
+      border-radius: 18px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 18px rgba(13,27,51,0.03);
+      position: relative;
+    }
+    .process-step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #E0F2FE;
+      color: #0284C7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .process-card-title {
+      font-size: 19px;
+      color: #0D1B33;
+      margin-bottom: 10px;
+    }
+    .process-card-desc {
+      font-size: 14px;
+      color: #64748B;
+      line-height: 1.55;
+    }
+
+    /* ════ 6. CLIENT LOGOS SLIDER ════ */
+    .logos-strip {
+      padding: 50px 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      overflow: hidden;
+    }
+    .logos-slider-track {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      width: max-content;
+      animation: logoScroll 38s linear infinite;
+    }
+    .logo-item-img {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.65;
+      transition: filter 0.2s, opacity 0.2s;
+    }
+    .logo-item-img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    @keyframes logoScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ════ 7. FINAL CTA SECTION ════ */
+    .final-cta {
+      background: var(--navy);
+      padding: 80px 0;
+      text-align: center;
+      color: #FFFFFF;
+      border-top: 1px solid rgba(0,194,255,0.15);
+    }
+    .final-cta-title {
+      font-size: clamp(28px, 4.2vw, 44px);
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .final-cta-sub {
+      font-size: 16px;
+      color: #94A3B8;
+      max-width: 580px;
+      margin: 0 auto 32px auto;
+      line-height: 1.6;
+    }
+
+    /* ════ 8. FOOTER ════ */
+    footer {
+      background: #040A12;
+      color: #94A3B8;
+      padding: 70px 0 30px 0;
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    @media (max-width: 860px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    }
+    @media (max-width: 540px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-col h5 {
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links-list a {
+      color: #94A3B8;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-links-list a:hover {
+      color: #FFFFFF;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+    }
+    .footer-locations {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      font-size: 12.5px;
+      color: #64748B;
+    }
+
+    /* ════ 9. MODAL DIALOG ════ */
+    .modal-dialog {
+      margin: auto;
+      border: none;
+      border-radius: 20px;
+      background: transparent;
+      padding: 0;
+      max-width: 600px;
+      width: 92%;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+    }
+    .modal-dialog::backdrop {
+      background: rgba(6, 17, 31, 0.75);
+      backdrop-filter: blur(8px);
+    }
+    .modal-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 32px;
+      position: relative;
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #F1F5F9;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #475569;
+      transition: background 0.15s;
+    }
+    .modal-close-btn:hover { background: #E2E8F0; color: #0D1B33; }
+
+    /* ════ 10. FLOATING WHATSAPP ════ */
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.38);
+      z-index: 190;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+    }
+    .floating-whatsapp-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 30px rgba(37,211,102,0.5);
+    }
+    .floating-whatsapp-tooltip {
+      position: absolute;
+      right: 68px;
+      background: #0D1B33;
+      color: #FFFFFF;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(8px);
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .floating-whatsapp-btn:hover .floating-whatsapp-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ════ MOBILE DRAWER ════ */
+    .nav-mobile-overlay {
+      position: fixed; inset: 0; background: #06111F; z-index: 9999;
+      display: flex; flex-direction: column; padding: 24px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 0.25s, visibility 0.25s;
+      overflow-y: auto;
+    }
+    .nav-mobile-overlay.nm-open { opacity: 1; visibility: visible; pointer-events: auto; }
+    .nm-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+    .nm-close-btn { background: transparent; border: none; color: #fff; cursor: pointer; }
+    .nm-section { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 14px 0; }
+    .nm-trigger {
+      display: flex; justify-content: space-between; align-items: center; width: 100%;
+      background: transparent; border: none; color: #fff; font-size: 16px; font-weight: 600;
+      font-family: 'Instrument Sans', sans-serif; cursor: pointer; text-align: left;
+    }
+    .nm-submenu { display: none; padding-top: 10px; }
+    .nm-submenu.nm-open { display: flex; flex-direction: column; gap: 8px; }
+    .nm-sub-item { color: #94A3B8; text-decoration: none; font-size: 14px; padding: 6px 0; }
+    .nm-actions { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+  </style>
+</head>
+<body>
+
+<!-- ════ 1. NAVBAR ════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-wrap-img">
+          <img src="assets/logo-white.png" alt="DigiHire" class="nav-logo-img logo-white" />
+          <img src="assets/logo-color.png" alt="DigiHire" class="nav-logo-img logo-color" />
+        </div>
+      </a>
+      <ul class="nav-links">
+        <!-- 1. For Brands (Direct Link to /services with hover dropdown) -->
+        <li class="nav-item-clean">
+          <a href="/services" class="nav-link-btn" aria-haspopup="true">
+            For Brands
+            <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-popover-menu" style="width:530px;">
+            <div class="nav-popover-header" style="display:flex;justify-content:space-between;align-items:center;">
+              <span>DigiHire Brand Solutions</span>
+              <a href="/services" style="color:var(--cyan-dim);font-weight:700;font-size:12px;text-decoration:none;">View All Services →</a>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;">
+              <a href="#recruitment" class="nav-popover-item">
+                <div class="npi-title">Sales Recruitment</div>
+                <div class="npi-desc">Permanent &amp; contract sales professionals</div>
+              </a>
+              <a href="#field-sales" class="nav-popover-item">
+                <div class="npi-title">Field Sales &amp; Customer Acquisition</div>
+                <div class="npi-desc">Outbound user growth &amp; foot-soldier teams</div>
+              </a>
+              <a href="#retail" class="nav-popover-item">
+                <div class="npi-title">Retail &amp; In-Store Workforce</div>
+                <div class="npi-desc">Merchandisers &amp; store promo staff</div>
+              </a>
+              <a href="#activations" class="nav-popover-item">
+                <div class="npi-title">Activation &amp; Exhibition Staffing</div>
+                <div class="npi-desc">High-impact brand activation personnel</div>
+              </a>
+              <a href="#managed-workforce" class="nav-popover-item">
+                <div class="npi-title">Managed Workforce Solutions</div>
+                <div class="npi-desc">Multi-location payroll, performance &amp; tracking</div>
+              </a>
+              <a href="#performance-sales" class="nav-popover-item">
+                <div class="npi-title">Performance-Based Sales &amp; Acquisition</div>
+                <div class="npi-desc">Pay strictly for verified sales results</div>
+              </a>
+              <a href="#affiliate-setup" class="nav-popover-item">
+                <div class="npi-title">Affiliate &amp; Sales Programme Setup</div>
+                <div class="npi-desc">Distributed commission networks &amp; pipelines</div>
+              </a>
+              <a href="#sales-academy" class="nav-popover-item">
+                <div class="npi-title">AI-Powered Sales Training</div>
+                <div class="npi-desc">Upskill sales reps with modern AI</div>
+              </a>
+            </div>
+            <div class="nav-popover-footer">
+              <a href="/services">Explore all DigiHire solutions &amp; services →</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- 2. For Talent -->
+        <li class="nav-item-clean">
+          <button type="button" class="nav-link-btn" aria-haspopup="true">
+            For Talent
+            <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-popover-menu" style="width:310px;">
+            <div class="nav-popover-header">Opportunities for Sales Talent</div>
+            <div style="display:flex;flex-direction:column;gap:3px;">
+              <a href="https://talents.digihire.io/signup?module=talent_pool" class="nav-popover-item">
+                <div class="npi-title">Join the Talent Pool</div>
+                <div class="npi-desc">Get discovered by top employers hiring sales talent</div>
+              </a>
+              <a href="/jobs" class="nav-popover-item">
+                <div class="npi-title">Apply for Sales Jobs</div>
+                <div class="npi-desc">Browse full-time, B2B, tech &amp; contract sales roles</div>
+              </a>
+              <a href="https://talents.digihire.io/signup?module=gigs" class="nav-popover-item">
+                <div class="npi-title">Activation &amp; Field Opportunities</div>
+                <div class="npi-desc">Short-term merchandising, promo &amp; event gigs</div>
+              </a>
+              <a href="https://chat.whatsapp.com/DigihireTalentCommunity" target="_blank" rel="noopener noreferrer" class="nav-popover-item">
+                <div class="npi-title">Join WhatsApp Group</div>
+                <div class="npi-desc">Instant gig alerts &amp; peer community</div>
+              </a>
+              <a href="#sales-academy" class="nav-popover-item">
+                <div class="npi-title">Sales Academy</div>
+                <div class="npi-desc">Practical AI-powered sales training</div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- 3. Why DigiHire -->
+        <li class="nav-item-clean">
+          <button type="button" class="nav-link-btn" aria-haspopup="true">
+            Why DigiHire
+            <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-popover-menu" style="width:230px;">
+            <div class="nav-popover-header">Company</div>
+            <div style="display:flex;flex-direction:column;gap:3px;">
+              <a href="/about" class="nav-popover-item"><div class="npi-title">About</div></a>
+              <a href="/blog" class="nav-popover-item"><div class="npi-title">Blog</div></a>
+              <a href="/events" class="nav-popover-item"><div class="npi-title">Events</div></a>
+              <a href="/services" class="nav-popover-item"><div class="npi-title">All Solutions</div></a>
+            </div>
+          </div>
+        </li>
+
+        <!-- 4. Jobs -->
+        <li><a href="/jobs" class="nav-plain-link">Jobs</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-actions">
+      <button type="button" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan btn-launch">
+        Request Talent
+        <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="nav-hamburger-btn" id="nav-hamburger-btn" aria-label="Open mobile menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════ 2. HERO SECTION ══════════════════════════ -->
+<header class="services-hero">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div style="text-align:center;">
+      <div class="hero-pill-badge">
+        <i data-lucide="sparkles" class="lucide ic-sm"></i>
+        <span>DigiHire Brand Solutions &amp; Workforce Engine</span>
+      </div>
+      <h1 class="hero-title">
+        Sales Recruitment, Field Activations &amp; Managed Workforce Solutions
+      </h1>
+      <p class="hero-sub">
+        Whether you need an individual quota-carrying B2B Sales Executive, a national retail merchandising network, an exhibition activation crew, or an end-to-end managed field sales engine across Africa — DigiHire delivers verified people and infrastructure.
+      </p>
+      <div class="hero-ctas">
+        <button type="button" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan btn-lg">
+          Request Talent Now
+          <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+        </button>
+        <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">
+          Speak with a Sales Specialist
+        </a>
+      </div>
+
+      <!-- Quick anchor filter pills -->
+      <div class="services-subnav-wrap">
+        <a href="#recruitment" class="subnav-link">Sales Recruitment</a>
+        <a href="#field-sales" class="subnav-link">Field Customer Acquisition</a>
+        <a href="#retail" class="subnav-link">Retail &amp; Merchandising</a>
+        <a href="#activations" class="subnav-link">Activation &amp; Events</a>
+        <a href="#managed-workforce" class="subnav-link">Managed Workforce</a>
+        <a href="#performance-sales" class="subnav-link">Performance-Based Sales</a>
+        <a href="#affiliate-setup" class="subnav-link">Affiliate Programmes</a>
+        <a href="#sales-academy" class="subnav-link">AI Sales Academy</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ════ 2.5 STATS STRIP ═════════════════════════ -->
+<section class="services-stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Sales Talents Recruited &amp; Deployed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5,000+</div>
+        <div class="stat-label">Verified Field Agents Nationwide</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">36</div>
+        <div class="stat-label">States Covered Across Nigeria &amp; West Africa</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">7 Days</div>
+        <div class="stat-label">Average Time from Brief to Deployment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 3. EXTENSIVE SERVICES BREAKDOWN ══════════ -->
+<main class="services-main-container">
+  <div class="container">
+
+    <!-- 1. SALES RECRUITMENT -->
+    <article class="service-section-block" id="recruitment">
+      <div class="service-block-inner">
+        <div class="service-content-col">
+          <div>
+            <div class="service-header-row">
+              <span class="service-category-badge badge-recruitment">Recruitment &amp; Headhunting</span>
+              <span class="service-sla-chip"><i data-lucide="clock" class="lucide ic-sm"></i> 7-Day Shortlist</span>
+              <span class="service-sla-chip"><i data-lucide="shield-check" class="lucide ic-sm"></i> 90-Day Guarantee</span>
+            </div>
+            <h2 class="service-card-title">Sales Recruitment &amp; Tech Sales Headhunting</h2>
+            <p class="service-card-desc">
+              Hiring salespeople is notoriously difficult when relying on general job boards. DigiHire specializes exclusively in sales talent. We evaluate candidates on actual quota attainment, objection handling, outbound prospecting rigor, and CRM discipline before they reach your interview table.
+            </p>
+
+            <div class="service-spec-grid">
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="users" class="lucide ic-sm" style="color:#0284C7;"></i> Roles We Recruit</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Account Executives (AEs) &amp; Closers</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Sales Development Reps (SDRs / BDRs)</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Enterprise Sales Directors &amp; VPs</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Inside Sales Specialists</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Channel &amp; Partnership Managers</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="package-check" class="lucide ic-sm" style="color:#0284C7;"></i> What DigiHire Delivers</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Verified past performance audit</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Live commercial closing simulation</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> 90-day free replacement guarantee</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Salary benchmarking &amp; OTE design</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Offer-to-onboarding support</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-industry-bar">
+              <span class="ind-label">Ideal For:</span>
+              <span class="ind-chip">B2B SaaS</span>
+              <span class="ind-chip">Fintech &amp; Payments</span>
+              <span class="ind-chip">Logistics &amp; Supply Chain</span>
+              <span class="ind-chip">HealthTech</span>
+              <span class="ind-chip">Professional Services</span>
+            </div>
+          </div>
+
+          <div class="service-actions-row">
+            <button type="button" onclick="openBrandWaitlistModal(event, 'Sales Recruitment')" class="btn btn-cyan">
+              Request Sales Talent
+              <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+            </button>
+            <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%20need%20to%20recruit%20sales%20talent." target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
+              Discuss Recruitment Role
+            </a>
+          </div>
+        </div>
+
+        <div class="service-visual-col">
+          <img src="/sales-talent-chinedu.jpg" alt="Sales Executive Recruitment" class="service-visual-img" loading="lazy" />
+          <div class="service-visual-overlay">
+            <p class="visual-quote">"DigiHire presented 3 pre-vetted Account Executives within 6 days. Our new hire closed a deal in their third week."</p>
+            <p class="visual-author">ASUS Partner Network — Commercial Sales</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. FIELD SALES & CUSTOMER ACQUISITION -->
+    <article class="service-section-block" id="field-sales">
+      <div class="service-block-inner">
+        <div class="service-content-col">
+          <div>
+            <div class="service-header-row">
+              <span class="service-category-badge badge-field">Outbound Field Sales</span>
+              <span class="service-sla-chip"><i data-lucide="map-pin" class="lucide ic-sm"></i> 36 States Geotagged</span>
+              <span class="service-sla-chip"><i data-lucide="activity" class="lucide ic-sm"></i> Real-Time Daily Reporting</span>
+            </div>
+            <h2 class="service-card-title">Field Sales &amp; Direct Customer Acquisition</h2>
+            <p class="service-card-desc">
+              When digital marketing hits customer acquisition cost (CAC) ceilings, on-the-ground foot soldiers deliver undeniable results. DigiHire deploys disciplined field sales agents directly into markets, trade clusters, motor parks, business districts, and university campuses.
+            </p>
+
+            <div class="service-spec-grid">
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="users" class="lucide ic-sm" style="color:#15803D;"></i> Deployed Profiles</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Direct Sales Agents (DSAs)</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Merchant Onboarding Officers</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Territory Route Canvassers</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> App Download &amp; KYC Agents</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Field Team Supervisors</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="package-check" class="lucide ic-sm" style="color:#15803D;"></i> What DigiHire Delivers</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Route mapping &amp; footfall zoning</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> GPS mobile check-in &amp; lead tracking</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Target-driven daily compensation</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Quality assurance &amp; fraud prevention</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Rapid squad scaling up to 500+ agents</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-industry-bar">
+              <span class="ind-label">Ideal For:</span>
+              <span class="ind-chip">Fintech Apps &amp; Wallets</span>
+              <span class="ind-chip">POS / Merchant Aggregators</span>
+              <span class="ind-chip">Telecoms &amp; Internet</span>
+              <span class="ind-chip">Micro-Insurance</span>
+              <span class="ind-chip">FMCG Wholesalers</span>
+            </div>
+          </div>
+
+          <div class="service-actions-row">
+            <button type="button" onclick="openBrandWaitlistModal(event, 'Field Sales & Customer Acquisition')" class="btn btn-cyan">
+              Deploy Field Sales Team
+              <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+            </button>
+            <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%20want%20to%20deploy%20a%20field%20sales%20team." target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
+              Discuss Route Plan
+            </a>
+          </div>
+        </div>
+
+        <div class="service-visual-col">
+          <img src="/avatar-lead-abuja.jpg" alt="Field Sales Team" class="service-visual-img" loading="lazy" />
+          <div class="service-visual-overlay">
+            <p class="visual-quote">"Over 45,000 verified merchant sign-ups completed across Lagos, Ibadan, and Kano within 90 days."</p>
+            <p class="visual-author">KoboGo — Merchant Acquisition Drive</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. RETAIL & IN-STORE WORKFORCE -->
+    <article class="service-section-block" id="retail">
+      <div class="service-block-inner">
+        <div class="service-content-col">
+          <div>
+            <div class="service-header-row">
+              <span class="service-category-badge badge-retail">Retail &amp; In-Store</span>
+              <span class="service-sla-chip"><i data-lucide="shopping-bag" class="lucide ic-sm"></i> Supermarket &amp; Chain Reach</span>
+              <span class="service-sla-chip"><i data-lucide="bar-chart-2" class="lucide ic-sm"></i> Planogram Compliance</span>
+            </div>
+            <h2 class="service-card-title">Retail Stores &amp; In-Store Workforce Management</h2>
+            <p class="service-card-desc">
+              Getting onto retail shelves is only half the battle; ensuring items actually move into shopping carts requires trained in-store promoters and proactive merchandisers. DigiHire places motivated retail floor personnel to drive sell-through, sample products, and prevent stock-outs.
+            </p>
+
+            <div class="service-spec-grid">
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="users" class="lucide ic-sm" style="color:#B45309;"></i> Retail Roles Deployed</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> In-Store Sales Promoters</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Visual Merchandisers</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Product Demonstrators</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Shelf Stocking &amp; Inventory Clerks</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Store Brand Ambassadors</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="package-check" class="lucide ic-sm" style="color:#B45309;"></i> What DigiHire Delivers</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Shelf space share auditing</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Daily sell-through volume reporting</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Out-of-stock notification alerts</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Professional grooming &amp; brand attire</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Immediate replacement for absences</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-industry-bar">
+              <span class="ind-label">Ideal For:</span>
+              <span class="ind-chip">Supermarkets &amp; Hypermarts</span>
+              <span class="ind-chip">FMCG &amp; Packaged Foods</span>
+              <span class="ind-chip">Consumer Electronics</span>
+              <span class="ind-chip">Beverage &amp; Spirits</span>
+              <span class="ind-chip">Beauty &amp; Personal Care</span>
+            </div>
+          </div>
+
+          <div class="service-actions-row">
+            <button type="button" onclick="openBrandWaitlistModal(event, 'Retail & In-Store Workforce')" class="btn btn-cyan">
+              Request Retail Staff
+              <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+            </button>
+            <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%20need%20retail%20store%20promoters." target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
+              Discuss Store Locations
+            </a>
+          </div>
+        </div>
+
+        <div class="service-visual-col">
+          <img src="/sector-retail-attendant.jpg" alt="Retail Merchandiser and Sales" class="service-visual-img" loading="lazy" />
+          <div class="service-visual-overlay">
+            <p class="visual-quote">"Consistent shelf presence and trained floor attendants across 18 supermarket outlets doubled our monthly sell-through rate."</p>
+            <p class="visual-author">Westgate Retail Partner — Electronics Division</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. ACTIVATION, EVENT & EXHIBITION STAFFING -->
+    <article class="service-section-block" id="activations">
+      <div class="service-block-inner">
+        <div class="service-content-col">
+          <div>
+            <div class="service-header-row">
+              <span class="service-category-badge badge-events">Experiential &amp; Exhibitions</span>
+              <span class="service-sla-chip"><i data-lucide="calendar" class="lucide ic-sm"></i> Turnkey Event Briefing</span>
+              <span class="service-sla-chip"><i data-lucide="qr-code" class="lucide ic-sm"></i> Digital Lead Capture</span>
+            </div>
+            <h2 class="service-card-title">Activation, Event &amp; Exhibition Staffing</h2>
+            <p class="service-card-desc">
+              Your trade booth or experiential activation is only as memorable as the people representing your brand. DigiHire recruits, trains, and coordinates articulate, polished exhibition staff, hosts, and experiential presenters who understand how to capture attention and convert footfall into qualified leads.
+            </p>
+
+            <div class="service-spec-grid">
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="users" class="lucide ic-sm" style="color:#7E22CE;"></i> Event Roles Deployed</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Exhibition Hosts &amp; Hostesses</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Live Product Demonstrators</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Brand Ambassadors &amp; MCs</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Registration &amp; QR Lead Ushers</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Roadshow &amp; Mall Tour Crew</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="package-check" class="lucide ic-sm" style="color:#7E22CE;"></i> What DigiHire Delivers</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> In-depth script &amp; pitch rehearsals</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Branded uniform &amp; badge coordination</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Mobile digital lead capture integration</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> On-site team supervisor &amp; logistics lead</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Post-event engagement analytics</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-industry-bar">
+              <span class="ind-label">Ideal For:</span>
+              <span class="ind-chip">Trade Expos &amp; B2B Conferences</span>
+              <span class="ind-chip">Mall Popups &amp; Activations</span>
+              <span class="ind-chip">Product Launch Events</span>
+              <span class="ind-chip">Campus &amp; Community Drives</span>
+              <span class="ind-chip">Festival Sponsorships</span>
+            </div>
+          </div>
+
+          <div class="service-actions-row">
+            <button type="button" onclick="openBrandWaitlistModal(event, 'Activation, Event & Exhibition Staffing')" class="btn btn-cyan">
+              Book Event Staff
+              <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+            </button>
+            <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%20need%20staff%20for%20an%20upcoming%20event." target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
+              Discuss Event Dates
+            </a>
+          </div>
+        </div>
+
+        <div class="service-visual-col">
+          <img src="/sector-event-staff.jpg" alt="Exhibition and Event Staff" class="service-visual-img" loading="lazy" />
+          <div class="service-visual-overlay">
+            <p class="visual-quote">"DigiHire staffed our 4-day tech expo booth. Their team gathered over 1,800 scanned qualified business leads with zero hiccups."</p>
+            <p class="visual-author">HP West Africa — Commercial Showcase</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. MANAGED WORKFORCE SOLUTIONS -->
+    <article class="service-section-block" id="managed-workforce">
+      <div class="service-block-inner">
+        <div class="service-content-col">
+          <div>
+            <div class="service-header-row">
+              <span class="service-category-badge badge-managed">Turnkey Workforce Outsourcing</span>
+              <span class="service-sla-chip"><i data-lucide="file-text" class="lucide ic-sm"></i> 100% Tax &amp; Payroll Compliant</span>
+              <span class="service-sla-chip"><i data-lucide="repeat" class="lucide ic-sm"></i> 48-Hour Replacement</span>
+            </div>
+            <h2 class="service-card-title">Managed Workforce Solutions (Multi-Location SLA)</h2>
+            <p class="service-card-desc">
+              Managing 50, 100, or 300+ sales personnel across disparate states is an operational and compliance minefield. DigiHire takes over the entire operational burden: sourcing, deployment, GPS attendance, performance KPIs, monthly payroll disbursement, statutory remittances, and instant replacements.
+            </p>
+
+            <div class="service-spec-grid">
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="users" class="lucide ic-sm" style="color:#4338CA;"></i> Workforce Capabilities</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Distributed Regional Sales Forces</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Multi-State Merchandiser Fleets</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Dedicated Territory Account Reps</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> State &amp; Regional Operations Leads</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Performance Quality Officers</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="package-check" class="lucide ic-sm" style="color:#4338CA;"></i> Managed Infrastructure</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Consolidated single monthly billing invoice</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Biometric / GPS mobile attendance</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Complete PAYE, pension &amp; insurance cover</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> 48-hour replacement guarantee</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Weekly KPI reviews &amp; churn management</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-industry-bar">
+              <span class="ind-label">Ideal For:</span>
+              <span class="ind-chip">Expanding Scale-Ups</span>
+              <span class="ind-chip">National Consumer Brands</span>
+              <span class="ind-chip">Logistics &amp; Delivery Fleets</span>
+              <span class="ind-chip">Pan-African Corporations</span>
+            </div>
+          </div>
+
+          <div class="service-actions-row">
+            <button type="button" onclick="openBrandWaitlistModal(event, 'Managed Workforce Solutions')" class="btn btn-cyan">
+              Get Managed Workforce Proposal
+              <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+            </button>
+            <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%20want%20to%20outsource%20our%20field%20workforce." target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
+              Request Workforce Audit
+            </a>
+          </div>
+        </div>
+
+        <div class="service-visual-col">
+          <img src="/bento-african-team.jpg" alt="Managed Workforce Operation" class="service-visual-img" loading="lazy" />
+          <div class="service-visual-overlay">
+            <p class="visual-quote">"DigiHire manages 120+ field sales reps across 14 Nigerian states for us. We get zero payroll headaches and predictable monthly volume."</p>
+            <p class="visual-author">Chidinma — Tech School Africa</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. PERFORMANCE-BASED SALES -->
+    <article class="service-section-block" id="performance-sales">
+      <div class="service-block-inner">
+        <div class="service-content-col">
+          <div>
+            <div class="service-header-row">
+              <span class="service-category-badge badge-performance">Performance-Driven</span>
+              <span class="service-sla-chip"><i data-lucide="trending-up" class="lucide ic-sm"></i> Pay-Per-Acquisition</span>
+              <span class="service-sla-chip"><i data-lucide="shield" class="lucide ic-sm"></i> Fraud-Audited Conversions</span>
+            </div>
+            <h2 class="service-card-title">Performance-Based Sales &amp; Acquisition Campaigns</h2>
+            <p class="service-card-desc">
+              Tie your budget strictly to business results. DigiHire structures performance-backed acquisition campaigns where payment is tethered to verified milestones: active funded accounts, first transactions, contracted merchants, or closed commercial deals.
+            </p>
+
+            <div class="service-spec-grid">
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="users" class="lucide ic-sm" style="color:#BE123C;"></i> Performance Squads</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Commission-Backed Outbound Reps</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Merchant Acquisition Squads</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Digital Campaign Activators</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Campus Ambassador Networks</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="package-check" class="lucide ic-sm" style="color:#BE123C;"></i> Campaign Mechanics</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Milestone verification protocols</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Real-time anti-fraud telemetry</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Automated commission reconciliation</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Transparent conversion tracking portal</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-industry-bar">
+              <span class="ind-label">Ideal For:</span>
+              <span class="ind-chip">Digital Wallets &amp; Neobanks</span>
+              <span class="ind-chip">Investment &amp; Savings Apps</span>
+              <span class="ind-chip">Subscription Services</span>
+              <span class="ind-chip">High-Margin B2B Products</span>
+            </div>
+          </div>
+
+          <div class="service-actions-row">
+            <button type="button" onclick="openBrandWaitlistModal(event, 'Performance-Based Sales & Acquisition')" class="btn btn-cyan">
+              Launch Performance Campaign
+              <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+            </button>
+            <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%20want%20to%20learn%20about%20performance-based%20sales." target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
+              Discuss Commission Model
+            </a>
+          </div>
+        </div>
+
+        <div class="service-visual-col">
+          <img src="/sales-talent-amina.jpg" alt="Performance Sales" class="service-visual-img" loading="lazy" />
+          <div class="service-visual-overlay">
+            <p class="visual-quote">"Zero upfront waste. We only paid for verified funded wallets. It became our most predictable channel in 2026."</p>
+            <p class="visual-author">Regional Fintech Scaleup</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. AFFILIATE & SALES PROGRAMME SETUP -->
+    <article class="service-section-block" id="affiliate-setup">
+      <div class="service-block-inner">
+        <div class="service-content-col">
+          <div>
+            <div class="service-header-row">
+              <span class="service-category-badge badge-affiliate">Channel Architecture</span>
+              <span class="service-sla-chip"><i data-lucide="share-2" class="lucide ic-sm"></i> Distributed Affiliate Network</span>
+            </div>
+            <h2 class="service-card-title">Affiliate &amp; Distributed Sales Programme Setup</h2>
+            <p class="service-card-desc">
+              Transform passionate customers, trade influencers, community leaders, and independent sales pros into an incentivized sales engine. DigiHire architects, launches, and operates complete distributed affiliate frameworks tailored to African payment and trust dynamics.
+            </p>
+
+            <div class="service-spec-grid">
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="users" class="lucide ic-sm" style="color:#166534;"></i> Network Channels</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Campus Ambassador Programmes</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Trade Association Micro-Distributors</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Creator &amp; Influencer Affiliates</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> B2B Referral Partner Networks</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="package-check" class="lucide ic-sm" style="color:#166534;"></i> Programme Deliverables</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Tiered commission &amp; gamification design</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Digital onboarding guide &amp; sales toolkits</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Tracking link &amp; promo code generation</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Automated bank account payout routing</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-industry-bar">
+              <span class="ind-label">Ideal For:</span>
+              <span class="ind-chip">EdTech &amp; Courses</span>
+              <span class="ind-chip">Direct-To-Consumer (D2C)</span>
+              <span class="ind-chip">SaaS Products</span>
+              <span class="ind-chip">Financial Services</span>
+            </div>
+          </div>
+
+          <div class="service-actions-row">
+            <button type="button" onclick="openBrandWaitlistModal(event, 'Affiliate & Sales Programme Setup')" class="btn btn-cyan">
+              Design Affiliate Programme
+              <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+            </button>
+            <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%20want%20to%20set%20up%20an%20affiliate%20sales%20programme." target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
+              Explore Programme Models
+            </a>
+          </div>
+        </div>
+
+        <div class="service-visual-col">
+          <img src="/sector-fmcg-merchandising.jpg" alt="Affiliate Sales Program" class="service-visual-img" loading="lazy" />
+          <div class="service-visual-overlay">
+            <p class="visual-quote">"Over 400 active student ambassadors deployed across 12 federal universities driving continuous subscription sign-ups."</p>
+            <p class="visual-author">Pan-African Learning App</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8. AI-POWERED SALES ACADEMY -->
+    <article class="service-section-block" id="sales-academy">
+      <div class="service-block-inner">
+        <div class="service-content-col">
+          <div>
+            <div class="service-header-row">
+              <span class="service-category-badge badge-academy">Enablement &amp; AI Academy</span>
+              <span class="service-sla-chip"><i data-lucide="cpu" class="lucide ic-sm"></i> 2026 AI Playbooks</span>
+              <span class="service-sla-chip"><i data-lucide="award" class="lucide ic-sm"></i> Certified Graduates</span>
+            </div>
+            <h2 class="service-card-title">DigiHire AI-Powered Sales Academy &amp; Enablement</h2>
+            <p class="service-card-desc">
+              Sales workflows have evolved. Modern sales professionals who harness AI for prospect research, automated qualification, hyper-personalized cadences, and objection handling outperform traditional reps by 3x. DigiHire upskills internal corporate sales teams and supplies vetted academy graduates.
+            </p>
+
+            <div class="service-spec-grid">
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="book-open" class="lucide ic-sm" style="color:#5B21B6;"></i> Curriculum Highlights</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> AI-Powered Account Research &amp; ICP Mapping</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Consultative Discovery &amp; Objection Handling</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Modern Multi-Touch Outbound Cadences</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> CRM Pipeline Hygiene &amp; Forecasting</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="spec-box-title"><i data-lucide="package-check" class="lucide ic-sm" style="color:#5B21B6;"></i> Corporate Training Scope</h4>
+                <ul class="spec-list">
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Custom 2 to 4-week company cohorts</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Live enterprise pitch &amp; cold call simulations</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Individual sales rep competency scorecard</li>
+                  <li><i data-lucide="check" class="lucide ic-sm spec-check"></i> Post-training revenue KPI tracking</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-industry-bar">
+              <span class="ind-label">Ideal For:</span>
+              <span class="ind-chip">Corporate Sales Teams</span>
+              <span class="ind-chip">B2B SaaS Scale-Ups</span>
+              <span class="ind-chip">Banking &amp; Insurance Sales</span>
+              <span class="ind-chip">Enterprise Account Teams</span>
+            </div>
+          </div>
+
+          <div class="service-actions-row">
+            <button type="button" onclick="openBrandWaitlistModal(event, 'AI-Powered Sales Training')" class="btn btn-cyan">
+              Explore Sales Academy
+              <i data-lucide="arrow-right" class="lucide ic-sm"></i>
+            </button>
+            <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%20am%20interested%20in%20sales%20training%20for%20my%20team." target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
+              Download Syllabus
+            </a>
+          </div>
+        </div>
+
+        <div class="service-visual-col">
+          <img src="/avatar-chidinma.jpg" alt="Sales Academy Training" class="service-visual-img" loading="lazy" />
+          <div class="service-visual-overlay">
+            <p class="visual-quote">"Upskilling our internal SDRs with DigiHire's AI prospecting framework shortened our cold-to-meeting cycle from 18 days to 5 days."</p>
+            <p class="visual-author">Enterprise Tech Sales Director</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<!-- ════ 4. COMPARISON MATRIX ═════════════════════ -->
+<section class="comparison-section">
+  <div class="container">
+    <div style="text-align:center;max-width:820px;margin:0 auto;">
+      <h2 class="section-heading" style="font-size:clamp(30px,4vw,44px);color:#FFFFFF;margin-bottom:14px;">
+        Why Leading Brands Choose DigiHire
+      </h2>
+      <p style="font-size:16px;color:#94A3B8;">
+        How our managed sales &amp; field workforce platform compares against traditional recruitment agencies and direct internal hiring.
+      </p>
+    </div>
+
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:28%;">Capability / Factor</th>
+            <th class="col-highlight" style="width:28%;">DigiHire Platform</th>
+            <th style="width:22%;">Traditional Agencies</th>
+            <th style="width:22%;">Direct In-House Hiring</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Time to Deployment</strong></td>
+            <td class="col-highlight"><strong>5 to 7 Days</strong> (Pre-vetted talent pool)</td>
+            <td>4 to 8 Weeks</td>
+            <td>6 to 12 Weeks</td>
+          </tr>
+          <tr>
+            <td><strong>Geographic Reach</strong></td>
+            <td class="col-highlight"><strong>All 36 States in Nigeria</strong> + Regional Hubs</td>
+            <td>Usually single-city (Lagos only)</td>
+            <td>Fragmented &amp; expensive to coordinate</td>
+          </tr>
+          <tr>
+            <td><strong>Replacement Guarantee</strong></td>
+            <td class="col-highlight"><strong>48-Hour Free Replacement</strong> on field staff</td>
+            <td>Onerous 30-day notice with extra fees</td>
+            <td>Costly restart of recruitment pipeline</td>
+          </tr>
+          <tr>
+            <td><strong>Attendance &amp; GPS Telemetry</strong></td>
+            <td class="col-highlight"><strong>Real-time mobile check-in &amp; lead tracking</strong></td>
+            <td>None (Manual self-reporting)</td>
+            <td>Requires buying third-party software</td>
+          </tr>
+          <tr>
+            <td><strong>Payroll &amp; Tax Compliance</strong></td>
+            <td class="col-highlight"><strong>100% Handled by DigiHire</strong> under 1 SLA</td>
+            <td>Client handles all statutory overhead</td>
+            <td>Heavy HR and legal administrative load</td>
+          </tr>
+          <tr>
+            <td><strong>Specialization</strong></td>
+            <td class="col-highlight"><strong>100% Dedicated to Commercial &amp; Sales</strong></td>
+            <td>Generalist staffing (drivers, cleaners, admin)</td>
+            <td>Depends on internal hiring team expertise</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 5. HOW IT WORKS ══════════════════════════ -->
+<section class="how-it-works-section">
+  <div class="container">
+    <div style="text-align:center;max-width:760px;margin:0 auto;">
+      <h2 class="section-heading" style="font-size:clamp(30px,4vw,42px);color:#0D1B33;margin-bottom:12px;">
+        How DigiHire Deploys Your Team in 4 Steps
+      </h2>
+      <p style="font-size:16px;color:#64748B;">
+        Fast, structured, and accountable. From initial brief to active field execution in under 7 days.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-step-num">01</div>
+        <h3 class="process-card-title">Scope &amp; Workforce Brief</h3>
+        <p class="process-card-desc">
+          Tell us your sales target, role specifications, required locations, and commercial model. We finalize targets and job descriptions within 24 hours.
+        </p>
+      </div>
+      <div class="process-card">
+        <div class="process-step-num">02</div>
+        <h3 class="process-card-title">Vetting &amp; Roleplay Auditing</h3>
+        <p class="process-card-desc">
+          Candidates from our 5,000+ talent pool undergo rigorous screening, past performance checks, and live commercial closing simulations.
+        </p>
+      </div>
+      <div class="process-card">
+        <div class="process-step-num">03</div>
+        <h3 class="process-card-title">Deployment &amp; Product Briefing</h3>
+        <p class="process-card-desc">
+          We onboard your squad, drill brand messaging, provide mobile GPS tracking tools, and deploy agents onto designated retail floors or field routes.
+        </p>
+      </div>
+      <div class="process-card">
+        <div class="process-step-num">04</div>
+        <h3 class="process-card-title">Performance &amp; SLA Management</h3>
+        <p class="process-card-desc">
+          Track daily verified numbers on our dashboard. Underperforming agents are seamlessly replaced within 48 hours without disrupting campaign momentum.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 6. CLIENT LOGOS SLIDER ═══════════════════ -->
+<section class="logos-strip">
+  <div class="container" style="margin-bottom:20px;text-align:center;">
+    <p style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#94A3B8;">
+      Trusted by Leading Enterprises &amp; Fast-Growing Brands Across Africa
+    </p>
+  </div>
+  <div class="logos-slider-track">
+    <img src="logos/westgate.png" alt="Westgate" class="logo-item-img" />
+    <img src="logos/hp.png" alt="HP" class="logo-item-img" />
+    <img src="logos/british-council.png" alt="British Council" class="logo-item-img" />
+    <img src="logos/jumia.png" alt="Jumia" class="logo-item-img" />
+    <img src="logos/picknfix.png" alt="PicknFix" class="logo-item-img" />
+    <img src="logos/konga.png" alt="Konga" class="logo-item-img" />
+    <img src="logos/blakskill.png" alt="Blakskill" class="logo-item-img" />
+    <img src="logos/betking.png" alt="BetKing" class="logo-item-img" />
+    <img src="logos/cloudmylab.png" alt="CloudmyLab" class="logo-item-img" />
+    <img src="logos/ezipay.png" alt="eziPay" class="logo-item-img" />
+    <img src="logos/9mobile.png" alt="9mobile" class="logo-item-img" />
+    <img src="logos/breet.png" alt="Breet" class="logo-item-img" />
+    <!-- Duplicate set for infinite loop -->
+    <img src="logos/westgate.png" alt="Westgate" class="logo-item-img" />
+    <img src="logos/hp.png" alt="HP" class="logo-item-img" />
+    <img src="logos/british-council.png" alt="British Council" class="logo-item-img" />
+    <img src="logos/jumia.png" alt="Jumia" class="logo-item-img" />
+    <img src="logos/picknfix.png" alt="PicknFix" class="logo-item-img" />
+    <img src="logos/konga.png" alt="Konga" class="logo-item-img" />
+    <img src="logos/blakskill.png" alt="Blakskill" class="logo-item-img" />
+    <img src="logos/betking.png" alt="BetKing" class="logo-item-img" />
+    <img src="logos/cloudmylab.png" alt="CloudmyLab" class="logo-item-img" />
+    <img src="logos/ezipay.png" alt="eziPay" class="logo-item-img" />
+    <img src="logos/9mobile.png" alt="9mobile" class="logo-item-img" />
+    <img src="logos/breet.png" alt="Breet" class="logo-item-img" />
+  </div>
+</section>
+
+<!-- ════ 7. FINAL CTA SECTION ═════════════════════ -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="final-cta-title">Ready to Build Your Sales &amp; Activation Team?</h2>
+    <p class="final-cta-sub">
+      Tell us the talent or team you need for an upcoming hire, campaign, activation or ongoing workforce requirement. We'll assemble the right personnel, fast.
+    </p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <button type="button" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan btn-lg">
+        Request Talent
+      </button>
+      <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">
+        Chat with us on WhatsApp
+      </a>
+    </div>
+    <p style="margin-top:20px;font-size:13.5px;color:#7A9CC5;">
+      Prefer email? Contact <a href="mailto:digihirenigeria@gmail.com" style="color:var(--cyan);font-weight:700;text-decoration:none;">digihirenigeria@gmail.com</a>
+    </p>
+  </div>
+</section>
+
+<!-- ════ 8. FOOTER ════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" style="display:inline-block;margin-bottom:16px;">
+          <img src="assets/logo-white.png" alt="DigiHire" style="height:32px;width:auto;" />
+        </a>
+        <p style="font-size:14px;color:#94A3B8;max-width:320px;line-height:1.6;margin-bottom:20px;">
+          Nigeria &amp; Africa's premier sales recruitment and activation deployment platform. Delivering verified commercial talent and managed field execution.
+        </p>
+        <div style="display:flex;gap:12px;align-items:center;">
+          <a href="https://twitter.com/digihireio" target="_blank" rel="noopener noreferrer" style="color:#94A3B8;text-decoration:none;"><i data-lucide="twitter" class="lucide ic-sm"></i></a>
+          <a href="https://linkedin.com/company/digihireio" target="_blank" rel="noopener noreferrer" style="color:#94A3B8;text-decoration:none;"><i data-lucide="linkedin" class="lucide ic-sm"></i></a>
+          <a href="https://instagram.com/digihire.io" target="_blank" rel="noopener noreferrer" style="color:#94A3B8;text-decoration:none;"><i data-lucide="instagram" class="lucide ic-sm"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Solutions for Brands</h5>
+        <ul class="footer-links-list">
+          <li><a href="/services#recruitment">Sales Recruitment</a></li>
+          <li><a href="/services#field-sales">Field Customer Acquisition</a></li>
+          <li><a href="/services#retail">Retail &amp; In-Store Teams</a></li>
+          <li><a href="/services#activations">Exhibition Staffing</a></li>
+          <li><a href="/services#managed-workforce">Managed Workforce</a></li>
+          <li><a href="/services#performance-sales">Performance-Based Sales</a></li>
+          <li><a href="/services#sales-academy">Sales Academy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>For Sales Talent</h5>
+        <ul class="footer-links-list">
+          <li><a href="https://talents.digihire.io/signup?module=talent_pool">Join the Talent Pool</a></li>
+          <li><a href="/jobs">Apply for Sales Jobs</a></li>
+          <li><a href="https://talents.digihire.io/signup?module=gigs">Field Opportunities</a></li>
+          <li><a href="https://chat.whatsapp.com/DigihireTalentCommunity" target="_blank" rel="noopener noreferrer">WhatsApp Community</a></li>
+          <li><a href="/services#sales-academy">AI Sales Training</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company &amp; Legal</h5>
+        <ul class="footer-links-list">
+          <li><a href="/about">About DigiHire</a></li>
+          <li><a href="/blog">Insights &amp; Blog</a></li>
+          <li><a href="/events">Events &amp; Webinars</a></li>
+          <li><a href="/contact">Contact Support</a></li>
+          <li><a href="mailto:digihirenigeria@gmail.com">digihirenigeria@gmail.com</a></li>
+          <li><a href="tel:+2347073848138">+234 707 384 8138</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 DigiHire Technologies Ltd. All rights reserved.</div>
+      <div class="footer-locations">
+        <span>Lagos, Nigeria</span>
+        <span>•</span>
+        <span>Abuja, FCT</span>
+        <span>•</span>
+        <span>Port Harcourt</span>
+        <span>•</span>
+        <span>Kano</span>
+        <span>•</span>
+        <span>Accra, Ghana</span>
+        <span>•</span>
+        <span>Nairobi, Kenya</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ 9. BRAND WAITLIST MODAL DIALOG ══════════ -->
+<dialog id="waitlist-modal" class="modal-dialog">
+  <div class="modal-card">
+    <button type="button" class="modal-close-btn" onclick="closeBrandWaitlistModal()" aria-label="Close dialog">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-header" style="margin-bottom:18px;">
+      <h3 class="modal-title" style="font-size:24px;color:#0D1B33;margin-bottom:8px;">Request Talent</h3>
+      <p class="modal-sub" style="font-size:14px;color:#475569;line-height:1.55;">
+        Tell us the talent or team you need for an upcoming hire, campaign, activation or ongoing workforce requirement.
+      </p>
+      <p style="margin-top:10px;font-size:13px;color:#64748B;">
+        Prefer email? Contact <a href="mailto:digihirenigeria@gmail.com" style="color:#0284C7;font-weight:700;text-decoration:none;">digihirenigeria@gmail.com</a>
+      </p>
+    </div>
+    <div class="modal-body">
+      <iframe id="fluentform" width="100%" height="500px" style="min-height: 500px;width: 100%;border:none;border-radius:12px;" frameborder="0" src="https://segun.innoveal.com.ng/?fluent-form=28&embedded=1"></iframe>
+    </div>
+  </div>
+</dialog>
+
+<!-- ════ 10. FLOATING WHATSAPP ════════════════════ -->
+<a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20services." 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="floating-whatsapp-btn" 
+   aria-label="Chat with us on WhatsApp">
+  <span class="floating-whatsapp-tooltip">Chat with us on WhatsApp</span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.84.814 2.796.814 3.18 0 5.766-2.587 5.767-5.766.001-3.181-2.585-5.767-5.767-5.767zm0-2.172c4.379 0 7.938 3.559 7.939 7.938 0 4.38-3.56 7.939-7.939 7.939-1.332 0-2.593-.332-3.705-.918l-5.326 1.396 1.423-5.201c-.677-1.182-1.059-2.527-1.059-3.956 0-4.379 3.56-7.938 7.939-7.938zm-1.896 5.867c.105-.233.224-.239.336-.243.088-.004.189-.004.289-.004.1 0 .264.038.402.188.138.151.528.516.528 1.258 0 .742.54 1.458.616 1.558.075.1 1.042 1.666 2.568 2.277 1.267.508 1.526.407 1.802.382.277-.025.892-.365 1.018-.717.126-.352.126-.654.088-.717-.038-.063-.138-.1-.289-.176-.151-.075-.892-.44-1.03-.49-.138-.05-.239-.075-.34.075-.101.151-.389.49-.477.591-.088.1-.176.113-.327.038-.151-.075-.637-.235-1.213-.749-.448-.4-.75-894-.838-1.045-.088-.151-.009-.233.066-.308.068-.068.151-.176.226-.264.075-.088.1-.151.151-.252.05-.1.025-.188-.013-.264-.038-.075-.34-.818-.466-1.12-.122-.294-.246-.254-.339-.258z"/>
+  </svg>
+</a>
+
+<!-- ════ 11. MOBILE MENU OVERLAY ═════════════════ -->
+<div class="nav-mobile-overlay" id="nav-mobile-overlay" aria-hidden="true">
+  <div class="nm-top">
+    <a href="/" style="display:flex;align-items:center;">
+      <img src="assets/logo-white.png" alt="DigiHire" style="height:30px;width:auto;" />
+    </a>
+    <button class="nm-close-btn" id="nm-close-btn" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" width="22" height="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="nm-body">
+    <div class="nm-section">
+      <button class="nm-trigger" data-nm-target="nm-brands">
+        For Brands
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="nm-submenu" id="nm-brands">
+        <a href="/services" class="nm-sub-item" style="color:var(--cyan);font-weight:700;">Explore All Services →</a>
+        <a href="/services#recruitment" class="nm-sub-item">Sales Recruitment</a>
+        <a href="/services#field-sales" class="nm-sub-item">Field Customer Acquisition</a>
+        <a href="/services#retail" class="nm-sub-item">Retail &amp; In-Store Teams</a>
+        <a href="/services#activations" class="nm-sub-item">Activation &amp; Exhibition Staffing</a>
+        <a href="/services#managed-workforce" class="nm-sub-item">Managed Workforce Solutions</a>
+        <a href="/services#performance-sales" class="nm-sub-item">Performance-Based Sales</a>
+        <a href="/services#affiliate-setup" class="nm-sub-item">Affiliate Programme Setup</a>
+        <a href="/services#sales-academy" class="nm-sub-item">AI Sales Training</a>
+      </div>
+    </div>
+    <div class="nm-section">
+      <button class="nm-trigger" data-nm-target="nm-talents">
+        For Talent
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="nm-submenu" id="nm-talents">
+        <a href="https://talents.digihire.io/signup?module=talent_pool" class="nm-sub-item">Join Talent Pool</a>
+        <a href="/jobs" class="nm-sub-item">Apply for Sales Jobs</a>
+        <a href="https://talents.digihire.io/signup?module=gigs" class="nm-sub-item">Activation &amp; Field Gigs</a>
+        <a href="https://chat.whatsapp.com/DigihireTalentCommunity" target="_blank" rel="noopener noreferrer" class="nm-sub-item">Join WhatsApp Group</a>
+        <a href="/services#sales-academy" class="nm-sub-item">Sales Academy</a>
+      </div>
+    </div>
+    <div class="nm-section">
+      <button class="nm-trigger" data-nm-target="nm-why">
+        Why DigiHire
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="nm-submenu" id="nm-why">
+        <a href="/about" class="nm-sub-item">About Us</a>
+        <a href="/blog" class="nm-sub-item">Blog &amp; Insights</a>
+        <a href="/events" class="nm-sub-item">Events</a>
+        <a href="/services" class="nm-sub-item">All Solutions</a>
+      </div>
+    </div>
+    <div class="nm-actions">
+      <button type="button" onclick="openBrandWaitlistModal(event)" class="btn btn-cyan" style="width:100%;">
+        Request Talent
+      </button>
+      <a href="https://wa.me/2347073848138?text=Hi%20DigiHire%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="btn btn-outline-white" style="width:100%;">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════ JAVASCRIPT ═══════════════════════════════ -->
+<script>
+  /* Lucide Icons */
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.lucide) lucide.createIcons();
+  });
+
+  /* Navbar Scrolled Pill Effect */
+  (function() {
+    var nb = document.getElementById('navbar');
+    if (!nb) return;
+    function checkScroll() {
+      if (window.scrollY > 40) {
+        nb.classList.add('scrolled');
+      } else {
+        nb.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
+  })();
+
+  /* Brand Modal Functions */
+  window.openBrandWaitlistModal = function(e, prefillService) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+    var modal = document.getElementById('waitlist-modal');
+    if (modal) {
+      if (typeof modal.showModal === 'function') {
+        modal.showModal();
+      } else {
+        modal.setAttribute('open', '');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.closeBrandWaitlistModal = function() {
+    var modal = document.getElementById('waitlist-modal');
+    if (modal) {
+      if (typeof modal.close === 'function') {
+        modal.close();
+      } else {
+        modal.removeAttribute('open');
+      }
+      document.body.style.overflow = '';
+    }
+  };
+
+  /* Modal outside click to close */
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('waitlist-modal');
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        var rect = modal.getBoundingClientRect();
+        var isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height
+          && rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+        if (!isInDialog) {
+          closeBrandWaitlistModal();
+        }
+      });
+      modal.addEventListener('close', function() {
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  /* Mobile menu */
+  (function () {
+    var overlay = document.getElementById('nav-mobile-overlay');
+    var openBtn = document.getElementById('nav-hamburger-btn');
+    var closeBtn = document.getElementById('nm-close-btn');
+    if (!overlay || !openBtn) return;
+    function open() { overlay.classList.add('nm-open'); overlay.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+    function close() { overlay.classList.remove('nm-open'); overlay.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+    openBtn.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    overlay.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+    overlay.querySelectorAll('.nm-trigger[data-nm-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sm = document.getElementById(btn.getAttribute('data-nm-target'));
+        var isOpen = sm && sm.classList.contains('nm-open');
+        overlay.querySelectorAll('.nm-submenu.nm-open').forEach(function (el) { el.classList.remove('nm-open'); });
+        overlay.querySelectorAll('.nm-trigger.nm-active').forEach(function (el) { el.classList.remove('nm-active'); });
+        if (!isOpen && sm) { sm.classList.add('nm-open'); btn.classList.add('nm-active'); }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
