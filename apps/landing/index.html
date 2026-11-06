@@ -1117,7 +1117,7 @@
       overflow: hidden;
       display: flex; align-items: center; justify-content: center;
       background: var(--navy);
-      padding-bottom: 80px; /* room for the overlap */
+      padding-bottom: 56px;
     }
 
     /* ── Gradient bars ── */
@@ -1251,11 +1251,11 @@
        3. LOGOS STRIP
     ════════════════════════════════════════════════ */
     .logos-strip {
-      background: var(--white); padding: 32px 0;
+      background: var(--white); padding: 44px 0 32px 0;
       border-bottom: 1px solid #E5EDF7;
-      border-radius: 56px 56px 0 0;
+      border-radius: 0;
       position: relative; z-index: 10;
-      margin-top: -64px;
+      margin-top: 0 !important;
       box-shadow: none;
       overflow: hidden !important;
       max-width: 100% !important;
@@ -1315,9 +1315,9 @@
 
     @media (max-width: 768px) {
       .logos-strip {
-        border-radius: 36px 36px 0 0;
-        margin-top: -36px;
-        padding: 24px 0;
+        border-radius: 0;
+        margin-top: 0 !important;
+        padding: 36px 0 24px 0;
       }
       .logos-strip-inner {
         flex-direction: column !important;
@@ -4375,10 +4375,10 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
       <!-- Card 1: Green (500+ Sales Talents) -->
       <div class="bento-card bento-green">
         <div class="bento-avatars">
-          <img src="/avatar-map-lagos.png" alt="Sales Talent" loading="lazy" />
-          <img src="/avatar-map-abuja.png" alt="Sales Talent" loading="lazy" />
-          <img src="/avatar-map-kano.png" alt="Sales Talent" loading="lazy" />
-          <img src="/avatar-map-ph.png" alt="Sales Talent" loading="lazy" />
+          <img src="/bento-avatar-1.jpg" alt="Sales Talent" loading="lazy" />
+          <img src="/bento-avatar-2.jpg" alt="Sales Talent" loading="lazy" />
+          <img src="/bento-avatar-3.jpg" alt="Sales Talent" loading="lazy" />
+          <img src="/bento-avatar-4.jpg" alt="Sales Talent" loading="lazy" />
         </div>
         <div>
           <div class="bento-stat-num">500+</div>
@@ -4418,9 +4418,9 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
           <div class="bento-stat-label">Companies Served</div>
         </div>
         <div class="bento-avatars bento-avatars-dark">
-          <img src="/avatar-map-lagos.png" alt="Partner" loading="lazy" />
-          <img src="/avatar-map-abuja.png" alt="Partner" loading="lazy" />
-          <img src="/avatar-map-kano.png" alt="Partner" loading="lazy" />
+          <img src="/bento-partner-1.jpg" alt="Partner" loading="lazy" />
+          <img src="/bento-partner-2.jpg" alt="Partner" loading="lazy" />
+          <img src="/bento-partner-3.jpg" alt="Partner" loading="lazy" />
         </div>
       </div>
 
@@ -4479,7 +4479,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
           <div class="polaroids-wrap">
             <div class="polaroid-card polaroid-1">
               <div class="polaroid-img-wrap">
-                <img src="/sales-talent-grey.png" alt="Amina B. - Senior Sales Executive" loading="lazy" />
+                <img src="/sales-talent-amina.jpg" alt="Amina B. - Senior Sales Executive" loading="lazy" style="object-position:center top;" />
                 <span class="polaroid-badge" title="Verified Talent">✓</span>
               </div>
               <div class="polaroid-meta">
@@ -4489,7 +4489,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
             </div>
             <div class="polaroid-card polaroid-2">
               <div class="polaroid-img-wrap">
-                <img src="/talent-blak-man.png" alt="Chinedu E. - B2B Account Executive" loading="lazy" />
+                <img src="/sales-talent-chinedu.jpg" alt="Chinedu E. - B2B Account Executive" loading="lazy" style="object-position:center top;" />
                 <span class="polaroid-badge polaroid-badge-blue" title="Verified Talent">✓</span>
               </div>
               <div class="polaroid-meta">
@@ -4535,22 +4535,22 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
                 <path d="M 120 40 Q 200 30, 230 40" stroke="#059669" stroke-width="2" stroke-dasharray="4 4" opacity="0.45" />
               </svg>
               <div class="map-node map-node-kano">
-                <img src="/avatar-map-kano.png" alt="Kano Lead" />
+                <img src="/map-lead-kano.jpg" alt="Kano Lead" />
                 <span>Kano</span>
                 <span class="map-node-badge">50+ Reps</span>
               </div>
               <div class="map-node map-node-abuja">
-                <img src="/avatar-map-abuja.png" alt="Abuja Lead" />
+                <img src="/map-lead-abuja.jpg" alt="Abuja Lead" />
                 <span>Abuja</span>
                 <span class="map-node-badge">120+ Reps</span>
               </div>
               <div class="map-node map-node-lagos">
-                <img src="/avatar-map-lagos.png" alt="Lagos Lead" />
+                <img src="/map-lead-lagos.jpg" alt="Lagos Lead" />
                 <span>Lagos Hub</span>
                 <span class="map-node-badge">380+ Reps</span>
               </div>
               <div class="map-node map-node-ph">
-                <img src="/avatar-map-ph.png" alt="PH Lead" />
+                <img src="/map-lead-ph.jpg" alt="PH Lead" />
                 <span>Port Harcourt</span>
                 <span class="map-node-badge">75+ Reps</span>
               </div>
@@ -4604,7 +4604,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
             </div>
             <div class="dw-feed-item">
               <div class="dw-feed-left">
-                <img src="/avatar-map-lagos.png" alt="Staff" />
+                <img src="/hub-staff-1.jpg" alt="Staff" />
                 <div>
                   <div class="dw-feed-text">Ikeja City Mall Team</div>
                   <div class="dw-feed-sub">GPS Check-in • 08:58 AM</div>
@@ -4614,7 +4614,7 @@ section, .hero-wrapper, .hero-banner, .talent-unlock, .case-studies-section,
             </div>
             <div class="dw-feed-item">
               <div class="dw-feed-left">
-                <img src="/avatar-map-abuja.png" alt="Staff" />
+                <img src="/hub-staff-2.jpg" alt="Staff" />
                 <div>
                   <div class="dw-feed-text">Abuja Gateway Activation</div>
                   <div class="dw-feed-sub">Daily Sales Log • Verified</div>
